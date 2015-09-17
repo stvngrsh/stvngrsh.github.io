@@ -1,0 +1,132 @@
+* {
+    font-family: arial;
+    color: white;
+  }
+
+#login{
+	width: 100%;
+	height: 100%;
+	background-color: #2980b9;
+	text-align: center;
+}
+
+#login-pic{
+	width: 200px;
+	height: 200px;
+	border-radius: 400px;
+
+}
+#login-name{
+	font-size: 30px;
+}
+#login-email{
+	font-size: 14px;
+}
+#login-button{
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: #3498db;
+	border-style: none;
+	margin: 15px;
+}
+#login-button:hover{
+	opacity: .8;
+}
+#login-button:focus{
+	outline:0;
+
+}
+
+#main-bg{
+	width: 100%;
+	height: 100%;
+	background-image: url("/steven/img/background.jpg");
+	background-size: cover;
+	background-color: #2980b9;
+}
+
+#start-menu{
+	height: 60%;
+	width: 40%;
+	background-color: gray;
+	bottom: 50px;
+	position: fixed;
+
+}
+#start-menu.closed{
+	display: none;
+}
+
+
+#navbar{
+	height: 50px;
+	width: 100%;
+	background-color: rgba(41, 128, 185, .7);
+	opacity: 1;
+	position: fixed;
+	bottom: 0px;
+}
+
+.navbar-icon{
+	display: inline;
+	float: left;
+	position: relative;
+	height: 50px;
+	padding-top:4px;
+	padding-bottom:4px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.navbar-icon:hover{
+	background-color: #2980b9;
+}
+#start-icon{
+}
+
+#start-icon.selected{
+	background-color: #2980b9;
+}
+
+#clock{
+	display: inline;
+	float: right;
+	position: relative;
+	height: 50px;
+	text-align: center;
+	padding: 5px;
+	padding-right: 15px;
+
+}
+
+.icon{
+	height: 120px;
+	width: 100px;
+	text-align: center;
+	border-width: 2px;
+	border-style: solid;
+	border-color: transparent;
+	border-radius: 30px;
+
+}
+.icon:hover{
+	border-width: 2px;
+	border-style: solid;
+	border-color: blue;
+	border-radius: 30px;
+	
+}
+.icon:focus{
+	background-color: rgba(41, 128, 185, .7);
+
+}
+.icon-img{
+	margin: 5px;
+	height: 80px;
+	width: 80px;
+}
+.icon-text{
+	font-size: 12px;
+}
+

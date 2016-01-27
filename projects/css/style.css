@@ -2,6 +2,7 @@
 	font-family: bebas;
 	src: url('BebasNeue Bold.ttf');
 }
+
 body{
 	background-color: #ccc;
 }
@@ -22,7 +23,7 @@ nav.navbar.shrink {
 .container{
 	max-width: 1080px;
 	background-color: #fff;
-
+	margin-top: 30px;
 }
 
 #nav-container{
@@ -44,7 +45,7 @@ nav.navbar.shrink {
 	font-size: 12pt;
 }
 .logo-cont{
-	width: 33%;
+	width: 24%;
 	display: inline-block;
 
 }
@@ -73,4 +74,29 @@ nav.navbar.shrink {
 
 .img-thumb{
 	width: 100%
+}
+.banner{
+	margin-top: 30px;
+}
+
+.blackbox{
+	background-color: rgba(0, 0, 0, 0.55);
+	padding:5%;
+	margin: 3%;
+	color: white;
+	font-size: 14pt;
+}
+
+.member{
+	background-color: white;
+	box-shadow: 5px 5px 15px black;
+	padding: 10px;
+	display: table-cell;
+}
+.member-pic{
+	margin: 15px;
+	height: 200px;
+	width: 200px;
+	border-radius: 100%;
+	overflow: hidden;
 }

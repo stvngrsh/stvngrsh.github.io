@@ -19,89 +19,113 @@
 	<link href="css/jquery-ui.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 	<link href="css/slidemenu.css" rel="stylesheet">
+	<link href="css/parallax.css" rel="stylesheet">
+
 </head>
 
 
-<body onload="slideMenu.build('sm',200,10,10,1)">
+<body>
 
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div id="nav-container" class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="index.html">&Sigma;&Phi;&Delta;</a>
-    </div>
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">&Sigma;&Phi;&Delta;</a>
+			</div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    
-      <ul class="nav navbar-nav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="rush.html">Rush</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Events</a></li>
-      </ul>
-      
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+				<ul class="nav navbar-nav">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="rush.html">Rush</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="schedule.html">Events</a></li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
 	</nav>
 
 	<div class="container">
 		<div class="accordion">
-			<div class="accordion-bck">
+			<a href="rush.html" class="accordion-bck">
 				<img class="accordion-bck-img " src="img/1.jpg">
-			</div>
+			</a>
 
-			<div class="accordion-item active left" id="acc1" class="active">
-			</div>
+			<a href="rush.html" class="accordion-item active left" id="acc1" class="active" style="overflow:visible">
+				<div class="accordion-text">
+					<h1>Rush</h1>
+				</div>
+			</a>
 			
-			<div class="accordion-item" id="acc2">
+			<a href="#" class="accordion-item" id="acc2">
+				<div class="accordion-text">
+					<h1>Members</h1>
+				</div>
 				<img class="accordion-img notfocus" src="img/2.jpg">
-			</div>
+			</a>
 
-			<div class="accordion-item" id="acc2">
+			<a href="#" class="accordion-item" id="acc2">
+				<div class="accordion-text">
+					<h1>About</h1>
+				</div>
 				<img class="accordion-img notfocus" src="img/1.jpg">
-			</div>
+			</a>
 			
-			<div class="accordion-item right" id="acc3">
+			<a href="#" class="accordion-item right" id="acc3">
+				<div class="accordion-text">
+					<h1>Events</h1>
+				</div>
 				<img class="accordion-img notfocus" src="img/3.jpg">
-			</div>
+			</a>
 
-		
+
 		</div>
 		
 		<div class="col-xs-12">
 			<div class="col-lg-6">
-				<h3 align="center">Events</h3>
+				<h3 align="center">Upcoming Events</h3>
+				<h5 align="center">Click for times and location</h5>
 				<ul class="list-group">
 					<li class="list-group-item">
 						<span class="badge">Sunday 1/31</span>
-						<a href="#">Meet the Greeks</a>
+						<a href="#">RUSH: IFC Meet the Greeks</a>
 					</li>
 					<li class="list-group-item">
 						<span class="badge">Monday 2/1</span>
-						<a href="#">Meet the Brothers</a>
+						<a href="#">RUSH: Meet the Brothers</a>
 					</li>
 					<li class="list-group-item">
 						<span class="badge">Tuesday 2/2</span>
-						<a href="#">Video Game Night</a>
+						<a href="#">RUSH: Video Game Night</a>
 					</li>
 					<li class="list-group-item">
 						<span class="badge">Wednesday 2/3</span>
-						<a href="#">BBQ</a>
+						<a href="#">RUSH: BBQ</a>
 					</li>
 				</ul>
+
 			</div>
 			<div class="col-lg-6">
 				<h3 align="center">Contact</h3>
+			</div>
+
+			<div class="col-xs-12" style="text-align:center">
+				<h2>Click Below for the full 2016 Rush Schedule</h2>
+				<a id="rush" href="schedule.html" class="btn btn-warning btn-lg">
+					<img src="img/calendar179.png">
+					Rush Schedule
+				</a>
 			</div>
 		</div>
 	</div>
@@ -113,28 +137,28 @@
 
 
 	<script>
-		$(window).scroll(function() {
-		  if ($(document).scrollTop() > 50) {
-		    $('nav, .navbar-brand, #nav-container').addClass('shrink');
-		  } else {
-		    $('nav, .navbar-brand, #nav-container').removeClass('shrink');
-		  }
-		});
+	$(window).scroll(function() {
+		if ($(document).scrollTop() > 50) {
+			$('nav, .navbar-brand, #nav-container').addClass('shrink');
+		} else {
+			$('nav, .navbar-brand, #nav-container').removeClass('shrink');
+		}
+	});
 
-		$(".accordion-item").mouseover(function() {
-			$(".accordion-item").removeClass("active");
-			$(this).addClass("active");
-		});
+	$(".accordion-item").mouseover(function() {
+		$(".accordion-item").removeClass("active");
+		$(this).addClass("active");
+	});
 
-		$('.accordion-img').mouseover(function(){
-			$('.accordion-img, .accordion-bck-img').addClass("notfocus");
-			$(this).removeClass("notfocus");
-		});
+	$('.accordion-img').mouseover(function(){
+		$('.accordion-img, .accordion-bck-img').addClass("notfocus");
+		$(this).removeClass("notfocus");
+	});
 
-		$('.accordion-bck-img, .accordion-item.left').hover(function(){
-			$('.accordion-img, .accordion-bck-img').addClass("notfocus");
-			$('.accordion-bck-img').removeClass("notfocus");
-		});
+	$('.accordion-bck-img, .accordion-item.left').hover(function(){
+		$('.accordion-img, .accordion-bck-img').addClass("notfocus");
+		$('.accordion-bck-img').removeClass("notfocus");
+	});
 	</script>
 
 </body>

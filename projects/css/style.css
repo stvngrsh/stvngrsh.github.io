@@ -1,0 +1,76 @@
+@font-face{
+	font-family: bebas;
+	src: url('BebasNeue Bold.ttf');
+}
+body{
+	background-color: #ccc;
+}
+nav.navbar {
+	-webkit-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+	min-height: 70px;
+	font-size: 18pt;
+	margin-bottom: 0;
+}
+
+nav.navbar.shrink {
+  min-height: 40px;
+  font-size: 12pt;
+
+}
+
+.container{
+	max-width: 1080px;
+	background-color: #fff;
+
+}
+
+#nav-container{
+	-webkit-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+	padding-top: 10px;
+	max-width: 1080px;
+}
+#nav-container.shrink{
+	padding-top: 0px;
+}
+
+.navbar-brand {
+	-webkit-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+	font-size: 18pt;
+}
+.navbar-brand.shrink{
+	font-size: 12pt;
+}
+.logo-cont{
+	width: 33%;
+	display: inline-block;
+
+}
+.logo{
+	-webkit-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+	width: 100%;
+	opacity: 0;
+}
+
+.logo-cont.scrolled .logo{
+	opacity: 1;
+}
+
+.gpa{
+  display: flex;
+}
+.gpa h3 {
+  color: rgb(0, 0, 0);
+  font-size: 48px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  font-family: bebas;
+}
+
+.img-thumb{
+	width: 100%
+}

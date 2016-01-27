@@ -1,0 +1,123 @@
+.accordion
+{
+	display: block;
+	overflow: hidden;
+}
+
+.accordion-item
+{
+	position: relative;
+	display: block;
+	float: left;
+	width: 15%;
+	height: 400px;
+	color: #333;
+	overflow: hidden;
+	border-radius: 3px;
+    
+    transform-origin: bottom left;
+    -ms-transform: skew(-30deg, 0deg);
+    -webkit-transform: skew(-30deg, 0deg);
+    transform: skew(-30deg, 0deg);
+
+    z-index: 2;
+
+}
+.accordion-item.left{
+	width: 10%;
+	z-index: 2;
+	float:left;
+}
+.accordion-item.left.active{
+	width: 50%;
+}
+.accordion-item.right.active{
+	width: 60%;
+}
+.accordion-item.right{
+	width: 20%;
+    -ms-transform: skew(0deg, 0deg);
+    -webkit-transform: skew(0deg, 0deg);
+    transform: skew(0deg, 0deg);
+    z-index: 1;
+
+    float: right;
+}
+
+.accordion-img
+{
+	 transform-origin: bottom left;
+    -ms-transform: skew(30deg, 0deg);
+    -webkit-transform: skew(30deg, 0deg);
+    transform: skew(30deg, 0deg);
+    height: 600px;
+    margin-left: 75px;
+    margin-top: -50px;
+
+    -webkit-transition: all .2s ease;
+	-moz-transition: all .2s ease;
+	-ms-transition: all .2s ease;
+	-o-transition: all .2s ease;
+	transition: all .2s ease;
+}
+
+.accordion-item.left .accordion-img{
+	transform-origin: bottom left;
+    -ms-transform: skew(0deg, 0deg);
+    -webkit-transform: skew(0deg, 0deg);
+    transform: skew(0deg, 0deg);
+    margin-left: 0;
+}
+.accordion-item.right .accordion-img{
+	transform-origin: bottom left;
+    -ms-transform: skew(0deg, 0deg);
+    -webkit-transform: skew(0deg, 0deg);
+    transform: skew(0deg, 0deg);
+    margin-left: -50px;
+}
+.accordion-item.active
+{
+	width: 55%;
+	color: #333;
+}
+
+.accordion-item
+{
+	-webkit-transition: all .2s ease;
+	-moz-transition: all .2s ease;
+	-ms-transition: all .2s ease;
+	-o-transition: all .2s ease;
+	transition: all .2s ease;
+}
+
+.accordion-bck{
+	position: absolute;
+	display: block;
+	height: 400px;
+	overflow: hidden;
+	z-index: 0;
+	margin-right: 150px;
+}
+
+.accordion-bck-img
+{
+	max-width: 900px;
+	margin-top:-150px;
+	float:left;
+
+	-webkit-transition: all .2s ease;
+	-moz-transition: all .2s ease;
+	-ms-transition: all .2s ease;
+	-o-transition: all .2s ease;
+	transition: all .2s ease;
+}
+
+.notfocus{
+
+	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
+	filter: blur(5px);
+
+}

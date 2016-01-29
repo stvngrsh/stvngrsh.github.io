@@ -20,11 +20,31 @@ nav.navbar.shrink {
 
 }
 
+.accordion{
+	display: none;
+}
+.accordion-mobile{
+	display: block;
+}
 .container{
 	max-width: 1080px;
+	width: 100%;
 	background-color: #fff;
 	margin-top: 30px;
 }
+@media screen and (min-width: 995px){
+	.accordion{
+		display: block;
+	}
+	.accordion-mobile{
+		display: none;
+	}
+	.container{
+		min-width: 995px;
+	}
+}
+
+
 
 #nav-container{
 	-webkit-transition: all 0.4s ease;
@@ -100,3 +120,10 @@ nav.navbar.shrink {
 	border-radius: 100%;
 	overflow: hidden;
 }
+.unselect { 
+		pointer-events: none;
+        -moz-user-select: none; 
+        -khtml-user-select: none; 
+        -webkit-user-select: none; 
+        -o-user-select: none; 
+} 

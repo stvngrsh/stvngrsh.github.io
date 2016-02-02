@@ -27,7 +27,7 @@
 
 <body>
 
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div id="nav-container" class="container-fluid">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
@@ -46,21 +46,24 @@
 				<ul class="nav navbar-nav">
 					<li><a href="rush.html">Rush</a></li>
 					<li><a href="about.html">About</a></li>
-					<li><a href="philantropy.html">Philantropy</a></li>
+					<!--<li><a href="philantropy.html">Philantropy</a></li>-->
 					<li><a href="schedule.html">Events</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">Contact</a></li>
+					<li><a href="contact.html">Contact</a></li>
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
 	</nav>
 
 	<div class="container">
+		<div class="banner">
+			<img src="img/bannertest.png">
+		</div>
 		<div class="accordion">
 			<a href="rush.html" class="accordion-bck">
-				<img class="accordion-bck-img " src="img/1.jpg">
+				<img class="accordion-bck-img " src="img/group/flag2015.jpg">
 			</a>
 
 			<a href="rush.html" class="accordion-item active left" id="acc1" class="active" style="overflow:visible">
@@ -73,21 +76,21 @@
 				<div class="accordion-text unselect">
 					<h1>Academics</h1>
 				</div>
-				<img class="accordion-img notfocus" src="img/2.jpg">
+				<img class="accordion-img notfocus" src="img/cadbest.jpg">
 			</a>
 
 			<a href="rush.html#career" class="accordion-item" id="acc2">
 				<div class="accordion-text unselect">
 					<h1>Career</h1>
 				</div>
-				<img class="accordion-img notfocus" src="img/1.jpg">
+				<img class="accordion-img notfocus" src="img/panel.jpg">
 			</a>
 			
 			<a href="rush.html#social" class="accordion-item right" id="acc3">
 				<div class="accordion-text unselect">
 					<h1>Social</h1>
 				</div>
-				<img class="accordion-img notfocus" src="img/3.jpg">
+				<img class="accordion-img notfocus" src="img/group/beach.jpg">
 			</a>
 		</div>
 
@@ -97,25 +100,25 @@
    				<li class="slider-item" >
    					<a href="rush.html">
    						<h1>Rush</h1>
-	   					<div class="slider-img" style="background-image:url('img/1.jpg');"></div>
+	   					<div class="slider-img" style="background-image:url('img/group/flag2015.jpg');"></div>
 	   				</a>
 					</li>
 					<li class="slider-item" >
 						<a href="rush.html#academics">
 							<h1>Academics</h1>
-	   					<div class="slider-img" style="background-image:url('img/2.jpg');"></div>
+	   					<div class="slider-img" style="background-image:url('img/cadbest.jpg');"></div>
 	   				</a>
 					</li>
 					<li class="slider-item">
 						<a href="rush.html#career">
 							<h1>Career</h1>
-	   					<div class="slider-img" style="background-image:url('img/1.jpg');"></div>
+	   					<div class="slider-img" style="background-image:url('img/panel.jpg');"></div>
 	   				</a>
 					</li>
 					<li class="slider-item">
 						<a href="rush.html#social">
 							<h1>Social</h1>
-	   					<div class="slider-img" style="background-image:url('img/3.jpg');"></div>
+	   					<div class="slider-img" style="background-image:url('img/group/beach.jpg');"></div>
 	   				</a>
 					</li>
    			</ul>
@@ -147,10 +150,24 @@
 
 			</div>
 			<div class="col-lg-6">
-				<h3 align="center">Contact</h3>
-			</div>
+				<h3 align="center">Send us a message</h3>
+				<form role="form">
+					<div class="form-group">
+						<label for="name">Name:</label>
+						<input type="name" class="form-control" id="name">
+					</div>
+					<div class="form-group">
+						<label for="email">Email Address:</label>
+						<input type="name" class="form-control" id="name">
+					</div>
+					<div class="form-group">
+					  <label for="comment">Message:</label>
+					  <textarea class="form-control" rows="5" id="comment"></textarea>
+					</div>
+					<button class="btn btn-info" id="submit-btn">Submit</button>
+				</div>
 
-			<div class="col-xs-12" style="text-align:center">
+			<div class="col-xs-12" style="text-align:center; margin-top:10px;">
 				<h2>Click Below for the full 2016 Rush Schedule</h2>
 				<a id="rush" href="schedule.html" class="btn btn-warning btn-lg">
 					<img src="img/calendar179.png">
@@ -158,6 +175,19 @@
 				</a>
 			</div>
 		</div>
+	</div>
+
+	<div class="footer container">
+		<img href="#" src="img/umd_logo.png" style="height:25px;float:left">
+		<div class="footer-content">
+			<a href="#" style="color:white;">National Website</a>
+			&nbsp;|&nbsp;
+			Site designed by Steven Gresh
+			<img href="#" src="img/linkedin.ico" style="width:25px;height:25px;">
+			<img href="#" src="img/gmail.ico" style="width:25px;height:25px;">
+		</div>
+		<!--<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>-->
+
 	</div>
 
 	<script src="js/jquery-2.1.4.min.js"></script>
@@ -169,9 +199,9 @@
 	<script>
 	$(window).scroll(function() {
 		if ($(document).scrollTop() > 50) {
-			$('nav, .navbar-brand, #nav-container').addClass('shrink');
+			$('nav').addClass('shrink');
 		} else {
-			$('nav, .navbar-brand, #nav-container').removeClass('shrink');
+			$('nav').removeClass('shrink');
 		}
 	});
 

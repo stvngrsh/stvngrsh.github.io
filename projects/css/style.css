@@ -15,9 +15,13 @@ nav.navbar {
 }
 
 nav.navbar.shrink {
-  min-height: 40px;
-  font-size: 12pt;
+  
 
+}
+@media screen and (max-width: 880px){
+	.no-mobile{
+		display: none;
+	}
 }
 
 .accordion{
@@ -30,7 +34,8 @@ nav.navbar.shrink {
 	max-width: 1080px;
 	width: 100%;
 	background-color: #fff;
-	margin-top: 30px;
+	padding-top: 30px;
+	padding-bottom: 50px;
 }
 @media screen and (min-width: 995px){
 	.accordion{
@@ -44,7 +49,13 @@ nav.navbar.shrink {
 	}
 }
 
-
+.banner{
+	display: block;
+	overflow: hidden;
+}
+.banner img{
+	width: 100%;
+}
 
 #nav-container{
 	-webkit-transition: all 0.4s ease;
@@ -53,7 +64,7 @@ nav.navbar.shrink {
 	max-width: 1080px;
 }
 #nav-container.shrink{
-	padding-top: 0px;
+	
 }
 
 .navbar-brand {
@@ -62,7 +73,7 @@ nav.navbar.shrink {
 	font-size: 18pt;
 }
 .navbar-brand.shrink{
-	font-size: 12pt;
+	
 }
 .logo-cont{
 	width: 24%;
@@ -120,10 +131,35 @@ nav.navbar.shrink {
 	border-radius: 100%;
 	overflow: hidden;
 }
+@media screen and (max-width: 1080px){
+	.member{
+		display: inline-block;
+	}
+}
 .unselect { 
-		pointer-events: none;
-        -moz-user-select: none; 
-        -khtml-user-select: none; 
-        -webkit-user-select: none; 
-        -o-user-select: none; 
-} 
+	pointer-events: none;
+    -moz-user-select: none; 
+    -khtml-user-select: none; 
+    -webkit-user-select: none; 
+    -o-user-select: none; 
+}
+.footer {
+	width: 100%;
+	height: 40px;
+	background-color: rgba(0, 0, 0, .5);
+	font-size: 18px;
+	color: white;
+	padding: 5px;
+	max-width: 1080px;
+
+}
+.footer-content{
+	float:right;
+}
+.donut-holder{
+
+	width: 500px;
+	height: 400px;
+	margin: -50px;
+	margin-top: -25px;
+}

@@ -197,26 +197,30 @@
 	<script src="js/unslider-min.js"></script>
 
 	<script>
-	$(window).scroll(function() {
+	var accordionItem = $(".accordion-item");
+	var accordionImg = $(".accordion-img");
+	var accordionBckImg = $(".accordion-bck-img");
+	/*$(window).scroll(function() {
 		if ($(document).scrollTop() > 50) {
 			$('nav').addClass('shrink');
 		} else {
 			$('nav').removeClass('shrink');
 		}
-	});
+	});*/
 
-	$(".accordion-item").mouseover(function() {
-		$(".accordion-item").removeClass("active");
+	accordionItem.mouseover(function() {
+		accordionItem.removeClass("active");
 		$(this).addClass("active");
 	});
 
-	$('.accordion-img').mouseover(function(){
-		$('.accordion-img, .accordion-bck-img').addClass("notfocus");
+	accordionImg.mouseover(function(){
+		accordionImg.addClass("notfocus");
+		$('.accordion-bck-img').addClass("notfocus");
 		$(this).removeClass("notfocus");
 	});
 
 	$('.accordion-bck-img, .accordion-item.left').hover(function(){
-		$('.accordion-img, .accordion-bck-img').addClass("notfocus");
+		accordionImg.addClass("notfocus");
 		$('.accordion-bck-img').removeClass("notfocus");
 	});
 

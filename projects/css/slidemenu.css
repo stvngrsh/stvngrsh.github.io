@@ -2,6 +2,7 @@
 {
 	display: block;
 	overflow: hidden;
+	height: 400px;
 }
 
 .accordion-item
@@ -53,12 +54,7 @@
 	height: 600px;
 	margin-left: 75px;
 	margin-top: -50px;
-
-	-webkit-transition: all .2s ease;
-	-moz-transition: all .2s ease;
-	-ms-transition: all .2s ease;
-	-o-transition: all .2s ease;
-	transition: all .2s ease;
+	
 }
 
 .accordion-item.left .accordion-img{
@@ -104,21 +100,15 @@
 	max-width: 900px;
 	margin-top:-150px;
 	float:left;
-
-	-webkit-transition: all .2s ease;
-	-moz-transition: all .2s ease;
-	-ms-transition: all .2s ease;
-	-o-transition: all .2s ease;
-	transition: all .2s ease;
 }
 
 .notfocus{
 
-	-webkit-filter: blur(5px);
+	/*-webkit-filter: blur(5px);
 	-moz-filter: blur(5px);
 	-o-filter: blur(5px);
 	-ms-filter: blur(5px);
-	filter: blur(5px);
+	filter: blur(5px);*/
 
 }
 
@@ -152,6 +142,9 @@
 	text-transform: uppercase;
 	text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 	transform-origin: left;
+
+	-ms-transform: rotate(-60deg);
+	-webkit-transform: rotate(-60deg);
 	transform: rotate(-60deg);
 }
 .accordion-item.active .accordion-text h1{

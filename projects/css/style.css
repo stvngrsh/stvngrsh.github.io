@@ -18,9 +18,14 @@ nav.navbar.shrink {
   
 
 }
-@media screen and (max-width: 880px){
+@media (max-width: 880px){
 	.no-mobile{
 		display: none;
+	}
+}
+@media (max-width: 420px){
+	.no-cell{
+		display: none!important;
 	}
 }
 
@@ -37,7 +42,7 @@ nav.navbar.shrink {
 	padding-top: 30px;
 	padding-bottom: 50px;
 }
-@media screen and (min-width: 995px){
+@media (min-width: 995px){
 	.accordion{
 		display: block;
 	}
@@ -132,9 +137,21 @@ nav.navbar.shrink {
 	overflow: hidden;
 }
 @media screen and (max-width: 1080px){
+
+	
 	.member{
 		display: inline-block;
 	}
+}
+.member-center{
+	text-align: center;
+	display: block;
+}
+.member-pic-center{
+	height: 250px;
+	width: 250px;
+	text-align: center;
+	display: inline-block;
 }
 .unselect { 
 	pointer-events: none;
@@ -147,13 +164,14 @@ nav.navbar.shrink {
 	width: 100%;
 	height: 40px;
 	background-color: rgba(0, 0, 0, .5);
-	font-size: 18px;
+	font-size: 12px;
 	color: white;
 	padding: 5px;
 	max-width: 1080px;
-
+	vertical-align: center;
 }
 .footer-content{
+	margin-top: 9px;
 	float:right;
 }
 .donut-holder{

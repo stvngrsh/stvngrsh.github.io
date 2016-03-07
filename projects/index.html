@@ -27,7 +27,7 @@
 
 <body>
 
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div id="nav-container" class="container-fluid">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
@@ -38,6 +38,7 @@
 					<span class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="index.html">&Sigma;&Phi;&Delta;</a>
+				<!--<a id="debug" class="navbar-brand" href="index.html">DEBUG</a>-->
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -57,7 +58,7 @@
 		</div><!-- /.container-fluid -->
 	</nav>
 
-	<div class="container">
+	<div id="main-container" class="container">
 		<div class="banner">
 			<img src="img/bannertest.png">
 		</div>
@@ -135,24 +136,38 @@
 				<h5 align="center"><BR></h5>
 				<ul class="list-group">
 					<li class="list-group-item">
-						<span class="badge"><div class="no-cell" style="display:inline;">Aerospace</div></span>
-						<a href="http://www.umdrightnow.umd.edu/news/umd-led-team-advances-spacex-hyperloop-pod-competition">SpaceX Hyperloop Competetition</a>
+						<span class="badge no-cell"><div style="display:inline;">Aerospace</div></span>
+						<a href="http://www.umdrightnow.umd.edu/news/umd-led-team-advances-spacex-hyperloop-pod-competition" target="_blank">SpaceX Hyperloop Competetition</a>
 						<div class="brother-label">
 							Brother David Hairumian
 						</div>
 					</li>
 					<li class="list-group-item">
-						<span class="badge"><div class="no-cell" style="display:inline;">Hackathon</div></span>
-						<a href="http://technical.ly/philly/2016/01/28/american-sign-language-app/">Students create app that can read Sign Language</a>
+						<span class="badge no-cell"><div style="display:inline;">Hackathon</div></span>
+						<a href="http://technical.ly/philly/2016/01/28/american-sign-language-app/" target="_blank">Students create app that can read Sign Language</a>
 						<div class="brother-label">
 							Brother Shah-Ameer Wali
 						</div>
 					</li>
 					<li class="list-group-item">
-						<span class="badge"><div class="no-cell" style="display:inline;">Materials</div></span>
-						<a href="http://www.diamondbackonline.com/news/article_f5cdb692-f2b0-11e4-86f4-0b615b916582.html">Gemstone Team builds super-strong nanopaper</a>
+						<span class="badge no-cell"><div style="display:inline;">Materials</div></span>
+						<a href="http://www.diamondbackonline.com/news/article_f5cdb692-f2b0-11e4-86f4-0b615b916582.html" target="_blank">Gemstone Team builds super-strong nanopaper</a>
 						<div class="brother-label">
 							Brother Jonathan Kagan
+						</div>
+					</li>
+					<li class="list-group-item">
+						<span class="badge no-cell"><div style="display:inline;">Computer Science</div></span>
+						<a href="http://blogs.rhsmith.umd.edu/questpress/?p=2815" target="_blank">Rock Paper Scissors Through Machine Learning</a>
+						<div class="brother-label">
+							Brother Steven Gresh
+						</div>
+					</li>
+					<li class="list-group-item">
+						<span class="badge no-cell"><div style="display:inline;">XXX</div></span>
+						<a href="http://i.imgur.com/MHbpM48.jpg" target="_blank">Pictures of Gary's Cousin Naked</a>
+						<div class="brother-label">
+							Sister Catherine McKee
 						</div>
 					</li>
 					
@@ -187,7 +202,7 @@
 		</div>
 	</div>
 
-	<div class="footer" >
+	<div id="footer" class="footer" >
 		<div class="row" style="max-width:1080px; margin:auto;">
 			<div class="col-sm-12 col-md-5">
 				<h2>Sigma Phi Delta</h2>
@@ -256,6 +271,14 @@
 
 	$('.automatic-slider').unslider({
 		autoplay: true 
+	});
+
+	var main = $('#main-container');
+	$(document).ready(function(){
+	    $(document).scroll(function(){
+	    	console.log($(document).scrollTop(),$('#footer')[0].scrollHeight);
+
+		});
 	});
 	</script>
 

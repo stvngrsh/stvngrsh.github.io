@@ -1,6 +1,6 @@
 @font-face{
 	font-family: bebas;
-	src: url('BebasNeue Bold.ttf');
+	src: url('BebasNeueBold.ttf');
 }
 
 body{
@@ -178,4 +178,8 @@ nav.navbar.shrink {
 	height: 400px;
 	margin: -50px;
 	margin-top: -25px;
+}
+
+.fix-main{
+	position: fixed;
 }

@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="en" hola_ext_inject="disabled"><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="favicon.ico">
+
+<title>STEVEN GRESH</title>
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/jquery-ui.css">    
+<link rel="stylesheet" href="css/style.css">
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+
+</head>
+
+
+<body >
+
+	<div id="banner">
+		<div id="banner-overlay">
+			<p>Steven Gresh</p>
+			<div id="triangles">
+				<div id="tri1">&#x25BC;</div>
+				<div id="tri2">&#x25BC;</div>
+				<div id="tri3">&#x25BC;</div>
+
+			</div>
+		</div>
+	</div>
+	<div id="banner-scroll">
+		<a href="#about"></a>
+	</div>
+
+	<!--
+	<nav class="menu">
+		<div id="top-white">
+			<h2>Steven Gresh</h2>
+		</div>
+		<ul>
+			<li><a href="#about"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>About</a></li>
+			<li><a href="#projects"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>Projects</a></li>
+			<li><a href="#resume"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>Resume</a></li>
+			<li><a href="#contact"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>Contact</a></li>
+		</ul>
+	</nav>-->
+
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand about" href="#">Steven Gresh</a>
+				<a class="navbar-brand projects" href="#">Steven Gresh</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"><a href="#about">About <span class="sr-only">(current)</span></a></li>
+					<li><a href="#projectsTarget">Projects</a></li>
+					<li><a href="#">Link</a></li>
+					<li class="Contact Me">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Email</a></li>
+							<li><a href="#">LinkedIn</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#">Separated link</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+
+	<div id="about" class="content-module">
+		<div class="container heading">
+			<h2>About Me</h2>
+		</div>
+		<div class="container content">
+			<div class="col-xs-12">
+				<div class="col-xs-12 col-md-4">
+					<img id="headshot" src="img/headshot.jpg">
+				</div>
+				<div class="about-me col-xs-12 col-md-8">
+					<h3>About Me</h3>
+					<ul>
+						<li>22 Years Old</li>
+						<li>Washington DC</li>
+						<li>BS Mechanical Engineering</li>
+						<li>University of Maryland</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+			</div>
+		</div>
+
+	</div><!-- About -->
+	<span class="symbol-target" id="projectsTarget">&nbsp;</span>
+	<div id="projects" class="content-module">
+		<div class="container heading">
+			<h2>Featured Projects</h2>
+		</div>
+		<div class="container content">
+			<div class="col-xs-4">
+				<div class="project">
+				</div>
+				<div class="project">
+				</div>
+				<div class="project">
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<div class="project">
+				</div>
+				<div class="project">
+				</div>
+				<div class="project">
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<div class="project">
+				</div>
+				<div class="project">
+				</div>
+				<div class="project">
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+
+
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+
+	<script>
+	var fixed = false;
+	$( window ).scroll(function(){
+		var aboutTop = $('#about').offset().top;
+		var scroll = $( window ).scrollTop();
+
+		var o = 1-scroll/(aboutTop/2);
+
+		$("#banner-overlay").css('opacity', o);
+
+		var menuChange = aboutTop-scroll;
+
+		if(fixed == false && menuChange <= 0){
+			$(".navbar").addClass('fixed');
+			fixed = true;
+		}
+		if(fixed == true && menuChange > 0){
+			$(".navbar").removeClass('fixed');
+			fixed = false;
+		}
+
+		var projTop = $('#projects').offset().top;
+		var projChange = projTop - scroll - 65;
+		console.log(projChange)
+		var x = 60+projChange;
+		$(".navbar-brand.projects").css('-webkit-clip-path', 'inset(' + x + 'px 0px 0px 0px');
+		
+		
+	});
+
+	$(function() {
+		$('a[href*="#"]:not([href="#"])').click(function() {
+			if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+				var target = $(this.hash);
+				target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+				if (target.length) {
+					$('html, body').animate({
+						scrollTop: target.offset().top
+					}, 1000);
+					return false;
+				}
+			}
+		});
+	});
+
+
+
+	</script>
+
+
+
+</body></html>

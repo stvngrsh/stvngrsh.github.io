@@ -188,15 +188,11 @@ body{
 	color: #2ecc71;
 	clip-path: inset(60px 0px 0px 0px);
 	-webkit-clip-path: inset(60px 0px 0px 0px);
-	-moz-clip-path: inset(60px 0px 0px 0px);
-	-o-clip-path: inset(60px 0px 0px 0px);
 }
 .navbar-brand.resume{
 	color: #e74c3c;
 	clip-path: inset(60px 0px 0px 0px);
 	-webkit-clip-path: inset(60px 0px 0px 0px);
-	-moz-clip-path: inset(60px 0px 0px 0px);
-	-o-clip-path: inset(60px 0px 0px 0px);
 }
 .navbar-toggle{
 	line-height: 50px;

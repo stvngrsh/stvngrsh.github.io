@@ -217,6 +217,40 @@ body{
 .container.projects{
 	padding: 0px;
 }
+
+.container.projects.small{
+	display: block;
+}
+.container.projects.medium{
+	display: none;
+}
+.container.projects.large{
+	display: none;
+}
+@media (min-width: 768px){
+	.container.projects.small{
+		display: none;
+	}
+	.container.projects.medium{
+		display: block;
+	}
+	.container.projects.large{
+		display: none;
+	}
+}
+
+@media (min-width: 992px){
+	.container.projects.small{
+		display: none;
+	}
+	.container.projects.medium{
+		display: none;
+	}
+	.container.projects.large{
+		display: block;
+	}
+}
+
 .container.projects .col-xs-4.left{
 	padding-left: 0px;
 	padding-right: 14px;

@@ -186,11 +186,13 @@ body{
 }
 .navbar-brand.projects{
 	color: #2ecc71;
+	clip: rect(60px, 200px, 200px, 0px);
 	clip-path: inset(60px 0px 0px 0px);
 	-webkit-clip-path: inset(60px 0px 0px 0px);
 }
 .navbar-brand.resume{
 	color: #e74c3c;
+	clip: rect(60px, 200px, 200px, 0px);
 	clip-path: inset(60px 0px 0px 0px);
 	-webkit-clip-path: inset(60px 0px 0px 0px);
 }

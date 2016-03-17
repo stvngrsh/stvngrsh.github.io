@@ -386,13 +386,21 @@
 		var projTop = $('#projects').offset().top;
 		var projChange = projTop - scroll - 65;
 		var xP = 60+projChange;
+		var xPm = 65+projChange;
 		$(".navbar-brand.projects").css('-webkit-clip-path', 'inset(' + xP + 'px 0px 0px 0px');
+		$(".navbar-brand.projects").css('clip-path', 'inset(' + xP + 'px 0px 0px 0px');
+		//$(".navbar-brand.projects").css('clip', 'rect(0px, 200px, ' + xPm + 'px, 0px)');
+		$(".navbar-brand.projects").css('clip', 'rect(' + xPm + 'px, 200px, 200px, 0px)');
 
 		var resTop = $('#resume').offset().top;
 		var resChange = resTop - scroll - 65;
 		var xR = 60+resChange;
+		var xRm = 65+resChange;
 		$(".navbar-brand.resume").css('-webkit-clip-path', 'inset(' + xR + 'px 0px 0px 0px');
-		
+		$(".navbar-brand.resume").css('clip-path', 'inset(' + xR + 'px 0px 0px 0px');
+		//$(".navbar-brand.resume").css('clip', 'rect(0px, 200px, ' + xRm + 'px, 0px)');
+		$(".navbar-brand.resume").css('clip', 'rect(' + xRm + 'px, 200px, 200px, 0px)');
+
 		if(fixed == true){
 			$(".nav li").removeClass("active");
 			$("#nav-about").addClass("active");

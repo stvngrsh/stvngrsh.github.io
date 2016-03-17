@@ -15,8 +15,8 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/jquery-ui.css">    
 <link rel="stylesheet" href="css/style.css">
-<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+<!--<link href='fonts/css?family=Montserrat' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>-->
 
 </head>
 
@@ -63,6 +63,8 @@
 				</button>
 				<a class="navbar-brand about" href="#">Steven Gresh</a>
 				<a class="navbar-brand projects" href="#">Steven Gresh</a>
+				<a class="navbar-brand resume" href="#">Steven Gresh</a>
+
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -71,9 +73,9 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li class="active"><a href="#about">About <span class="sr-only">(current)</span></a></li>
 					<li><a href="#projectsTarget">Projects</a></li>
-					<li><a href="#">Link</a></li>
+					<li><a href="#resumeTarget">Resume</a></li>
 					<li class="Contact Me">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+						<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="#">Email</a></li>
 							<li><a href="#">LinkedIn</a></li>
@@ -112,38 +114,118 @@
 		</div>
 
 	</div><!-- About -->
+
+	<div class="next">
+		<a href="#projectsTarget">&#x25BC;</a>
+	</div>
+
 	<span class="symbol-target" id="projectsTarget">&nbsp;</span>
 	<div id="projects" class="content-module">
 		<div class="container heading">
 			<h2>Featured Projects</h2>
 		</div>
+		<div class="container projects">
+			<div class="col-xs-4 left">
+				<div class="project">
+					<a href="#">
+						<h3>QUEST Capstone</h3>
+						<p>Consulting and app development for Thales Defense & Security Inc</p>
+						<span class="badge"><div style="display:inline;">Consulting</div></span>
+						<span class="badge"><div style="display:inline;">Javascript</div></span>
+						<span class="badge"><div style="display:inline;">SVG</div></span>
+					</a>
+					<img src="img/thales.png">
+				</div>
+				<div class="project">
+					<a href="#">
+						<h3>3D Printing Guide</h3>
+						<p>Comprehensive consumer 3D printing usage guide designed for open access UMD printers. Tech Writing project.</p>
+						<span class="badge"><div style="display:inline;">3D Printing</div></span>
+						<span class="badge"><div style="display:inline;">Tech Writing</div></span>
+						<span class="badge"><div style="display:inline;">Design</div></span>
+					</a>
+					<img src="img/3dguide.png">
+				</div>
+			</div>
+			<div class="col-xs-4 middle">
+				<div class="project">
+					<a href="#">
+						<h3>Kinect Rock Paper Scissors</h3>
+						<p>Developed RPS game for Microsoft Kinect. Uses machine learning algoritm from training data to identify hand types and learns player patterns.</p>
+						<span class="badge"><div style="display:inline;">Machine Learning</div></span>
+						<span class="badge"><div style="display:inline;">Java</div></span>
+						<span class="badge"><div style="display:inline;">Kinect</div></span>
+					</a>
+					<img src="img/hand.png">
+				</div>
+				<div class="project">
+					<a href="#">
+						<h3>Autonomous Sentry Turret</h3>
+						<p>Built and programmed an autonomous nerf turret. Turret identifies and tracks targets using a microsoft kinect.</p>
+						<span class="badge"><div style="display:inline;">Robotics</div></span>
+						<span class="badge"><div style="display:inline;">Java</div></span>
+						<span class="badge"><div style="display:inline;">Arduino</div></span>
+					</a>
+					<img src="img/nerf.png">
+				</div>
+			</div>
+			<div class="col-xs-4 right">
+				<div class="project">
+					<a href="#">
+						<h3>Autodesk Student Expert</h3>
+						<p>Campus lead and Student Expert for Autodesk. Hosts CAD workshops around campus to various student groups.</p>
+						<span class="badge"><div style="display:inline;">CAD</div></span>
+						<span class="badge"><div style="display:inline;">Fusion 360</div></span>
+						<span class="badge"><div style="display:inline;">Autodesk</div></span>
+					</a>
+					<img src="img/bernays.png">
+				</div>
+				<div class="project">
+					<a href="#">
+						<h3>Web Site for SPD</h3>
+						<p>Blah blah I made a website its really cool check it out.</p>
+						<span class="badge"><div style="display:inline;">Web Design</div></span>
+						<span class="badge"><div style="display:inline;">HTML</div></span>
+						<span class="badge"><div style="display:inline;">CSS</div></span>
+					</a>
+					<img src="img/spd.png">
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="next">
+		<a href="#resumeTarget">&#x25BC;</a>
+	</div>
+	<span class="symbol-target" id="resumeTarget">&nbsp;</span>
+	<div id="resume" class="content-module">
+		<div class="container heading">
+			<h2>Digital Resume</h2>
+		</div>
 		<div class="container content">
-			<div class="col-xs-4">
-				<div class="project">
-				</div>
-				<div class="project">
-				</div>
-				<div class="project">
-				</div>
-			</div>
-			<div class="col-xs-4">
-				<div class="project">
-				</div>
-				<div class="project">
-				</div>
-				<div class="project">
-				</div>
-			</div>
-			<div class="col-xs-4">
-				<div class="project">
-				</div>
-				<div class="project">
-				</div>
-				<div class="project">
-				</div>
-			</div>
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
+			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
+			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+		</P>
+		<ul class="list-group">HERE IS MY RESUME
+			<li class="list-group-item">RESUME ITEM OR SOMETHING
+				<ul class="list-group">
+					<li class="list-group-item">STUFFFFDS:LKFJDS:LKF</li>
+					<li class="list-group-item">:SLDKJF:SDFJK:SLDKJF:LSKDJF</li>
+					<li class="list-group-item">STUFFFFDS:LKFJDS:LKF</li>
+				</ul>
+			</li>
+			<li class="list-group-item">MORE SHITSD:LKFJ
+				<ul class="list-group">
+					<li class="list-group-item">:SLDKJF:SDFJK:SLDKJF:LSKDJF</li>
+					<li class="list-group-item">STUFFFFDS:LKFJDS:LKF</li>
+					<li class="list-group-item">:SLDKJF:SDFJK:SLDKJF:LSKDJF</li>
+				</ul>
+			</li>
+		</ul>
 		</div>
 	</div>
 
@@ -174,9 +256,13 @@
 
 		var projTop = $('#projects').offset().top;
 		var projChange = projTop - scroll - 65;
-		console.log(projChange)
-		var x = 60+projChange;
-		$(".navbar-brand.projects").css('-webkit-clip-path', 'inset(' + x + 'px 0px 0px 0px');
+		var xP = 60+projChange;
+		$(".navbar-brand.projects").css('-webkit-clip-path', 'inset(' + xP + 'px 0px 0px 0px');
+
+		var resTop = $('#resume').offset().top;
+		var resChange = resTop - scroll - 65;
+		var xR = 60+resChange;
+		$(".navbar-brand.resume").css('-webkit-clip-path', 'inset(' + xR + 'px 0px 0px 0px');
 		
 		
 	});
@@ -196,7 +282,11 @@
 		});
 	});
 
-
+	$('.project').hover(function(){
+		$(this).find('a').addClass('in');
+	},function(){
+		$(this).find('a').removeClass('in');
+	});
 
 	</script>
 

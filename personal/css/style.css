@@ -133,8 +133,8 @@ body{
 	background-color: #3498db;
 }
 .symbol-target {
-    padding-top: 10px;
-    margin-top: -10px;
+    padding-top: 1px;
+    margin-top: -1px;
     width: 1px; /* '0' will not work for Opera */
     display: inline-block;
 }

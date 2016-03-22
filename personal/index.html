@@ -13,16 +13,20 @@
 
 <!-- Bootstrap core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="css/jquery-ui.css">    
+<!--<link rel="stylesheet" href="css/jquery-ui.css">  -->  
 <link rel="stylesheet" href="css/style.css">
 <!--<link href='fonts/css?family=Montserrat' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>-->
 
+<style>
+
+
+</style>
 </head>
 
 
 <body >
-
+	
 	<div id="banner">
 		<div id="banner-overlay">
 			<p>Steven Gresh</p>
@@ -384,8 +388,10 @@
 	<!--<script src="js/jquery-ui.min.js"></script>-->
 	<script src="js/bootstrap.min.js"></script>
 	<script>
+	
+	var banner = $("#banner");
 	var bannerOverlay = $("#banner-overlay");
-	var navbar = $(".navbar");
+	var navbar = $(".navbar, #banner");
 
 	var navbarBrandProjects = $(".navbar-brand.projects");
 

@@ -27,6 +27,9 @@ body{
 	width: 100%;
 	z-index: -1;
 }
+#banner.fixed{
+	visibility: hidden;
+}
 
 #banner-overlay{
 	background-color: rgba(0,0,0,.4);
@@ -162,6 +165,8 @@ body{
 }
 
 .navbar{
+	border-style: none;
+	border-radius: 0;
 	font-size: 20px;
 	z-index: 9999;
 	position: absolute;

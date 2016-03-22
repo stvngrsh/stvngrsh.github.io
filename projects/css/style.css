@@ -172,6 +172,12 @@ nav.navbar.shrink {
 	margin-top: 9px;
 	float:right;
 }
+@media(max-width: 768px){
+	.footer .row div{
+		color: red;
+	}
+}
+
 .donut-holder{
 
 	width: 500px;

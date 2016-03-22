@@ -172,9 +172,10 @@ nav.navbar.shrink {
 	margin-top: 9px;
 	float:right;
 }
+
 @media(max-width: 768px){
-	.footer .row div{
-		color: red;
+	.footer .row .left{
+		text-align: center;
 	}
 }
 

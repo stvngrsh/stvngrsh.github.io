@@ -134,7 +134,7 @@ body{
 }
 
 #about{
-	padding-top: 150px;
+	padding-top: 125px;
 	background-color: #3498db;
 }
 .symbol-target {
@@ -208,7 +208,21 @@ body{
 	height: 50px;
 }
 
+#about{
+	text-align: center;
+}
+.content-module .container h2{
+	margin-bottom: 20px;
+}
+@media(max-width: 500px){
+	.content-module .container h2 s{
+		display: none;
+	}
+}
 
+.content-module .container h1{
+	margin-bottom: 40px;
+}
 #headshot{
 	height: 250px;
 	width: 250px;
@@ -221,14 +235,19 @@ body{
 	filter: gray;
 
 }
+.about-me-cont{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}	
 .about-me{
-	text-align: center;
+	text-align: left;
 }
-.about-me h3{
-
+.about-me ul li b{
+	color: #3498db;
 }
 .about-me ul{
-	text-align: left;
+	padding: 30;
 	list-style-type: none;
 	font-size: 18px;
 }

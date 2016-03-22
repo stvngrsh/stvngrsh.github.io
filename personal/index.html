@@ -95,26 +95,36 @@
 
 	<div id="about" class="content-module">
 		<div class="container heading">
-			<h2>About Me</h2>
+			<h2>
+				<s>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</s>
+				&nbsp;About Me
+				<s>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
+				</s>
+			</h2>
 		</div>
 		<div class="container content">
-			<div class="col-xs-12">
+			<h1>I like making cool things.</h1>
+			<div class="about-me-cont">
+				<div class="about-me col-xs-12 col-md-4">
+					<ul>
+						<li><b>Born</b> 22 years ago</li>
+						<li><b>just outside</b> Washington DC</li>
+						<li><b>studying</b> Mechanical Engineering</li>
+						<li><b>at the</b> University of Maryland</li>
+						
+					</ul>
+
+				</div>
 				<div class="col-xs-12 col-md-4">
 					<img id="headshot" src="img/headshot.jpg">
 				</div>
-				<div class="about-me col-xs-12 col-md-8">
-					<h3>About Me</h3>
-					<ul>
-						<li>22 Years Old</li>
-						<li>Washington DC</li>
-						<li>BS Mechanical Engineering</li>
-						<li>University of Maryland</li>
-					</ul>
+				<div class="about-me col-xs-12 col-md-4">
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+					</p>
 				</div>
 			</div>
-			<div class="col-xs-12">
-				<p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-			</div>
+			
 		</div>
 
 	</div><!-- About -->
@@ -400,7 +410,8 @@
 
 	var navbarLi = $(".nav li");
 
-	$( document ).scroll(function(){
+
+	$( document ).on('scroll', function(){
 		var aboutTop = $('#about').offset().top;
 
 		var scroll = $( window ).scrollTop();

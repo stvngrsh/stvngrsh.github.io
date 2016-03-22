@@ -381,26 +381,36 @@
 
 
 	<script src="js/jquery-1.11.3.min.js"></script>
-	<script src="js/jquery-ui.min.js"></script>
+	<!--<script src="js/jquery-ui.min.js"></script>-->
 	<script src="js/bootstrap.min.js"></script>
 	<script>
+	var bannerOverlay = $("#banner-overlay");
+	var navbar = $(".navbar");
+
+	var navbarBrandProjects = $(".navbar-brand.projects");
+
+	var navbarBrandResume = $(".navbar-brand.resume");
 	var fixed = false;
+
+	var navbarLi = $(".nav li");
+
 	$( window ).scroll(function(){
 		var aboutTop = $('#about').offset().top;
+
 		var scroll = $( window ).scrollTop();
 
 		var o = 1-scroll/(aboutTop/2);
 
-		$("#banner-overlay").css('opacity', o);
+		bannerOverlay.css('opacity', o);
 
 		var menuChange = aboutTop-scroll;
 
 		if(fixed == false && menuChange <= 0){
-			$(".navbar").addClass('fixed');
+			navbar.addClass('fixed');
 			fixed = true;
 		}
 		if(fixed == true && menuChange > 0){
-			$(".navbar").removeClass('fixed');
+			navbar.removeClass('fixed');
 			fixed = false;
 		}
 
@@ -408,28 +418,29 @@
 		var projChange = projTop - scroll - 65;
 		var xP = 60+projChange;
 		var xPm = 65+projChange;
-		$(".navbar-brand.projects").css('-webkit-clip-path', 'inset(' + xP + 'px 0px 0px 0px');
-		$(".navbar-brand.projects").css('clip-path', 'inset(' + xP + 'px 0px 0px 0px');
-		$(".navbar-brand.projects").css('clip', 'rect(' + xPm + 'px, 200px, 200px, 0px)');
+		navbarBrandProjects.css('-webkit-clip-path', 'inset(' + xP + 'px 0px 0px 0px');
+		navbarBrandProjects.css('clip-path', 'inset(' + xP + 'px 0px 0px 0px');
+		navbarBrandProjects.css('clip', 'rect(' + xPm + 'px, 200px, 200px, 0px)');
 
 		var resTop = $('#resume').offset().top;
+
 		var resChange = resTop - scroll - 65;
 		var xR = 60+resChange;
 		var xRm = 65+resChange;
-		$(".navbar-brand.resume").css('-webkit-clip-path', 'inset(' + xR + 'px 0px 0px 0px');
-		$(".navbar-brand.resume").css('clip-path', 'inset(' + xR + 'px 0px 0px 0px');
-		$(".navbar-brand.resume").css('clip', 'rect(' + xRm + 'px, 200px, 200px, 0px)');
+		navbarBrandResume.css('-webkit-clip-path', 'inset(' + xR + 'px 0px 0px 0px');
+		navbarBrandResume.css('clip-path', 'inset(' + xR + 'px 0px 0px 0px');
+		navbarBrandResume.css('clip', 'rect(' + xRm + 'px, 200px, 200px, 0px)');
 
 		if(fixed == true){
-			$(".nav li").removeClass("active");
+			navbarLi.removeClass("active");
 			$("#nav-about").addClass("active");
 		}
 		if(fixed == true && projChange < 0){
-			$(".nav li").removeClass("active");
+			navbarLi.removeClass("active");
 			$("#nav-projects").addClass("active");
 		}
 		if(fixed == true && resChange < 0){
-			$(".nav li").removeClass("active");
+			navbarLi.removeClass("active");
 			$("#nav-resume").addClass("active");
 		}
 	});
@@ -449,10 +460,15 @@
 		});
 	});
 
-	$('.project').hover(function(){
-		$(this).find('button').addClass('in');
-	},function(){
-		$(this).find('button').removeClass('in');
+	var project = $('.project');
+
+	$(function() {
+
+		project.hover(function(){
+			$(this).find('button').addClass('in');
+		},function(){
+			$(this).find('button').removeClass('in');
+		});
 	});
 
 

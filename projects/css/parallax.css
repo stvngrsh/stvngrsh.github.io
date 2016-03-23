@@ -55,7 +55,6 @@ section.module.parallax-2 {
 }
 section.module.parallax-3 {
   background-image: url("../img/group/flag2015.jpg");
-  background-size: contain;
 }
 section.module.parallax-4 {
   background-image: url("../img/paintball.jpg");
@@ -71,9 +70,30 @@ section.module.parallax-4 {
   section.module.parallax h1 {
     font-size: 96px;
   }
+
 }
 @media all and (min-width: 960px) {
   section.module.parallax h1 {
-    font-size: 160px;
+    font-size: 150px;
+  }
+}
+
+@media all and (max-width: 750px){
+  section.module.parallax{
+    height: 500px;
+  }
+  section.module.parallax h1 {
+    line-height: 500px;
+  }
+  section.module.parallax-1{
+    background-position-y: -90px;
+  }
+}
+@media all and (max-width: 600px){
+  section.module.parallax{
+    height: 400px;
+  }
+  section.module.parallax h1 {
+    line-height: 400px;
   }
 }

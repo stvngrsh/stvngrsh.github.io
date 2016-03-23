@@ -131,3 +131,8 @@
         font-size: 90px;
     }
 }
+@media(max-width: 350px){
+    .slider-item h1 {
+        font-size: 80px;
+    }
+}

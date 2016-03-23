@@ -1,6 +1,6 @@
 @font-face{
 	font-family: bebas;
-	src: url('BebasNeueBold.ttf');
+	src: url('../fonts/BebasNeueBold.ttf');
 }
 
 body{
@@ -54,10 +54,12 @@ nav.navbar.shrink {
 	}
 }
 
+
 .banner{
 	display: block;
 	overflow: hidden;
 }
+
 .banner img{
 	width: 100%;
 }
@@ -85,6 +87,7 @@ nav.navbar.shrink {
 	display: inline-block;
 
 }
+
 .logo{
 	-webkit-transition: all 0.4s ease;
 	transition: all 0.4s ease;
@@ -114,7 +117,12 @@ nav.navbar.shrink {
 .banner{
 	margin-top: 30px;
 }
-
+.thumbnail{
+	text-align: center;
+}
+.thumbnail .caption p{
+	font-size: 16px;
+}
 .blackbox{
 	background-color: rgba(0, 0, 0, 0.55);
 	padding:5%;
@@ -122,12 +130,24 @@ nav.navbar.shrink {
 	color: white;
 	font-size: 14pt;
 }
+@media(max-width: 992px){
+	.blackbox{
+		font-size: 12pt;
+	}
+}
+@media(max-width: 600px){
+	.blackbox{
+		font-size: 10pt;
+	}
+}
 
 .member{
-	background-color: white;
-	box-shadow: 5px 5px 15px black;
 	padding: 10px;
-	display: table-cell;
+	display: flex;
+	justify-content: center;
+	border-top-style: solid;
+	border-width: 1px;
+
 }
 .member-pic{
 	margin: 15px;
@@ -136,23 +156,22 @@ nav.navbar.shrink {
 	border-radius: 100%;
 	overflow: hidden;
 }
-@media screen and (max-width: 1080px){
-
-	
+.member-text{
+	max-width: 500px;
+}
+@media(max-width: 800px){
 	.member{
-		display: inline-block;
+		display: block;
+		text-align: center;
+	}
+	.member-text{
+		max-width: none;
+	}
+	.member-pic{
+		margin: auto;
 	}
 }
-.member-center{
-	text-align: center;
-	display: block;
-}
-.member-pic-center{
-	height: 250px;
-	width: 250px;
-	text-align: center;
-	display: inline-block;
-}
+
 .unselect { 
 	pointer-events: none;
     -moz-user-select: none; 
@@ -172,11 +191,62 @@ nav.navbar.shrink {
 	margin-top: 9px;
 	float:right;
 }
-
-@media(max-width: 768px){
+.footer .row{
+	max-width:1080px; 
+	margin:auto;
+}
+.footer .row div ul li a{
+	color: white;
+}
+@media(min-width: 768px){
+	.footer .row .right{
+		text-align: right;
+	}
+}
+@media(max-width: 992px){
 	.footer .row .left{
 		text-align: center;
+		margin-bottom: 10px;
 	}
+	.footer .row .middle{
+		padding-left: 45px;
+	}
+	.footer .row .middle ul{
+		padding: 0;
+	}
+	.footer .row .right{
+		padding-right: 45px;
+	}
+}
+@media(max-width: 768px){
+	.footer{
+		text-align: center;
+	}
+	.footer .row .middle{
+		padding: 0;
+	}
+	.footer .row .middle ul{
+		list-style: none;
+	}
+	.footer .row .right{
+		padding: 0;
+	}
+}
+.thumbs{
+	text-align: center;
+}
+.thumb{
+	position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 300px;
+    display: inline-block;
+}
+.thumbnail{
+	display: inline-table;
+	    height: 450px;
+
 }
 
 .donut-holder{

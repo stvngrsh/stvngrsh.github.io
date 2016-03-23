@@ -271,7 +271,12 @@
 	$('.automatic-slider').unslider({
 		autoplay: true 
 	});
-
+	$( document ).ready(function(){
+		if (navigator.userAgent.indexOf('Edge') !== -1 || navigator.appVersion.indexOf('Trident/') > 0 || navigator.userAgent.indexOf('MSIE') !== -1) {
+		   alert('Hello, we apologize but some features currently do not display correctly on Microsoft Edge or Internet Explorer. For optimal performance, use another browser such as Firefox or Chrome.');
+		}
+		
+	});
 	
 	</script>
 

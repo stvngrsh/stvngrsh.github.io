@@ -267,6 +267,7 @@ body{
 	transform: scale(1);
 
 
+
 	-webkit-transition: transform 0.1s ease-in;
 	-moz-transition: transform 0.1s ease-in;
 	-o-transition: transform 0.1s ease-in;
@@ -328,9 +329,28 @@ body{
 	padding-right: 0px;
 }
 .project img{
+	z-index: 1;
 	width: 100%;
+	-webkit-filter: grayscale(1);
+	-moz-filter: grayscale(1);
+	-o-filter: grayscale(1);
+	filter: grayscale(1);
+	filter: gray;
+
+	-webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    -o-transition: all .1s linear;
+    transition: all .1s linear;
+}
+.project.in img{
+	-webkit-filter: blur(1px);
+	-moz-filter: grayscale(0);
+	-o-filter: grayscale(0);
+	filter: grayscale(0);
+	filter: none;
 }
 .project button{	
+	z-index: 2;
 	border-style: none;
 
 	padding: 15px;
@@ -344,19 +364,29 @@ body{
     overflow: hidden;
     text-decoration: none;
     background-color: rgba(0,0,0,.5);
-    opacity: 0;
+    opacity: .2;
 
     -webkit-transition: opacity .1s linear;
     -moz-transition: opacity .1s linear;
     -o-transition: opacity .1s linear;
     transition: opacity .1s linear;
-
-
 }
 
-.project button.in{
+.project.in button{
 	opacity: 1;
 }
+
+.project button h3, .project button p, .project button span{
+	-webkit-transition: opacity .1s linear;
+    -moz-transition: opacity .1s linear;
+    -o-transition: opacity .1s linear;
+    transition: opacity .1s linear;
+	opacity: 0;
+}
+.project.in button h3, .project.in button p, .project.in button span{
+	opacity: 1;
+}
+
 .project:hover{
 	-webkit-transform: scale(1.1);
 	-moz-transform: scale(1.1);

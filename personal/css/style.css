@@ -144,7 +144,7 @@ body{
     display: inline-block;
 }
 #projects{
-	background-color: #2ecc71;
+	background-color: white;/*#2ecc71;*/
 	text-align: center;
 }
 #resume{
@@ -195,7 +195,7 @@ body{
 	color: #3498db;
 }
 .navbar-brand.projects{
-	color: #2ecc71;
+	color: white; /*#2ecc71;*/
 	clip: rect(60px, 200px, 200px, 0px);
 	clip-path: inset(60px 0px 0px 0px);
 	-webkit-clip-path: inset(60px 0px 0px 0px);
@@ -455,5 +455,5 @@ body{
 	height: 100%;
 	width: 50%;
 	position: absolute;
-	background-color: #2ecc71;
+	background-color: white; /*#2ecc71;*/
 }

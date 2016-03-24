@@ -196,15 +196,15 @@ body{
 }
 .navbar-brand.projects{
 	color: white; /*#2ecc71;*/
-	clip: rect(60px, 200px, 200px, 0px);
+	/*clip: rect(60px, 200px, 200px, 0px);
 	clip-path: inset(60px 0px 0px 0px);
-	-webkit-clip-path: inset(60px 0px 0px 0px);
+	-webkit-clip-path: inset(60px 0px 0px 0px);*/
 }
 .navbar-brand.resume{
 	color: #e74c3c;
-	-webkit-clip-path: inset(60px 0px 0px 0px);
+	/*-webkit-clip-path: inset(60px 0px 0px 0px);
 	clip-path: inset(60px 0px 0px 0px);
-	clip: rect(60px, 200px, 200px, 0px);
+	clip: rect(60px, 200px, 200px, 0px);*/
 }
 .navbar-toggle{
 	line-height: 50px;
@@ -330,12 +330,12 @@ body{
 }
 .project img{
 	z-index: 1;
-	width: 100%;
+	width: 100%;/*
 	-webkit-filter: grayscale(1);
 	-moz-filter: grayscale(1);
 	-o-filter: grayscale(1);
 	filter: grayscale(1);
-	filter: gray;
+	filter: gray;*/
 
 	-webkit-transition: all .1s linear;
     -moz-transition: all .1s linear;

@@ -6,3 +6,125 @@
 .skew-wrap{
 	margin-top: 90px;
 }
+.about-me p{
+	color: white;
+	font-size: 12pt;
+}
+#about .skew-rev .container h1{
+	color: white;
+}
+#projects div div h2{
+	color: black;
+}
+#projects{
+	margin-bottom: 100px;
+}
+.navbar{
+	background-color: #2c3e50;
+}
+.navbar-default .navbar-nav>li>a{
+	color: #ecf0f1;
+}
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px; /* Adjusts for spacing */
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.modal-header .close{
+	display: none;
+}
+.modal-title{
+	font-family: Oswald;
+	font-size: 20pt;
+}
+.modal-img-big{
+	width: 300px;
+	height: 245px;
+	border-radius: 2px;
+	overflow: hidden;
+	display: flex;
+    justify-content: center;
+}
+.modal-img-big img{
+	height: 100%;
+}
+.modal-body .row .flex{
+	display: flex;
+}
+.modal-thumbs{
+	width: 100px;
+}
+.modal-thumbs div{
+	background-color: black;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	margin-left: 20px;
+	width: 75px;
+	height: 75px;
+	overflow: hidden;
+	display: flex;
+    justify-content: center;
+
+}
+.modal-thumbs-img{
+	height: 100%;
+	opacity: .3;
+
+}
+.modal-thumbs-img:hover{
+	opacity: 1;
+}
+.modal-thumbs-img.last{
+	margin-bottom: 0;
+}
+.modal-class{
+	font-size: 16pt;
+}
+.modal-teammates{
+	font-size: 14pt;
+}
+.modal-teammates a{
+	font-family: 12pt;
+}
+.modal-body .row{
+	padding: 30px;
+	padding-bottom: 0;
+}
+.modal-body .description{
+	font-size: 12pt;
+}
+.github{
+
+}
+.btn{
+	border-radius: 0;
+}
+.description{
+	padding: 15px;
+}
+.modal-header span{
+	font-size: 16pt;
+}
+.modal-header h4{
+	display: inline;
+}
+.modal-header .spans{
+	float: right;
+}
+.spans .badge{
+	    padding: 8px 13px;
+}

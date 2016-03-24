@@ -66,9 +66,9 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand about" href="#">Steven Gresh</a>
-				<a class="navbar-brand projects" href="#">Steven Gresh</a>
 				<a class="navbar-brand resume" href="#">Steven Gresh</a>
+				<a class="navbar-brand projects" href="#">Steven Gresh</a>
+				<a class="navbar-brand about" href="#">Steven Gresh</a>
 
 			</div>
 
@@ -128,7 +128,7 @@
 								<img id="headshot" src="img/headshot.jpg">
 							</div>
 							<div class="about-me col-xs-12 col-md-4">
-								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+								<p >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
 								</p>
 							</div>
 						</div>
@@ -405,23 +405,58 @@
 	</div>
 
 	<!-- PROJECT MODALS-->
-
-	<div id="thales-modal" class="modal fade" tabindex="-1" role="dialog">
-	  <div class="modal-dialog">
+	<!--<div id="thales-modal" class="modal fade  in" tabindex="-1" role="dialog" style="display: block; padding-right: 17px;">-->
+	<div id="thales-modal" class="modal fade " tabindex="-1" role="dialog">
+	  <div class="modal-dialog modal-lg">
 	    <div class="modal-content">
 	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title">Modal title</h4>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+	        <h4 class="modal-title">QUEST Capstone Project</h4>
+	        <div class="spans">
+		        <span class="badge"><div style="display:inline;">Consulting</div></span>
+			    <span class="badge"><div style="display:inline;">Javascript</div></span>
+			    <span class="badge"><div style="display:inline;">SVG</div></span>
+			</div>
 	      </div>
 	      <div class="modal-body">
-	        <p>One fine body&hellip;</p>
+	      	<div class="row">
+		      	<div class="col-xs-12 col-sm-6 flex">
+		      		<div class="modal-img-big"><img src="img/nerf.png" ></div>
+		      		<div class="modal-thumbs">
+		      			<div><img src="img/nerf.png" class="modal-thumbs-img"></div>
+		      			<div><img src="img/nerf.png" class="modal-thumbs-img"></div>
+		      			<div><img src="img/nerf.png" class="modal-thumbs-img last"></div>
+		      		</div>
+		      	</div>
+		      	<div class="col-xs-12 col-sm-6">
+		      		<div class="modal-class">
+		      			<b>Class:</b> BMGT/ENES490H
+		      		</div>
+		      		<div class="modal-teammates">
+		      			<b>Teammates:</b>
+		      			<ul>
+		      				<li><a href="https://www.linkedin.com/in/liya-ai-758a7483">Liya Ai</a></li>
+		      				<li><a href="https://www.linkedin.com/in/trevor-putman-39a39a9b">Trevor Putnam</a></li>
+		      				<li><a href="https://www.linkedin.com/in/erintumney">Erin Tumney</a></li>
+		      			</ul>
+		      		</div>
+	      			<div class="github ">
+			      		<a class="btn btn-default" href="#">Poster PDF Download</a>
+			      		<a class="btn btn-default" href="#">Project Source</a>
+			      	</div>
+		      	</div>
+		      	<div class="description col-xs-12">
+		      		<p>Thales Defense & Security Inc. IT Asset Optimization	-Semester long project working for Thales DSI to optimize IT asset allocation processes - Worked on multidisciplinary team of engineering and business majors - Developed custom web application and recommended system changes to reduce company asset costs, man-hours and even electricity consumption.
+					</p>
+		      	</div>
+		      
+		      </div>
 	      </div>
 	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        <button type="button" class="btn btn-primary">Save changes</button>
+	        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 	      </div>
 	    </div><!-- /.modal-content -->
-	  </div><!-- /.modal-dialog -->
+	  </div><!-- /.modal-dialog -->	  
 	</div><!-- /.modal -->
 
 
@@ -435,9 +470,10 @@
 	var bannerOverlay = $("#banner-overlay");
 	var navbar = $(".navbar, #banner");
 
+	var navbarBrandAbout = $(".navbar-brand.about");
 	var navbarBrandProjects = $(".navbar-brand.projects");
-
 	var navbarBrandResume = $(".navbar-brand.resume");
+
 	var fixed = false;
 
 	var navbarLi = $(".nav li");
@@ -463,28 +499,33 @@
 			fixed = false;
 		}
 
-		var projTop = $('#projects').offset().top;
-		var projChange = projTop - scroll - 65;
-		var xP = 60+projChange;
+		var projTop = $('#about').offset().top;
+		var projChange = projTop - scroll + 390;
+		var xP1 = 127+projChange;
+		var xP2 = 57+projChange;
+
 		var xPm = 65+projChange;
-		navbarBrandProjects.css('-webkit-clip-path', 'inset(' + xP + 'px 0px 0px 0px');
-		navbarBrandProjects.css('clip-path', 'inset(' + xP + 'px 0px 0px 0px');
-		navbarBrandProjects.css('clip', 'rect(' + xPm + 'px, 200px, 200px, 0px)');
+		navbarBrandAbout.css('-webkit-clip-path', 'polygon(0% 0%, 100% 0%, 100% ' + xP1 + 'px, 0% ' + xP2 + 'px)');
+		navbarBrandProjects.css('-webkit-clip-path', 'polygon(0% ' + xP2 + 'px, 100% ' + xP1 + 'px, 100% 100%, 0% 100%)')
+		//navbarBrandProjects.css('-webkit-clip-path', 'inset(' + xP + 'px 0px 0px 0px');
+		//navbarBrandProjects.css('clip-path', 'inset(' + xP + 'px 0px 0px 0px');
+		//navbarBrandProjects.css('clip', 'rect(' + xPm + 'px, 200px, 200px, 0px)');
 
 		var resTop = $('#resume').offset().top;
 
 		var resChange = resTop - scroll - 65;
 		var xR = 60+resChange;
 		var xRm = 65+resChange;
-		navbarBrandResume.css('-webkit-clip-path', 'inset(' + xR + 'px 0px 0px 0px');
-		navbarBrandResume.css('clip-path', 'inset(' + xR + 'px 0px 0px 0px');
-		navbarBrandResume.css('clip', 'rect(' + xRm + 'px, 200px, 200px, 0px)');
+		//navbarBrandResume.css('-webkit-clip-path', 'inset(' + xR + 'px 0px 0px 0px');
+		//navbarBrandResume.css('clip-path', 'inset(' + xR + 'px 0px 0px 0px');
+		//navbarBrandResume.css('clip', 'rect(' + xRm + 'px, 200px, 200px, 0px)');
 
+		console.log(projChange);
 		if(fixed == true){
 			navbarLi.removeClass("active");
 			$("#nav-about").addClass("active");
 		}
-		if(fixed == true && projChange < 0){
+		if(fixed == true && projChange < -320){
 			navbarLi.removeClass("active");
 			$("#nav-projects").addClass("active");
 		}

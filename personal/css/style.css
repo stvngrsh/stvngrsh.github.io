@@ -39,6 +39,17 @@ body{
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	padding-bottom: 10%;
+}
+#fade3{
+	display: inline-block;
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 28pt;
+}
+#fade3 div{
+	opacity: 0;
+	display: inline;
 }
 #banner-scroll{
 	height: 100%;
@@ -108,6 +119,50 @@ body{
 	100% {opacity: 1;}
 }
 
+#f1
+{	-webkit-animation: 	fade 2s 1 .8s;
+	-moz-animation: 	fade 2s 1 .8s;
+	-o-animation: 		fade 2s 1 .8s;
+	animation: 			fade 2s 1 .8s;
+	animation-fill-mode: forwards;  
+}
+#s1,#s2
+{	-webkit-animation: 	fade 2s 1 2.4s;
+	-moz-animation: 	fade 2s 1 2.4s;
+	-o-animation: 		fade 2s 1 2.4s;
+	animation: 			fade 2s 1 2.4s;
+	animation-fill-mode: forwards;  
+}
+#f2
+{	-webkit-animation: 	fade 2s 1 1.5s;
+	-moz-animation: 	fade 2s 1 1.5s;
+	-o-animation: 		fade 2s 1 1.5s;
+	animation: 			fade 2s 1 1.5s;
+	animation-fill-mode: forwards;  
+}
+#f3
+{	-webkit-animation: 	fade 2s 1 2s;
+	-moz-animation: 	fade 2s 1 2s;
+	-o-animation: 		fade 2s 1 2s;
+	animation: 			fade 2s 1 2s;
+	animation-fill-mode: forwards;  
+}
+@keyframes fade{
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+@-webkit-keyframes fade{
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+@-moz-keyframes fade{
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+@-o-keyframes fade{
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
 #steven-fix{
 	font-family: 'Oswald', sans-serif;
 	position: fixed;
@@ -148,8 +203,8 @@ body{
 	text-align: center;
 }
 #resume{
-	background-color: #e74c3c;	
 	text-align: center;
+	background-color: #e74c3c;	
 
 }
 .content-module .container h2{
@@ -344,10 +399,10 @@ body{
 }
 .project.in img{
 	-webkit-filter: blur(1px);
-	-moz-filter: grayscale(0);
-	-o-filter: grayscale(0);
-	filter: grayscale(0);
-	filter: none;
+	-moz-filter: blur(1px);
+	-o-filter: blur(1px);
+	filter: blur(1px);
+	filter: blur;
 }
 .project button{	
 	z-index: 2;
@@ -482,6 +537,12 @@ body{
 	margin-left: 50%;
 }
 #projects-bck{
+	height: 100%;
+	width: 50%;
+	position: absolute;
+	background-color: white; /*#2ecc71;*/
+}
+#resume-bck{
 	height: 100%;
 	width: 50%;
 	position: absolute;

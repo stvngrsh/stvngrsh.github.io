@@ -13,8 +13,12 @@
 
 <!-- Bootstrap core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/lightbox.min.css" rel="stylesheet">
+
 <!--<link rel="stylesheet" href="css/jquery-ui.css">  -->  
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/alt.css">
+
 <!--<link href='fonts/css?family=Montserrat' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>-->
 
@@ -30,6 +34,13 @@
 	<div id="banner">
 		<div id="banner-overlay">
 			<p>Steven Gresh</p>
+			<div id="fade3">
+				<div id="f1">Engineering</div>
+				<div id="s1"> | </div>
+				<div id="f2">Programming</div>
+				<div id="s2"> | </div>
+				<div id="f3">Design</div>
+			</div>
 			<div id="triangles">
 				<div id="tri1">&#x25BC;</div>
 				<div id="tri2">&#x25BC;</div>
@@ -65,7 +76,6 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-		
 				<a class="navbar-brand resume" href="#">Steven Gresh</a>
 				<a class="navbar-brand projects" href="#">Steven Gresh</a>
 				<a class="navbar-brand about" href="#">Steven Gresh</a>
@@ -80,13 +90,10 @@
 					<li id="nav-projects" ><a href="#projectsTarget">Projects</a></li>
 					<li id="nav-resume" ><a href="#resumeTarget">Resume</a></li>
 					<li class="Contact Me">
-						<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+						<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="#">Email</a></li>
-							<li><a href="#">LinkedIn</a></li>
-							<li><a href="#">Something else here</a></li>
-							<li role="separator" class="divider"></li>
-							<li><a href="#">Separated link</a></li>
+							<li><a target="_blank" href="mailto:stvngrsh@gmail.com">Email</a></li>
+							<li><a target="_blank" href="https://www.linkedin.com/in/stevengresh">LinkedIn</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -128,8 +135,7 @@
 								<img id="headshot" src="img/headshot.jpg">
 							</div>
 							<div class="about-me col-xs-12 col-md-4">
-								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-								</p>
+								<p>I'm a mechanical engineering student with strong interest and experience in robotics, programming & web design. I also own two 3D printers, have hosted a radio show, and love skiing. </p>
 							</div>
 						</div>
 						
@@ -138,10 +144,7 @@
 			</div>
 		</div><!-- About -->
 
-		<div class="next">
-			<a href="#projectsTarget">&#x25BC;</a>
-		</div>
-
+		
 		<span class="symbol-target" id="projectsTarget">&nbsp;</span>
 		<div class="skew-wrap">
 			<div id="projects-wrap">
@@ -170,7 +173,7 @@
 									<img src="img/thales.png">
 								</div>
 								<div class="project">
-									<button href="#">
+									<button data-toggle="modal" data-target="#3dprint-modal">
 										<h3>3D Printing Guide</h3>
 										<p>Comprehensive consumer 3D printing usage guide designed for open access UMD printers. Tech Writing project.</p>
 										<span class="badge"><div style="display:inline;">3D Printing</div></span>
@@ -182,7 +185,7 @@
 							</div>
 							<div class="col-xs-4 middle">
 								<div class="project">
-									<button href="#">
+									<button data-toggle="modal" data-target="#rps-modal">
 										<h3>Kinect Rock Paper Scissors</h3>
 										<p>Developed RPS game for Microsoft Kinect. Uses machine learning algoritm from training data to identify hand types and learns player patterns.</p>
 										<span class="badge"><div style="display:inline;">Machine Learning</div></span>
@@ -192,9 +195,9 @@
 									<img src="img/hand.png">
 								</div>
 								<div class="project">
-									<button href="#">
+									<button data-toggle="modal" data-target="#nerf-modal">
 										<h3>Autonomous Sentry Turret</h3>
-										<p>Built and programmed an autonomous nerf turret. Turret identifies and tracks targets using a microsoft kinect.</p>
+										<p>Built and programmed an autonomous nerf turret. Turret identifies and tracks targets using a Microsoft Kinect.</p>
 										<span class="badge"><div style="display:inline;">Robotics</div></span>
 										<span class="badge"><div style="display:inline;">Java</div></span>
 										<span class="badge"><div style="display:inline;">Arduino</div></span>
@@ -204,9 +207,9 @@
 							</div>
 							<div class="col-xs-4 right">
 								<div class="project">
-									<button href="#">
+									<button data-toggle="modal" data-target="#autodesk-modal">
 										<h3>Autodesk Student Expert</h3>
-										<p>Campus lead and Student Expert for Autodesk. Hosts CAD workshops around campus to various student groups.</p>
+										<p>Participated in Fusion 360 student design project. Campus lead and Student Expert for Autodesk. Hosts CAD workshops around campus to various student groups.</p>
 										<span class="badge"><div style="display:inline;">CAD</div></span>
 										<span class="badge"><div style="display:inline;">Fusion 360</div></span>
 										<span class="badge"><div style="display:inline;">Autodesk</div></span>
@@ -214,9 +217,9 @@
 									<img src="img/bernays.png">
 								</div>
 								<div class="project">
-									<button href="#">
+									<button data-toggle="modal" data-target="#spd-modal">
 										<h3>Web Site for SPD</h3>
-										<p>Blah blah I made a website its really cool check it out.</p>
+										<p>Custom website designed for Sigma Phi Delta Engineering Fraternity.</p>
 										<span class="badge"><div style="display:inline;">Web Design</div></span>
 										<span class="badge"><div style="display:inline;">HTML</div></span>
 										<span class="badge"><div style="display:inline;">CSS</div></span>
@@ -228,7 +231,7 @@
 						<div class="container projects medium">
 							<div class="col-xs-6 left">
 								<div class="project">
-									<button href="#">
+									<button data-toggle="modal" data-target="#thales-modal">
 										<h3>QUEST Capstone</h3>
 										<p>Consulting and app development for Thales Defense & Security Inc</p>
 										<span class="badge"><div style="display:inline;">Consulting</div></span>
@@ -238,7 +241,7 @@
 									<img src="img/thales.png">
 								</div>
 								<div class="project">
-									<button href="#">
+									<button data-toggle="modal" data-target="#3dprint-modal">
 										<h3>3D Printing Guide</h3>
 										<p>Comprehensive consumer 3D printing usage guide designed for open access UMD printers. Tech Writing project.</p>
 										<span class="badge"><div style="display:inline;">3D Printing</div></span>
@@ -248,9 +251,9 @@
 									<img src="img/3dguide.png">
 								</div>
 								<div class="project">
-									<button href="#">
+									<button data-toggle="modal" data-target="#autodesk-modal">
 										<h3>Autodesk Student Expert</h3>
-										<p>Campus lead and Student Expert for Autodesk. Hosts CAD workshops around campus to various student groups.</p>
+										<p>Participated in Fusion 360 student design project. Campus lead and Student Expert for Autodesk. Hosts CAD workshops around campus to various student groups.</p>
 										<span class="badge"><div style="display:inline;">CAD</div></span>
 										<span class="badge"><div style="display:inline;">Fusion 360</div></span>
 										<span class="badge"><div style="display:inline;">Autodesk</div></span>
@@ -260,7 +263,7 @@
 							</div>
 							<div class="col-xs-6 right">
 								<div class="project">
-									<button href="#">
+									<button data-toggle="modal" data-target="#rps-modal">
 										<h3>Kinect Rock Paper Scissors</h3>
 										<p>Developed RPS game for Microsoft Kinect. Uses machine learning algoritm from training data to identify hand types and learns player patterns.</p>
 										<span class="badge"><div style="display:inline;">Machine Learning</div></span>
@@ -270,9 +273,9 @@
 									<img src="img/hand.png">
 								</div>
 								<div class="project">
-									<button href="#">
+									<button data-toggle="modal" data-target="#nerf-modal">
 										<h3>Autonomous Sentry Turret</h3>
-										<p>Built and programmed an autonomous nerf turret. Turret identifies and tracks targets using a microsoft kinect.</p>
+										<p>Built and programmed an autonomous nerf turret. Turret identifies and tracks targets using a Microsoft Kinect.</p>
 										<span class="badge"><div style="display:inline;">Robotics</div></span>
 										<span class="badge"><div style="display:inline;">Java</div></span>
 										<span class="badge"><div style="display:inline;">Arduino</div></span>
@@ -280,9 +283,9 @@
 									<img src="img/nerf.png">
 								</div>
 								<div class="project">
-									<button href="#">
+									<button data-toggle="modal" data-target="#spd-modal">
 										<h3>Web Site for SPD</h3>
-										<p>Blah blah I made a website its really cool check it out.</p>
+										<p>Custom website designed for Sigma Phi Delta Engineering Fraternity.</p>
 										<span class="badge"><div style="display:inline;">Web Design</div></span>
 										<span class="badge"><div style="display:inline;">HTML</div></span>
 										<span class="badge"><div style="display:inline;">CSS</div></span>
@@ -294,7 +297,7 @@
 						<div class="container projects small">
 							<div class="col-xs-12">
 								<div class="project">
-									<button href="#">
+									<button data-toggle="modal" data-target="#thales-modal">
 										<h3>QUEST Capstone</h3>
 										<p>Consulting and app development for Thales Defense & Security Inc</p>
 										<span class="badge"><div style="display:inline;">Consulting</div></span>
@@ -304,7 +307,7 @@
 									<img src="img/thales.png">
 								</div>
 								<div class="project">
-									<button href="#">
+									<button data-toggle="modal" data-target="#3dprint-modal">
 										<h3>3D Printing Guide</h3>
 										<p>Comprehensive consumer 3D printing usage guide designed for open access UMD printers. Tech Writing project.</p>
 										<span class="badge"><div style="display:inline;">3D Printing</div></span>
@@ -314,9 +317,9 @@
 									<img src="img/3dguide.png">
 								</div>
 								<div class="project">
-									<button href="#">
+									<button data-toggle="modal" data-target="#autodesk-modal">
 										<h3>Autodesk Student Expert</h3>
-										<p>Campus lead and Student Expert for Autodesk. Hosts CAD workshops around campus to various student groups.</p>
+										<p>Participated in Fusion 360 student design project. Campus lead and Student Expert for Autodesk. Hosts CAD workshops around campus to various student groups.</p>
 										<span class="badge"><div style="display:inline;">CAD</div></span>
 										<span class="badge"><div style="display:inline;">Fusion 360</div></span>
 										<span class="badge"><div style="display:inline;">Autodesk</div></span>
@@ -324,7 +327,7 @@
 									<img src="img/bernays.png">
 								</div>
 								<div class="project">
-									<button href="#">
+									<button data-toggle="modal" data-target="#rps-modal">
 										<h3>Kinect Rock Paper Scissors</h3>
 										<p>Uses machine learning algoritm from training data to identify hand types and learns player patterns.</p>
 										<span class="badge"><div style="display:inline;">Machine Learning</div></span>
@@ -334,9 +337,9 @@
 									<img src="img/hand.png">
 								</div>
 								<div class="project">
-									<button href="#">
+									<button data-toggle="modal" data-target="#nerf-modal">
 										<h3>Autonomous Sentry Turret</h3>
-										<p>Built and programmed an autonomous nerf turret. Turret identifies and tracks targets using a microsoft kinect.</p>
+										<p>Built and programmed an autonomous nerf turret. Turret identifies and tracks targets using a Microsoft Kinect.</p>
 										<span class="badge"><div style="display:inline;">Robotics</div></span>
 										<span class="badge"><div style="display:inline;">Java</div></span>
 										<span class="badge"><div style="display:inline;">Arduino</div></span>
@@ -344,9 +347,9 @@
 									<img src="img/nerf.png">
 								</div>
 								<div class="project">
-									<button href="#">
+									<button data-toggle="modal" data-target="#spd-modal">
 										<h3>Web Site for SPD</h3>
-										<p>Blah blah I made a website its really cool check it out.</p>
+										<p>Custom website designed for Sigma Phi Delta Engineering Fraternity.</p>
 										<span class="badge"><div style="display:inline;">Web Design</div></span>
 										<span class="badge"><div style="display:inline;">HTML</div></span>
 										<span class="badge"><div style="display:inline;">CSS</div></span>
@@ -359,13 +362,12 @@
 				</div>
 			</div>
 		</div>
-		<div class="next">
-			<a href="#resumeTarget">&#x25BC;</a>
-		</div>
+	
+
 		<span class="symbol-target" id="resumeTarget">&nbsp;</span>
 		<div class="skew-wrap-resume">
 			<div id="resume-wrap">
-				<div id="projects-bck">
+				<div id="resume-bck">
 				</div>
 				<div id="resume" class="content-module skew-rev">
 					<div class="skew">
@@ -379,28 +381,128 @@
 							</h2>
 						</div>
 						<div class="container content">
-							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+						
+							<div class="resume-block" id="education">
+								<h2>Education</h2>
+								<hr>
 
-							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+								<div class="date-range">
+									September 2012 - May 2016 (Expected)
+								</div>
+								<div class="resume-line">
+									<h3>University of Maryland - A. James Clark School of Engineering</h3>
+								</div>
+								<div class="resume-line">
+									<h4>BS Mechanical Engineering <b>GPA: 3.71</b></h4>
+								</div>
+								<div class="resume-line">
+									<h4><a target="_blank" href="http://www.rhsmith.umd.edu/programs/undergraduate-programs/academics/fellows-special-programs/quest">QUEST Honors Program</a></h4>
+									<p>3-year, multidisciplinary engineering and business management program</p>
+								</div>
+								<div class="resume-line">
+									<h4><a target="_blank" href="http://dcc.umd.edu/">DCC Honors College</a></h4>
+									<p>Design Cultures & Creativity - Makers and thinkers transforming society through digital technologies.</p>
+								</div>
+							</div>
+							<div class="resume-block" id="experience">
+								<h2>Work Experience</h2>
+								<hr>
+								<div id="m3d">
+									<div class="date-range">
+										October 2014 - Present
+									</div>
+									<div class="resume-line">
+										<h3>M3D LLC&nbsp;&nbsp;</h3>
+										<h4>Web Developer & Programmer</h4>
+										<h5>Fulton, Maryland</h5>
+									</div>
+									<ul class="list-group">
+										<li class="list-group-item">Overseeing development & implementation of company wide process management system</li>
+										<li class="list-group-item">Ported .NET consumer software to Mac OSX using Mono framework</li>
+										<li class="list-group-item">Created WCF web service to provide real time shipping rates to storefront</li>
+										<li class="list-group-item">Created online application to optimize RMA/Returns/Refunding for support staff</li>
+										<li class="list-group-item">Wrote calibration and leveling algorithms for printer firmware</li>
+										<li class="list-group-item">Set up and wrote assembly line automation program on Linux microcomputer</li>
+										<li class="list-group-item">Produced CAD models and prototype parts for assembly line and quality control stations</li>
+									</ul>
+								</div>
 
-							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-						</P>
-						<ul class="list-group">HERE IS MY RESUME
-							<li class="list-group-item">RESUME ITEM OR SOMETHING
-								<ul class="list-group">
-									<li class="list-group-item">STUFFFFDS:LKFJDS:LKF</li>
-									<li class="list-group-item">:SLDKJF:SDFJK:SLDKJF:LSKDJF</li>
-									<li class="list-group-item">STUFFFFDS:LKFJDS:LKF</li>
-								</ul>
-							</li>
-							<li class="list-group-item">MORE SHITSD:LKFJ
-								<ul class="list-group">
-									<li class="list-group-item">:SLDKJF:SDFJK:SLDKJF:LSKDJF</li>
-									<li class="list-group-item">STUFFFFDS:LKFJDS:LKF</li>
-									<li class="list-group-item">:SLDKJF:SDFJK:SLDKJF:LSKDJF</li>
-								</ul>
-							</li>
-						</ul>
+								<div id="lockheed">
+									<div class="date-range">
+										Summer 2014
+									</div>
+									<div class="resume-line">
+										<h3>Lockheed Martin IS&GS&nbsp;&nbsp;</h3>
+										<h4>Engineering Intern</h4>
+										<h5>Rockville, Maryland</h5>
+									</div>
+									<ul class="list-group">
+										<li class="list-group-item"><b>Pepco/Delmarva Commercial & Industrial Energy Savings Program</b></li>
+										<li class="list-group-item">Preliminary Engineering review of energy saving projects including lighting, HVAC, Refrigeration, Occupancy Controls, VFD’s and more</li>
+										<li class="list-group-item">Used Microsoft Excel and Dynamics CRM to calculate effectiveness and long term savings of energy efficient measures, and approved incentives to the Trade Ally installing them</li>
+										<li class="list-group-item">Performed on-site inspections of projects to verify a complete installation </li>
+									</ul>
+								</div>
+
+								<div id="perfectfit">
+									<div class="date-range">
+										Summer 2012, Summer 2013
+									</div>
+									<div class="resume-line">
+										<h3>Perfect Fit Custom Shutters&nbsp;&nbsp;</h3>
+										<h4>Tech Support</h4>
+										<h5>Gaithersburg, Maryland</h5>
+									</div>
+									<ul class="list-group">
+										<li class="list-group-item"><b>Shopbot CNC Machine:</b> Set up new CNC machine for the factory. Learned Shopbot code and Partworks software, wrote programs to automate various portions of the assembly process</li>
+										<li class="list-group-item"><b>IT Support:</b> Regular maintenance and check-ups on the office computers, managed the mass email system, oversaw transition to a new T1 provider</li>
+									</ul>
+								</div>
+							</div>
+							<div class="resume-block" id="skills">
+								<h2>Skills</h2>
+								<hr>
+								<div class="col-xs-12 skill-key">
+									<div class="skill"><div class="skill-ranks"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>&nbsp;Expert</div></div>
+									<div class="skill"><div class="skill-ranks"><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span>&nbsp;Proficient</div></div>
+									<div class="skill"><div class="skill-ranks"><span>&#9733;</span><span>&#9734;</span><span>&#9734;</span>&nbsp;Familiar</div></div>
+								</div>
+								<div class="col-xs-12 col-md-4 skill-group">
+									<div class="skill-heading">Programming</div>
+									<div class="skill"><div class="skill-ranks"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>&nbsp;HTML</div></div>
+									<div class="skill"><div class="skill-ranks"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>&nbsp;CSS</div></div>
+									<div class="skill"><div class="skill-ranks"><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span>&nbsp;Java</div></div>
+									<div class="skill"><div class="skill-ranks"><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span>&nbsp;C#</div></div>
+									<div class="skill"><div class="skill-ranks"><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span>&nbsp;JavaScript</div></div>
+									<div class="skill"><div class="skill-ranks"><span>&#9733;</span><span>&#9734;</span><span>&#9734;</span>&nbsp;Python</div></div>
+									<div class="skill"><div class="skill-ranks"><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span>&nbsp;PHP</div></div>
+									<div class="skill"><div class="skill-ranks"><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span>&nbsp;SQL</div></div>
+									<div class="skill"><div class="skill-ranks"><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span>&nbsp;MatLab</div></div>
+									<div class="skill"><div class="skill-ranks"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>&nbsp;Arduino C</div></div>
+								</div>
+								<div class="col-xs-12 col-md-4 skill-group">
+									<div class="skill-heading">CAD/Physical Prototyping</div>
+									<div class="skill"><div class="skill-ranks"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>&nbsp;3D Printing</div></div>
+									<div class="skill"><div class="skill-ranks"><span>&#9733;</span><span>&#9734;</span><span>&#9734;</span>&nbsp;CNC Milling</div></div>
+									<div class="skill"><div class="skill-ranks"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>&nbsp;Autodesk Inventor</div></div>
+									<div class="skill"><div class="skill-ranks"><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span>&nbsp;SolidWorks</div></div>
+									<div class="skill"><div class="skill-ranks"><span>&#9733;</span><span>&#9734;</span><span>&#9734;</span>&nbsp;Creo Parametric</div></div>
+									<div class="skill"><div class="skill-ranks"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>&nbsp;Autodesk Fusion 360</div></div>
+									<div class="skill"><div class="skill-ranks"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>&nbsp;Parametric Modeling</div></div>
+									<div class="skill"><div class="skill-ranks"><span>&#9733;</span><span>&#9734;</span><span>&#9734;</span>&nbsp;Freeform/Surface Modeling</div></div>
+									<div class="skill"><div class="skill-ranks"><span>&#9733;</span><span>&#9734;</span><span>&#9734;</span>&nbsp;Finite Element Analysis</div></div>
+									<div class="skill"><div class="skill-ranks"><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span>&nbsp;Rendering</div></div>
+								</div>
+								<div class="col-xs-12 col-md-4 skill-group">
+									<div class="skill-heading">Creative</div>
+									<div class="skill"><div class="skill-ranks"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>&nbsp;Adobe Photoshop</div></div>
+									<div class="skill"><div class="skill-ranks"><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span>&nbsp;Adobe InDesign</div></div>
+									<div class="skill"><div class="skill-ranks"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>&nbsp;Final Cut Studio</div></div>
+									<div class="skill"><div class="skill-ranks"><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span>&nbsp;Adobe After Effects</div></div>
+									<div class="skill"><div class="skill-ranks"><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span>&nbsp;Photography</div></div>
+									<div class="skill"><div class="skill-ranks"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>&nbsp;Microsoft Office</div></div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -409,39 +511,296 @@
 	</div>
 
 	<!-- PROJECT MODALS-->
-
-	<div id="thales-modal" class="modal fade" tabindex="-1" role="dialog">
-	  <div class="modal-dialog">
+	<!--<div id="thales-modal" class="modal fade  in" tabindex="-1" role="dialog" style="display: block; padding-right: 17px;">-->
+	<div id="thales-modal" class="modal fade " tabindex="-1" role="dialog">
+	  <div class="modal-dialog modal-lg">
 	    <div class="modal-content">
 	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title">Modal title</h4>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+	        <h4 class="modal-title">QUEST Capstone Project</h4>
+	        <div class="spans">
+		        <span class="badge"><div style="display:inline;">Consulting</div></span>
+			    <span class="badge"><div style="display:inline;">Javascript</div></span>
+			    <span class="badge"><div style="display:inline;">SVG</div></span>
+			</div>
 	      </div>
 	      <div class="modal-body">
-	        <p>One fine body&hellip;</p>
+	      	<div class="row">
+		      	<div class="col-xs-12 col-sm-7 flex">
+		      		<div class="modal-img-big"><a href="img/nerf.png" data-lightbox="nerf-lb" data-title="nerf"><img src="img/nerf.png" ></a></div>
+		      		<div class="modal-thumbs">
+		      			<div><a href="img/nerf.png" data-lightbox="nerf-lb" data-title="nerf"><img src="img/nerf.png" class="modal-thumbs-img"></a></div>
+		      			<div><a href="img/nerf.png" data-lightbox="nerf-lb" data-title="nerf"><img src="img/nerf.png" class="modal-thumbs-img"></a></div>
+		      			<div><a href="img/nerf.png" data-lightbox="nerf-lb" data-title="nerf"><img src="img/nerf.png" class="modal-thumbs-img last"></a></div>
+		      		</div>
+		      	</div>
+		      	<div class="col-xs-12 col-sm-5">
+		      		<div class="modal-class">
+		      			<b>Class:</b> BMGT/ENES490H
+		      		</div>
+		      		<div class="modal-teammates">
+		      			<b>Teammates:</b>
+		      			<ul>
+		      				<li><a target="_blank" href="https://www.linkedin.com/in/liya-ai-758a7483">Liya Ai</a></li>
+		      				<li><a target="_blank" href="https://www.linkedin.com/in/trevor-putman-39a39a9b">Trevor Putnam</a></li>
+		      				<li><a target="_blank" href="https://www.linkedin.com/in/erintumney">Erin Tumney</a></li>
+		      			</ul>
+		      		</div>
+	      			<div class="github ">
+			      		<a class="btn btn-default" target="_blank" href="#">Poster PDF Download</a>
+			      		<a class="btn btn-default" target="_blank" href="#">Project Source</a>
+			      	</div>
+		      	</div>
+		      	<div class="description col-xs-12">
+		      		<p>Semester long project working for Thales DSI to optimize IT asset allocation processes. Worked on multidisciplinary team of engineering and business majors and developed custom web application and recommended system changes to reduce company asset costs, man-hours and even electricity consumption.
+					</p>
+		      	</div>
+		      
+		      </div>
 	      </div>
 	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        <button type="button" class="btn btn-primary">Save changes</button>
+	        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 	      </div>
 	    </div><!-- /.modal-content -->
-	  </div><!-- /.modal-dialog -->
+	  </div><!-- /.modal-dialog -->	  
 	</div><!-- /.modal -->
-
+	<div id="3dprint-modal" class="modal fade " tabindex="-1" role="dialog">
+	  <div class="modal-dialog modal-lg">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+	        <h4 class="modal-title">3D Printing User Guide</h4>
+	        <div class="spans">
+		        <span class="badge"><div style="display:inline;">3D Printing</div></span>
+			    <span class="badge"><div style="display:inline;">Tech Writing</div></span>
+			    <span class="badge"><div style="display:inline;">Design</div></span>
+			</div>
+	      </div>
+	      <div class="modal-body">
+	      	<div class="row">
+		      	<div class="col-xs-12 col-sm-7 flex">
+		      		<div class="modal-img-big"><a href="img/3dguide.png" data-lightbox="3dprint-lb" data-title="Guide Cover"><img src="img/3dguide.png"></a></div>
+		      		<div class="modal-thumbs">
+		      			<div><a href="img/3dprint1.png" data-lightbox="3dprint-lb" data-title="Settings"><img src="img/3dprint1.png" class="modal-thumbs-img"></a></div>
+		      			<div><a href="img/3dprint2.png" data-lightbox="3dprint-lb" data-title="Troubleshooting"><img src="img/3dprint2.png" class="modal-thumbs-img"></a></div>
+		      			<div><a href="img/3dprint3.png" data-lightbox="3dprint-lb" data-title="Printer Anatomy"><img src="img/3dprint3.png" class="modal-thumbs-img last"></a></div>
+		      		</div>
+		      	</div>
+		      	<div class="col-xs-12 col-sm-5">
+		      		<div class="modal-class">
+		      			<b>Class:</b> ENGL393
+		      		</div>
+		      		<div class="modal-teammates">
+		      			<b>Teammates:</b>
+		      			<ul>
+		      				<li><a target="_blank" href="https://www.linkedin.com/in/csneeder">Chris Sneeder</a></li>
+		      			</ul>
+		      		</div>
+	      			<div class="github ">
+			      		<a class="btn btn-default" target="_blank" href="files/3dprinting.pdf">PDF Download</a>
+			      	</div>
+		      	</div>
+		      	<div class="description col-xs-12">
+		      		<p>Created a maintenance, troubleshooting, and best-practices manual for 3D printers. Our guide is targeted towards engineers and hobbyists using consumer printing technology and provides details beyond what is included in official manuals. The guide is currently being used in 3D printing labs on campus.</p>
+		      	</div>
+		      
+		      </div>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->	  
+	</div><!-- /.modal -->
+	<div id="rps-modal" class="modal fade " tabindex="-1" role="dialog">
+	  <div class="modal-dialog modal-lg">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+	        <h4 class="modal-title">Kinect Rock Paper Scissors</h4>
+	        <div class="spans">
+		        <span class="badge"><div style="display:inline;">Machine Learning</div></span>
+			    <span class="badge"><div style="display:inline;">Microsoft Kinect</div></span>
+			    <span class="badge"><div style="display:inline;">Java</div></span>
+			</div>
+	      </div>
+	      <div class="modal-body">
+	      	<div class="row">
+		      	<div class="col-xs-12 col-sm-7 flex">
+		      		<div class="modal-img-big"><a href="img/hand.png" data-lightbox="rps-lb" data-title="Rock Close-Up"><img src="img/hand.png" ></a></div>
+		      		<div class="modal-thumbs">
+		      			<div><a href="img/rps1.png" data-lightbox="rps-lb" data-title="Scissors"><img src="img/rps1.png" class="modal-thumbs-img"></a></div>
+		      			<div><a href="img/rps2.png" data-lightbox="rps-lb" data-title="Scatterplot Matrix"><img src="img/rps2.png" class="modal-thumbs-img"></a></div>
+		      			<div><a href="img/rps3.png" data-lightbox="rps-lb" data-title="The Rock"><img src="img/rps3.png" class="modal-thumbs-img last"></a></div>
+		      		</div>
+		      	</div>
+		      	<div class="col-xs-12 col-sm-5">
+		      		<div class="modal-class">
+		      			<b>Class:</b> ENME440 - Applied Machine Learning
+		      		</div>
+	      			<div class="github ">
+			      		<a class="btn btn-default" target="_blank" href="https://github.com/stvngrsh/Kinect-RPS">GitHub Repo</a>
+			      		<a class="btn btn-default" target="_blank" href="http://blogs.rhsmith.umd.edu/questpress/?p=2815">QUESTPress Article</a>
+			      	</div>
+		      	</div>
+		      	<div class="description col-xs-12">
+		      		<p>A basic Rock Paper Scissors game programmed for the Microsoft Kinect. Using a Java based language called Processing, the Kinect 'image' is analyzed and 4 features are extracted from the pointcloud of a human hand. A Gradient Boosted Machine model was trained on labeled test data and integrated into the Java app to provide accurate gesture detection.</p>
+		      	</div>
+		      
+		      </div>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->	  
+	</div><!-- /.modal -->
+	<div id="nerf-modal" class="modal fade " tabindex="-1" role="dialog">
+	  <div class="modal-dialog modal-lg">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+	        <h4 class="modal-title">Autonomous Sentry Turret</h4>
+	        <div class="spans">
+		        <span class="badge"><div style="display:inline;">Robotics</div></span>
+			    <span class="badge"><div style="display:inline;">Java</div></span>
+			    <span class="badge"><div style="display:inline;">Arduino</div></span>
+			</div>
+	      </div>
+	      <div class="modal-body">
+	      	<div class="row">
+		      	<div class="col-xs-12 col-sm-7 flex">
+		      		<div class="modal-img-big"><a href="img/nerf.png" data-lightbox="nerf-lb" data-title="Desktop Defender"><img src="img/nerf.png" ></a></div>
+		      		<div class="modal-thumbs">
+		      			<div><a href="img/nerf1.jpg" data-lightbox="nerf-lb" data-title="3D Printed Parts"><img src="img/nerf1.jpg" class="modal-thumbs-img"></a></div>
+		      			<div><a href="img/nerf2.jpg" data-lightbox="nerf-lb" data-title="Desktop Defender Side"><img src="img/nerf2.jpg" class="modal-thumbs-img"></a></div>
+		      			<div><a href="img/nerf3.jpg" data-lightbox="nerf-lb" data-title="Desktop Defender Front"><img src="img/nerf3.jpg" class="modal-thumbs-img last"></a></div>
+		      		</div>
+		      	</div>
+		      	<div class="col-xs-12 col-sm-5">
+		      		<div class="modal-class">
+		      			<b>Class:</b> ENME351 - Electronics II
+		      		</div>
+		      		<div class="modal-teammates">
+		      			<b>Teammates:</b>
+		      			<ul>
+		      				<li><a target="_blank" href="https://www.linkedin.com/in/csneeder">Chris Sneeder</a></li>
+		      			</ul>
+		      		</div>
+	      			<div class="github ">
+			      		<a class="btn btn-default" target="_blank" href="https://github.com/stvngrsh/Desktop-Defender">GitHub Repo</a>
+			      		<a class="btn btn-default" target="_blank" href="https://gallery.autodesk.com/fusion360/projects/22923/desktop-defender">Fusion 360 Gallery</a>
+			      	</div>
+		      	</div>
+		      	<div class="description col-xs-12">
+		      		<p>A Microsoft Kinect powered Nerf turret. The robot detects people nearby and fires Nerf darts at them. Target data is tracked by Kinect in Java based application (Processing) and sent via serial communication to onboard Arduino. Motor actuation is then determined by Arduino. </p>
+		      	</div>
+		      
+		      </div>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->	  
+	</div><!-- /.modal -->
+	<div id="autodesk-modal" class="modal fade " tabindex="-1" role="dialog">
+	  <div class="modal-dialog modal-lg">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+	        <h4 class="modal-title">Autodesk Student Expert</h4>
+	        <div class="spans">
+		        <span class="badge"><div style="display:inline;">CAD</div></span>
+			    <span class="badge"><div style="display:inline;">Fusion 360</div></span>
+			    <span class="badge"><div style="display:inline;">Autodesk</div></span>
+			</div>
+	      </div>
+	      <div class="modal-body">
+	      	<div class="row">
+		      	<div class="col-xs-12 col-sm-7 flex">
+		      		<div class="modal-img-big"><a href="img/bernays.png" data-lightbox="cad-lb" data-title="Bernays Steam Engine" ><img src="img/bernays.png" ></a></div>
+		      		<div class="modal-thumbs">
+		      			<div><a href="img/cad1.jpg" data-lightbox="cad-lb" data-title="QUEST Workshop" ><img src="img/cad1.jpg" class="modal-thumbs-img"></a></div>
+		      			<div><a href="img/cad2.png" data-lightbox="cad-lb" data-title="Fusion 360 Page" ><img src="img/cad2.png" class="modal-thumbs-img"></a></div>
+		      			<div><a href="img/cad3.jpg" data-lightbox="cad-lb" data-title="SPD Workshop" ><img src="img/cad3.jpg" class="modal-thumbs-img last"></a></div>
+		      		</div>
+		      	</div>
+		      	<div class="col-xs-12 col-sm-5">
+		      		
+	      			<div class="github ">
+			      		<a class="btn btn-default" target="_blank" href="https://gallery.autodesk.com/fusion360/users/89BCKDLHTP43">Fusion 360 Gallery</a>
+			      		<a class="btn btn-default" target="_blank" href="https://www.youtube.com/watch?v=HYWXL7ErGxo">Project Video</a>
+			      	</div>
+		      	</div>
+		      	<div class="description col-xs-12">
+		      		<p>Participated in Design for Autodesk program and was invited to Student Bootcamp in San Francisco. Has since led multiple workshops on CAD design for student organizations on campus.</p>
+		      	</div>
+		      
+		      </div>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->	  
+	</div><!-- /.modal -->
+	<div id="spd-modal" class="modal fade " tabindex="-1" role="dialog">
+	  <div class="modal-dialog modal-lg">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+	        <h4 class="modal-title">Sigma Phi Delta Website</h4>
+	        <div class="spans">
+		        <span class="badge"><div style="display:inline;">Web Design</div></span>
+			    <span class="badge"><div style="display:inline;">HTML</div></span>
+			    <span class="badge"><div style="display:inline;">CSS</div></span>
+			</div>
+	      </div>
+	      <div class="modal-body">
+	      	<div class="row">
+		      	<div class="col-xs-12 col-sm-7 flex">
+		      		<div class="modal-img-big"><a href="img/spd.png" data-lightbox="spd-lb" data-title="Home Page" ><img src="img/spd.png" ></a></div>
+		      		<div class="modal-thumbs">
+		      			<div><a href="img/spd1.png" data-lightbox="spd-lb" data-title="Rush Page" ><img src="img/spd1.png" class="modal-thumbs-img"></a></div>
+		      			<div><a href="img/spd2.png" data-lightbox="spd-lb" data-title="Jobs Page" ><img src="img/spd2.png" class="modal-thumbs-img"></a></div>
+		      			<div><a href="img/spd3.png" data-lightbox="spd-lb" data-title="Events Page" ><img src="img/spd3.png" class="modal-thumbs-img last"></a></div>
+		      		</div>
+		      	</div>
+		      	<div class="col-xs-12 col-sm-5">
+	      			<div class="github ">
+			      		<a class="btn btn-default" target="_blank" href="http://stvngrsh.github.io/projects/">Website Link</a>
+			      	</div>
+		      	</div>
+		      	<div class="description col-xs-12">
+		      		<p>Created website for Sigma Phi Delta Engineering Fraternity. Features custom accordion slider on home page.</p>
+		      	</div>
+		      
+		      </div>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->	  
+	</div><!-- /.modal -->
 
 
 	<script src="js/jquery-1.11.3.min.js"></script>
 	<!--<script src="js/jquery-ui.min.js"></script>-->
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/lightbox.min.js"></script>
+
 	<script>
 	
 	var banner = $("#banner");
 	var bannerOverlay = $("#banner-overlay");
 	var navbar = $(".navbar, #banner");
 
+	var navbarBrandAbout = $(".navbar-brand.about");
 	var navbarBrandProjects = $(".navbar-brand.projects");
-
 	var navbarBrandResume = $(".navbar-brand.resume");
+
 	var fixed = false;
 
 	var navbarLi = $(".nav li");
@@ -467,32 +826,47 @@
 			fixed = false;
 		}
 
+		var aboutTop = $('#about').offset().top;
+		var aboutChange = aboutTop - scroll + 390;
+		var xP1 = 127+aboutChange;
+		var xP2 = 57+aboutChange;
+
+		navbarBrandAbout.css('-webkit-clip-path', 'polygon(0% 0%, 100% 0%, 100% ' + xP1 + 'px, 0% ' + xP2 + 'px)');
+		navbarBrandProjects.css('-webkit-clip-path', 'polygon(0% ' + xP2 + 'px, 100% ' + xP1 + 'px, 100% 100%, 0% 100%)');
+		navbarBrandAbout.css('clip-path', 'polygon(0% 0%, 100% 0%, 100% ' + xP1 + 'px, 0% ' + xP2 + 'px)');
+		navbarBrandProjects.css('clip-path', 'polygon(0% ' + xP2 + 'px, 100% ' + xP1 + 'px, 100% 100%, 0% 100%)');
+		//navbarBrandProjects.css('-webkit-clip-path', 'inset(' + xP + 'px 0px 0px 0px');
+		//navbarBrandProjects.css('clip-path', 'inset(' + xP + 'px 0px 0px 0px');
+		//navbarBrandProjects.css('clip', 'rect(' + xPm + 'px, 200px, 200px, 0px)');
+
+		var bckTop = $('#resume-bck').offset().top;
+		var bckWidth = $('#resume-bck').width();
+		var changeDiff = 0.325*bckWidth;
+		var resDiff = scroll-bckTop;
+		var resChange = resDiff-changeDiff+70;
+		var xR1 = 70-resChange;
+		var xR2 = -resChange;
+		if(aboutChange < -200){
+			navbarBrandProjects.css('-webkit-clip-path', 'polygon(0% 0%, 100% 0%, 100% ' + xR2 + 'px, 0% ' + xR1 + 'px)');
+			navbarBrandProjects.css('clip-path', 'polygon(0% 0%, 100% 0%, 100% ' + xR2 + 'px, 0% ' + xR1 + 'px)');
+			//navbarBrandResume.css('-webkit-clip-path', 'inset(' + xR + 'px 0px 0px 0px');
+			//navbarBrandResume.css('clip-path', 'inset(' + xR + 'px 0px 0px 0px');
+			//navbarBrandResume.css('clip', 'rect(' + xRm + 'px, 200px, 200px, 0px)');
+
+		}
 		var projTop = $('#projects').offset().top;
-		var projChange = projTop - scroll - 65;
-		var xP = 60+projChange;
-		var xPm = 65+projChange;
-		navbarBrandProjects.css('-webkit-clip-path', 'inset(' + xP + 'px 0px 0px 0px');
-		navbarBrandProjects.css('clip-path', 'inset(' + xP + 'px 0px 0px 0px');
-		navbarBrandProjects.css('clip', 'rect(' + xPm + 'px, 200px, 200px, 0px)');
+		var projChange = projTop - scroll;
 
-		var resTop = $('#resume').offset().top;
-
-		var resChange = resTop - scroll - 65;
-		var xR = 60+resChange;
-		var xRm = 65+resChange;
-		navbarBrandResume.css('-webkit-clip-path', 'inset(' + xR + 'px 0px 0px 0px');
-		navbarBrandResume.css('clip-path', 'inset(' + xR + 'px 0px 0px 0px');
-		navbarBrandResume.css('clip', 'rect(' + xRm + 'px, 200px, 200px, 0px)');
-
+		console.log(projChange);
 		if(fixed == true){
 			navbarLi.removeClass("active");
 			$("#nav-about").addClass("active");
 		}
-		if(fixed == true && projChange < 0){
+		if(fixed == true && projChange < 112){
 			navbarLi.removeClass("active");
 			$("#nav-projects").addClass("active");
 		}
-		if(fixed == true && resChange < 0){
+		if(fixed == true && resDiff > -90){
 			navbarLi.removeClass("active");
 			$("#nav-resume").addClass("active");
 		}

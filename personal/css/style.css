@@ -15,6 +15,12 @@ body{
 }
 *:focus {outline:0;}
 
+
+@media (min-width: 768px) and (max-width: 992px){
+.modal-dialog {
+    width: 714px;
+}
+}
 #test{
 	height: 1500px;
 }
@@ -308,6 +314,62 @@ body{
 	padding: 30;
 	list-style-type: none;
 	font-size: 18px;
+}
+@media (min-width: 768px) and (max-width: 992px){
+	.container.content.about-me-cont-fix{
+		width: 100%;
+    	padding: 0;
+    	padding-top: 27px;
+	}	
+}
+@media (max-width: 768px){
+	.container.content.about-me-cont-fix{
+		height: auto!important;
+	}
+	.about-me-cont{
+		flex-direction: column;
+	}
+	.about-me ul{
+		text-align: center;
+		padding: 0;
+	}
+	.about-me ul li{
+		color: white;
+	}
+	.about-me ul li b{
+		color: black;
+	}
+	.about-me p{
+		max-width: 400px;
+		text-align: center;
+		padding-top: 20px;
+	}
+}
+@media(max-width: 660px){
+	#fade3{
+		font-size: 22pt;
+	}
+}
+@media(max-width: 530px){
+	#banner-overlay p{
+		font-size: 50pt;
+	}
+	#fade3{
+		font-size: 18pt;
+	}
+}
+@media(max-width: 420px){
+	#banner-overlay p{
+		font-size: 42pt;
+	}
+	#fade3{
+		font-size: 13pt;
+	}
+}
+@media(max-width: 565px){
+	.modal-dialog{
+		width: 95%!important;
+	}
 }
 .project{
 	background-color: white;

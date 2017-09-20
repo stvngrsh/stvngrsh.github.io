@@ -89,10 +89,11 @@
         left: 0%;
     }
     img.bob{
-        width: 70px;
+        width: 100px;
         z-index: 2;
-        bottom: 60px;
-        margin-left: 207px;
+        bottom: 57px;
+        margin-left: 190px;
+        
     }
 
 
@@ -107,6 +108,7 @@
     const totalTime = endTime - startTime;
 
     $(document).ready(function(){
+        var i = 0;
         var x = setInterval(function() {
             var now = new Date().getTime();
             var distance = endTime.getTime() - now;
@@ -124,6 +126,16 @@
             var percent = (1-distance/totalTime) * 100;
 
             $('img').css("left", percent + "%");
+            
+            if(i > 2) {
+                $('img.bob').css("transform", "rotateZ(10deg)");
+            }
+            else {
+                $('img.bob').css("transform", "rotateZ(10deg)");
+            }
+            if( i > 4){
+                i = 0;
+            }
         }, 1000);
     });
 

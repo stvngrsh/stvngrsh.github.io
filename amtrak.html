@@ -106,9 +106,10 @@
     const endTime = new Date(2017, 8, 24, 3, 0, 0);
 
     const totalTime = endTime - startTime;
-
+    
+    var i = 10;
     $(document).ready(function(){
-        var i = 0;
+        
         var x = setInterval(function() {
             var now = new Date().getTime();
             var distance = endTime.getTime() - now;
@@ -126,16 +127,9 @@
             var percent = (1-distance/totalTime) * 100;
 
             $('img').css("left", percent + "%");
+            i = i * -1;
+            $('img.bob').css("transform", "rotateZ(" + i + "deg)");
             
-            if(i > 2) {
-                $('img.bob').css("transform", "rotateZ(10deg)");
-            }
-            else {
-                $('img.bob').css("transform", "rotateZ(10deg)");
-            }
-            if( i > 4){
-                i = 0;
-            }
         }, 1000);
     });
 

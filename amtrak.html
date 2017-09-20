@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Go-Live Countdown</title>
+    </head>
+    <body>
+        <div class="main">
+            <div class="content">
+                <h1>Time to Go-Live</h1>
+                <div class="timer">
+                    <div class="timer-element">
+                        <div id="days" class="timer-digits">00</div>
+                        <div class="timer-label">DAYS</div>
+                    </div>
+                    <div class="timer-element">
+                        <div id="hours" class="timer-digits">00</div>
+                        <div class="timer-label">HOURS</div>
+                    </div>
+                    <div class="timer-element">
+                        <div id="minutes" class="timer-digits">00</div>
+                        <div class="timer-label">MINUTES</div>
+                    </div>
+                    <div class="timer-element">
+                        <div id="seconds" class="timer-digits">00</div>
+                        <div class="timer-label">SECONDS</div>
+                    </div>
+                </div>
+                <img src="http://images.clipartpanda.com/choo-choo-train-images-Choo_Choo_Train.svg">
+            </div>
+        </div>
+    </body>
+</html>
+
+<style>
+    html, body {
+        height: 100%;
+        width: 100%;
+        background: rgb(29, 37, 82);
+        margin: 0;
+        position: relative;
+    }
+    .main {
+        display: flex;
+        margin: 0; 
+        justify-content: center;
+        align-content: center;
+        height: 100%;
+        width: 100%;
+    }
+    .content {
+        position: relative;
+        background-image: url(http://weclipart.com/gimg/8820EAF489D3BC76/train-track-border-clipart-train-tracks.svg);
+        background-position-y: 100px;
+        height: 500px;
+        background: #f1f1f1;
+        width: 100%;
+        font-family: monospace;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+    h1 {
+        font-size: 4em;
+    }
+    .timer {
+        display: flex;
+    }
+    .timer-element {
+        margin: 10px;
+    }
+    .timer-digits {
+        padding: 10px;
+        background: #d2d2d2;
+        font-size: 60px;
+    }
+    .timer-label {
+        text-align: center;
+        font-size: 20px;
+    }
+    img {
+        transform: rotateY(180deg);
+        width: 400px;
+        position: absolute;
+        bottom: 0;
+        left: 0%;
+    }
+
+
+</style>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+<script>
+    const startTime = new Date(2017, 8, 20, 0, 0, 0);
+    const endTime = new Date(2017, 8, 24, 3, 0, 0);
+
+    const totalTime = endTime - startTime;
+
+    $(document).ready(function(){
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = endTime.getTime() - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            $('#days').html(days);
+            $('#hours').html(hours);
+            $('#minutes').html(("0" + minutes).slice(-2));
+            $('#seconds').html(("0" + seconds).slice(-2));
+
+            var percent = (1-distance/totalTime) * 100;
+
+            $('img').css("left", percent + "%");
+        }, 1000);
+    });
+
+</script>

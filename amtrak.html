@@ -29,17 +29,17 @@
                 <h2><b>Go-Live Date: </b>October 8th, 2017</h2>
                 <img class="bob" src="img/bob.png">
                 <img class="steven" src="img/steven.png">
-                <img class="tien" src="img/steven.png">
-                <img class="srini" src="img/steven.png">
-                <img class="lauren" src="img/steven.png">
-                <img class="andrew" src="img/noemie.png">
-                <img class="anh" src="img/srini.png">
-                <img class="nandita" src="img/tien.png">
-                <img class="igor" src="img/tien.png">
-                <img class="tara" src="img/tien.png">
-                <img class="james" src="img/tien.png">
-                <img class="noemie" src="img/tien.png">
-                <img class="meredith" src="img/tien.png">
+                <img class="tien" src="img/tien.png">
+                <img class="srini" src="img/srini.png">
+                <img class="lauren" src="img/lauren.png">
+                <img class="andrew" src="img/andrew.png">
+                <img class="anh" src="img/anh.png">
+                <img class="nandita" src="img/nandita.png">
+                <img class="igor" src="img/igor.png">
+                <img class="tara" src="img/tara.png">
+                <img class="james" src="img/james.png">
+                <img class="noemie" src="img/noemie.png">
+                <img class="meredith" src="img/meredith.png">
                 <img class="train" src="img/method-draw-image.svg">
                 
             </div>
@@ -97,41 +97,92 @@
     }
     img {
         transform: rotateY(180deg);
-        width: 400px;
         position: absolute;
         bottom: 0;
         left: 0%;
     }
+    img.train{
+        width: 820px;
+    }
     img.bob{
         width: 100px;
-        z-index: 6;
+        z-index: 12;
         bottom: 57px;
-        margin-left: 190px;
+        margin-left: 613px;
     }
     img.steven{
         width: 83px;
-        z-index: 5;
+        z-index: 11;
         bottom: 71px;
-        margin-left: 153px;
+        margin-left: 554px;
     }
     img.tien{
         width: 73px;
-        z-index: 4;
+        z-index: 10;
         bottom: 74px;
-        margin-left: 111px;
-    }
-    img.lauren{
-        width: 77px;
-        z-index: 2;
-        bottom: 69px;
-        margin-left: 9px;
+        margin-left: 500px;
     }
     img.srini{
         width: 78px;
-        z-index: 3;
+        z-index: 9;
         bottom: 66px;
-        margin-left: 56px;
+        margin-left: 445px;
     }
+    img.lauren{
+        width: 77px;
+        z-index: 8;
+        bottom: 69px;
+        margin-left: 390px;
+    }
+    img.andrew{
+        width: 80px;
+        z-index: 7;
+        bottom: 69px;
+        margin-left: 329px;
+    }
+    img.anh{
+        width: 77px;
+        z-index: 6;
+        bottom: 69px;
+        margin-left: 275px;
+    }
+    img.nandita{
+        width: 92px;
+        z-index: 5;
+        bottom: 55px;
+        margin-left: 220px;
+    }
+    img.igor{
+        width: 77px;
+        z-index: 4;
+        bottom: 69px;
+        margin-left: 167px;
+    }
+    img.tara{
+        width: 82px;
+        z-index: 3;
+        bottom: 48px;
+        margin-left: 108px;
+    }
+    img.james{
+        width: 82px;
+        z-index: 3;
+        bottom: 48px;
+        margin-left: 50px;
+    }
+    img.noemie{
+        width: 82px;
+        z-index: 3;
+        bottom: 48px;
+        margin-left: 0px;
+    }
+    img.meredith{
+        width: 82px;
+        z-index: 3;
+        bottom: 48px;
+        margin-left: -50px;
+    }
+    
 
     .nogo, .go {
         border: none;
@@ -190,6 +241,14 @@
             $('img.tien').css("transform", "rotateZ(" + i + "deg)");
             $('img.srini').css("transform", "rotateZ(" + -i + "deg)");
             $('img.lauren').css("transform", "rotateZ(" + i + "deg)");
+            $('img.andrew').css("transform", "rotateZ(" + -i + "deg)");
+            $('img.anh').css("transform", "rotateZ(" + i + "deg)");
+            $('img.nandita').css("transform", "rotateZ(" + -i + "deg)");
+            $('img.tara').css("transform", "rotateZ(" + i + "deg)");
+            $('img.james').css("transform", "rotateZ(" + -i + "deg)");
+            $('img.noemie').css("transform", "rotateZ(" + i + "deg)");
+            $('img.meredith').css("transform", "rotateZ(" + -i + "deg)");
+
 
         }, 1000);
     });

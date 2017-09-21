@@ -7,7 +7,7 @@
     <body>
         <div class="main">
             <div class="content">
-                <h1>Time to Go-Live</h1>
+                <h1>Time to Go-Live?</h1>
                 <div class="timer">
                     <div class="timer-element">
                         <div id="days" class="timer-digits">00</div>
@@ -26,8 +26,13 @@
                         <div class="timer-label">SECONDS</div>
                     </div>
                 </div>
-                <img class="bob" src="/img/bob.png">
+                <img class="bob" src="img/bob.png">
+                <img class="steven" src="img/steven.png">
+                <img class="tien" src="img/tien.png">
+                <img class="srini" src="img/srini.png">
+                <img class="lauren" src="img/lauren.png">
                 <img class="train" src="http://images.clipartpanda.com/choo-choo-train-images-Choo_Choo_Train.svg">
+                
             </div>
         </div>
     </body>
@@ -90,10 +95,53 @@
     }
     img.bob{
         width: 100px;
-        z-index: 2;
+        z-index: 6;
         bottom: 57px;
         margin-left: 190px;
-        
+    }
+    img.steven{
+        width: 83px;
+        z-index: 5;
+        bottom: 71px;
+        margin-left: 153px;
+    }
+    img.tien{
+        width: 73px;
+        z-index: 4;
+        bottom: 74px;
+        margin-left: 111px;
+    }
+    img.lauren{
+        width: 77px;
+        z-index: 2;
+        bottom: 69px;
+        margin-left: 9px;
+    }
+    img.srini{
+        width: 78px;
+        z-index: 3;
+        bottom: 66px;
+        margin-left: 56px;
+    }
+
+    .nogo, .go {
+        border: none;
+        width: 90px;
+        height: 40px;
+        font-size: 18px;
+        color: white;
+        font-weight: bold;
+        padding: 5px;
+        cursor: pointer;
+    }
+
+    .nogo {
+        background: red;
+        border: none;
+    }
+    .go {
+        background: green;
+        border: none;
     }
 
 
@@ -129,7 +177,11 @@
             $('img').css("left", percent + "%");
             i = i * -1;
             $('img.bob').css("transform", "rotateZ(" + i + "deg)");
-            
+            $('img.steven').css("transform", "rotateZ(" + -i + "deg)");
+            $('img.tien').css("transform", "rotateZ(" + i + "deg)");
+            $('img.srini').css("transform", "rotateZ(" + -i + "deg)");
+            $('img.lauren').css("transform", "rotateZ(" + i + "deg)");
+
         }, 1000);
     });
 

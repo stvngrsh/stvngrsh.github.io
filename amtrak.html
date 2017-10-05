@@ -233,7 +233,7 @@
             $('#minutes').html(("0" + minutes).slice(-2));
             $('#seconds').html(("0" + seconds).slice(-2));
 
-            var percent = (1-distance/totalTime) * 100 - 50;
+            var percent = (1-distance/totalTime) * 100 - 60;
 
             $('img').css("left", percent + "%");
             i = i * -1;

@@ -211,7 +211,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
 <script>
-    const startTime = new Date(2017, 8, 20, 0, 0, 0);
+    const startTime = new Date(2017, 10, 5, 0, 0, 0);
     const endTime = new Date(2017, 9, 8, 3, 0, 0);
 
     const totalTime = endTime - startTime;
@@ -233,7 +233,7 @@
             $('#minutes').html(("0" + minutes).slice(-2));
             $('#seconds').html(("0" + seconds).slice(-2));
 
-            var percent = (1-distance/totalTime) * 100 - 75;
+            var percent = (1-distance/totalTime) * 100 - 50;
 
             $('img').css("left", percent + "%");
             i = i * -1;

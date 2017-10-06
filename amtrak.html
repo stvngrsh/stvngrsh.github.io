@@ -317,7 +317,7 @@
                 if(!triggerConfetti){
                     triggerConfetti = true;
                     console.log("GO LIVE");
-                    goConfetti();
+                    $('#world').removeClass('hide');
                     $('#header1').addClass('hide');
                     $('#header2').removeClass('hide');
                     $('#header2').addClass('rainbow');
@@ -353,9 +353,7 @@
         }, 1000);
  
     });
-    function goConfetti(){
-        $('#world').removeClass('hide');
-    }
+   
     (function() {
       var COLORS, Confetti, NUM_CONFETTI, PI_2, canvas, confetti, context, drawCircle, i, range, resizeWindow, xpos;
 

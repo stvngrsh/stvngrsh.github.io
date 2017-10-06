@@ -7,7 +7,7 @@
     <body>
         <div class="main">
             <div class="content">
-                <canvas id="world" style="position: absolute;"></canvas>
+                <canvas id="world" class="hide" style="position: absolute;"></canvas>
                 <h1 id="header1">Time to Go-Live!!!</h1>
                 <h1 id="header2" class="hide">WE ARE LIVE! (I hope)</h1>
                 <div class="timer">
@@ -355,6 +355,9 @@
  
     });
     function goConfetti(){
+        $('#world').removeClass('hide');
+    }
+    (function() {
       var COLORS, Confetti, NUM_CONFETTI, PI_2, canvas, confetti, context, drawCircle, i, range, resizeWindow, xpos;
 
       NUM_CONFETTI = 350;
@@ -470,7 +473,8 @@
 
       step();
 
-    }
+    }).call(this);
+
     $(document).ready(function(){
         goConfetti();
     });

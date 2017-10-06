@@ -7,8 +7,9 @@
     <body>
         <div class="main">
             <div class="content">
-                <canvas id="world"></canvas>
-                <h1>Time to Go-Live!!!</h1>
+                <canvas id="world" style="position: absolute;"></canvas>
+                <h1 id="header1">Time to Go-Live!!!</h1>
+                <h1 id="header2" class="hide">WE ARE LIVE! (I hope)</h1>
                 <div class="timer">
                     <div class="timer-element">
                         <div id="days" class="timer-digits">00</div>
@@ -220,6 +221,10 @@
         border: none;
     }
 
+    .hide{
+        display:none;
+    }
+
 
 </style>
 
@@ -272,7 +277,7 @@
         }, 1000);
  
     });
-    (function() {
+    function goConfetti(){
       var COLORS, Confetti, NUM_CONFETTI, PI_2, canvas, confetti, context, drawCircle, i, range, resizeWindow, xpos;
 
       NUM_CONFETTI = 350;
@@ -388,6 +393,9 @@
 
       step();
 
-    }).call(this);
+    }
+    $(document).ready(function(){
+        goConfetti();
+    });
 
 </script>

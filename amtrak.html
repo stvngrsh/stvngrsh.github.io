@@ -293,22 +293,7 @@
                 $('#hours').html(hours);
                 $('#minutes').html(("0" + minutes).slice(-2));
                 $('#seconds').html(("0" + seconds).slice(-2));
-            }
-            else {
-                if(!triggerConfetti){
-                    triggerConfetti = true;
-                    goConfetti();
-                    $('#header1').addClass('hide');
-                    $('#header2').removeClass('hide');
-                    $('#header2').addClass('rainbow');
-                    $('.timer-digits').addClass('rainbow');
-                }
-                $('#days').html("0");
-                $('#hours').html("00");
-                $('#minutes').html("00");
-                $('#seconds').html("00");
                 
-            }
                 var percent = (1-distance/totalTime) * 100 - 65;
 
                 $('img').css("left", percent + "%");
@@ -328,6 +313,42 @@
                 $('img.james').css("transform", "rotateZ(" + i + "deg)");
                 $('img.noemie').css("transform", "rotateZ(" + -i + "deg)");
                 $('img.meredith').css("transform", "rotateZ(" + i + "deg)");
+            }
+            else {
+                if(!triggerConfetti){
+                    triggerConfetti = true;
+                    goConfetti();
+                    $('#header1').addClass('hide');
+                    $('#header2').removeClass('hide');
+                    $('#header2').addClass('rainbow');
+                    $('.timer-digits').addClass('rainbow');
+                }
+                $('#days').html("0");
+                $('#hours').html("00");
+                $('#minutes').html("00");
+                $('#seconds').html("00");
+                
+                var percent = (1-distance/totalTime) * 100 - 65;
+
+                $('img').css("left", percent + "%");
+                i = i * -1;
+                $('img.bob').css("transform", "rotateZ(" + i + "deg) translateY(" + i "px)");
+                $('img.vaidehi').css("transform", "rotateZ(" + -i + "deg) translateY(" + -i "px)");
+                $('img.tien').css("transform", "rotateZ(" + i + "deg) translateY(" + -i "px)");
+                $('img.steven').css("transform", "rotateZ(" + -i + "deg) translateY(" + -i "px)");
+                $('img.srini').css("transform", "rotateZ(" + i + "deg) translateY(" + -i "px)");
+                $('img.brian').css("transform", "rotateZ(" + -i + "deg) translateY(" + i "px)");
+                $('img.lauren').css("transform", "rotateZ(" + i + "deg) translateY(" + -i "px)");
+                $('img.andrew').css("transform", "rotateZ(" + -i + "deg) translateY(" + -i "px)");
+                $('img.anh').css("transform", "rotateZ(" + i + "deg) translateY(" + i "px)");
+                $('img.nandita').css("transform", "rotateZ(" + -i + "deg) translateY(" + -i "px)");
+                $('img.igor').css("transform", "rotateZ(" + i + "deg) translateY(" + i "px)");
+                $('img.tara').css("transform", "rotateZ(" + -i + "deg) translateY(" + -i "px)");
+                $('img.james').css("transform", "rotateZ(" + i + "deg) translateY(" + i "px)");
+                $('img.noemie').css("transform", "rotateZ(" + -i + "deg) translateY(" + -i "px)");
+                $('img.meredith').css("transform", "rotateZ(" + i + "deg) translateY(" + i "px)");
+            }
+                
            
         }, 1000);
  

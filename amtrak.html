@@ -224,6 +224,43 @@
     .hide{
         display:none;
     }
+    
+    .rainbow {
+       /* Chrome, Safari, Opera */
+      -webkit-animation: rainbow 1s infinite; 
+
+      /* Internet Explorer */
+      -ms-animation: rainbow 1s infinite;
+
+      /* Standar Syntax */
+      animation: rainbow 1s infinite; 
+    }
+
+    /* Chrome, Safari, Opera */
+    @-webkit-keyframes rainbow{
+        20%{color: red;}
+        40%{color: yellow;}
+        60%{color: green;}
+        80%{color: blue;}
+        100%{color: orange;}	
+    }
+    /* Internet Explorer */
+    @-ms-keyframes rainbow{
+        20%{color: red;}
+        40%{color: yellow;}
+        60%{color: green;}
+        80%{color: blue;}
+        100%{color: orange;}	
+    }
+
+    /* Standar Syntax */
+    @keyframes rainbow{
+        20%{color: red;}
+        40%{color: yellow;}
+        60%{color: green;}
+        80%{color: blue;}
+        100%{color: orange;}	
+    }
 
 
 </style>
@@ -239,39 +276,59 @@
     var i = 10;
     $(document).ready(function(){
         
+        var triggerConfetti = false;
+        
         var x = setInterval(function() {
             var now = new Date().getTime();
             var distance = endTime.getTime() - now;
+            
+            if(distance > 0){
 
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            $('#days').html(days);
-            $('#hours').html(hours);
-            $('#minutes').html(("0" + minutes).slice(-2));
-            $('#seconds').html(("0" + seconds).slice(-2));
+                $('#days').html(days);
+                $('#hours').html(hours);
+                $('#minutes').html(("0" + minutes).slice(-2));
+                $('#seconds').html(("0" + seconds).slice(-2));
+            }
+            else {
+                if(!triggerConfetti){
+                    triggerConfetti = true;
+                    goConfetti();
+                    $('#heading1').addClass('hide');
+                    $('#heading2').removeClass('hide');
+                    $('.timer-digits').addClass('rainbow');
+                }
+                $('#days').html("0");
+                $('#hours').html("00");
+                $('#minutes').html("00");
+                $('#seconds').html("00");
+                
+            }
+                var percent = (1-distance/totalTime) * 100 - 65;
 
-            var percent = (1-distance/totalTime) * 100 - 65;
-
-            $('img').css("left", percent + "%");
-            i = i * -1;
-            $('img.bob').css("transform", "rotateZ(" + i + "deg)");
-            $('img.vaidehi').css("transform", "rotateZ(" + -i + "deg)");
-            $('img.tien').css("transform", "rotateZ(" + i + "deg)");
-            $('img.steven').css("transform", "rotateZ(" + -i + "deg)");
-            $('img.srini').css("transform", "rotateZ(" + i + "deg)");
-            $('img.brian').css("transform", "rotateZ(" + -i + "deg)");
-            $('img.lauren').css("transform", "rotateZ(" + i + "deg)");
-            $('img.andrew').css("transform", "rotateZ(" + -i + "deg)");
-            $('img.anh').css("transform", "rotateZ(" + i + "deg)");
-            $('img.nandita').css("transform", "rotateZ(" + -i + "deg)");
-            $('img.igor').css("transform", "rotateZ(" + i + "deg)");
-            $('img.tara').css("transform", "rotateZ(" + -i + "deg)");
-            $('img.james').css("transform", "rotateZ(" + i + "deg)");
-            $('img.noemie').css("transform", "rotateZ(" + -i + "deg)");
-            $('img.meredith').css("transform", "rotateZ(" + i + "deg)");
+                $('img').css("left", percent + "%");
+                i = i * -1;
+                $('img.bob').css("transform", "rotateZ(" + i + "deg)");
+                $('img.vaidehi').css("transform", "rotateZ(" + -i + "deg)");
+                $('img.tien').css("transform", "rotateZ(" + i + "deg)");
+                $('img.steven').css("transform", "rotateZ(" + -i + "deg)");
+                $('img.srini').css("transform", "rotateZ(" + i + "deg)");
+                $('img.brian').css("transform", "rotateZ(" + -i + "deg)");
+                $('img.lauren').css("transform", "rotateZ(" + i + "deg)");
+                $('img.andrew').css("transform", "rotateZ(" + -i + "deg)");
+                $('img.anh').css("transform", "rotateZ(" + i + "deg)");
+                $('img.nandita').css("transform", "rotateZ(" + -i + "deg)");
+                $('img.igor').css("transform", "rotateZ(" + i + "deg)");
+                $('img.tara').css("transform", "rotateZ(" + -i + "deg)");
+                $('img.james').css("transform", "rotateZ(" + i + "deg)");
+                $('img.noemie').css("transform", "rotateZ(" + -i + "deg)");
+                $('img.meredith').css("transform", "rotateZ(" + i + "deg)");
+            }
+            
 
 
         }, 1000);

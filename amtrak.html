@@ -28,6 +28,7 @@
                         <div class="timer-label">SECONDS</div>
                     </div>
                 </div>
+                <button id="button"> CLICK WHEN WE ARE LIVE </button>
                 <h2><b>Go-Live Date: </b>October 8th, 2017</h2>
                 <img class="bob" src="img/bob.png">
                 <img class="vaidehi" src="img/vaidehi.png">
@@ -106,6 +107,11 @@
         text-align: center;
         font-size: 20px;
         color: white;
+    }
+    #button{
+        font-size: 24px;
+        background: light-green;
+        color: black;
     }
     img {
         transform: rotateY(180deg);
@@ -276,34 +282,46 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
 <script>
-    const startTime = new Date(2017, 10, 5, 0, 0, 0);
-    const endTime = new Date(2017, 9, 8, 6, 30, 0);
-    const totalTime = endTime - startTime;
+    //const startTime = new Date(2017, 10, 5, 0, 0, 0);
+    //const endTime = new Date(2017, 9, 8, 6, 4, 0);
+    //const totalTime = endTime - startTime;
     
     var i = 10;
     $(document).ready(function(){
         
-        var triggerConfetti = false;
+        var golive = false;
         
+        $('#button').click(function(){
+            golive = true;
+        });
+        
+        var triggerConfetti = false;
+
         var x = setInterval(function() {
-            var now = new Date().getTime();
-            var distance = endTime.getTime() - now;
+            //var now = new Date().getTime();
+            //var distance = endTime.getTime() - now;
             
-            if(distance > 0){
+            if(!golive){
 
-                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
+              //  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                //var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                //var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                //var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                var days = "??";
+                var hours = "??";
+                //var minutes = ("0" + minutes).slice(-2);
+                var minutes = "??";
+               // var seconds =  ("0" + seconds).slice(-2);
+                var seconds = "??";
                 $('#days').html(days);
                 $('#hours').html(hours);
-                $('#minutes').html(("0" + minutes).slice(-2));
-                $('#seconds').html(("0" + seconds).slice(-2));
+                $('#minutes').html(minutes);
+                $('#seconds').html(seconds);
                 
-                var percent = (1-distance/totalTime) * 100 - 65;
+                //var percent = (1-distance/totalTime) * 100 - 65;
 
-                $('img').css("left", percent + "%");
+                $('img').css("left", 50 + "%");
                 i = i * -1;
                 $('img.bob').css("transform", "rotateZ(" + i + "deg)");
                 $('img.vaidehi').css("transform", "rotateZ(" + -i + "deg)");
@@ -336,8 +354,9 @@
                 $('#minutes').html("00");
                 $('#seconds').html("00");
                 
-                var percent = (1-distance/totalTime) * 100 - 65;
-
+                //var percent = (1-distance/totalTime) * 100 - 65;
+                var percent = 45;
+                
                 $('img').css("left", percent + "%");
                 i = i * -1;
                 $('img.bob').css("transform", "rotateZ(" + i + "deg) translateY(" + i + "px)");

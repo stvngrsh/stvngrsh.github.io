@@ -1,3 +1,345 @@
-p {
-	color: blue;
+@mixin animation ($animation, $duration, $interations, $delay) {
+    -webkit-animation-delay: $delay;
+    -webkit-animation-duration: $duration;
+    -webkit-animation-name: $animation;
+    -webkit-animation-iteration-count: $interations;
+
+    -webkit-animation-fill-mode: forwards;
+
+    -moz-animation-delay: $delay;
+    -moz-animation-duration: $duration;
+    -moz-animation-name: $animation;
+    -moz-animation-iteration-count: $interations;
+
+    -moz-animation-fill-mode: forwards; 
+
+    -o-animation-delay: $delay;
+    -o-animation-duration: $duration;
+    -o-animation-name: $animation;
+    -o-animation-iteration-count: $interations;
+
+    -o-animation-fill-mode: forwards; 
+
+    animation-delay: $delay;
+    animation-duration: $duration;
+    animation-name: $animation;
+    animation-iteration-count: $interations;
+
+    animation-fill-mode: forwards; 
 }
+
+@mixin mykeyframe ($animation_name) {
+  @-webkit-keyframes #{$animation_name} {
+      @content;
+  }
+
+  @-moz-keyframes #{$animation_name} {
+      @content;
+  }
+
+  @-o-keyframes #{$animation_name} {
+      @content;
+  }
+
+  @keyframes #{$animation_name} {
+      @content;
+  }
+}
+
+@include mykeyframe(fade){
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+@mixin fade($delay) {
+	@include animation(fade, 2s, 1, $delay);
+}
+
+@include mykeyframe(ripple){
+	0% {opacity: 1;}
+	6% {opacity: 0.5;}
+	12% {opacity: 1;}
+	100% {opacity: 1;}
+}
+@mixin ripple($delay) {
+	@include animation(ripple, 3s, infinite, $delay);
+}
+
+
+//Colors
+$overlay: rgba(0,0,0,.4);
+$dark-blue: #2c3e50;
+$blue: #3498db;
+$red: #e74c3c;
+$light-gray: #ecf0f1;
+
+$font-title: 'Oswald', sans-serif;
+$font-sub: 'Montserrat', sans-serif;
+$font-body: 'Arial', sans-serif;
+
+body {
+	margin: 0;
+  overflow: scroll;
+	position: relative;
+}
+
+h1 {
+	color: white;
+	font-size: 60pt;
+	margin-top: 15%;
+}
+
+
+#banner {
+	position: fixed;
+	background-color: green;
+	//background-image: url(../img/banner.jpg);
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+
+	&.fixed {
+		visibility: hidden;
+	}
+
+	#banner-overlay {
+		background-color: rgba(0,0,0,.4);
+		font-family: $font-title;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		padding-bottom: 10%;
+
+		#fade3 {
+
+			display: inline-block;
+			color: white;
+			font-family: $font-sub;
+			font-size: 28pt;
+
+			div {
+				opacity: 0;
+				display: inline;
+				animation-fill-mode: forwards;
+			}
+			#f1 {	
+				@include fade(0.8s);
+			}
+			#s1,#s2 {	
+				@include fade(2.4s);
+			}
+			#f2 {	
+				@include fade(1.5s);
+			}
+			#f3 {	
+				@include fade(2s);
+			}
+		}
+
+		#triangles{
+			text-align: center;
+			color: white;
+			pointer-events: all;
+
+			#tri1 {
+				@include ripple(0.5s);
+				font-size: 45px;
+			}
+			#tri2 {
+				@include ripple(0.8s);
+				font-size: 35px;
+			}
+			#tri3 {
+				@include ripple(1.1s);
+				font-size: 25px;
+			}
+		}
+	}
+}
+
+#banner-scroll{
+	z-index: 1;
+	height: 100%;
+
+	a {
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
+
+	p {
+		color: white;
+		font-size: 60pt;
+		margin-top: 15%;
+	}
+}
+
+/* grid */
+.container {
+	position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+  background: white;
+}
+
+/* nav styles */
+nav {
+	padding: 5px 20px;
+  position: sticky;
+  top: 0;
+  background: $dark-blue;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  ul {
+  	display: grid;
+  	flex-grow: 1;
+  	grid-template-columns: repeat(auto-fit, minmax(1px, max-content));
+  	align-items: center;
+  
+  	margin: 0;
+  	padding: 0;
+
+  	&.left {
+  		justify-content: flex-start;
+  	}
+  	&.right {
+  		justify-content: flex-end;
+  	}
+
+  	li {
+  		font-size: 18px;
+  		
+  	}
+
+  	li#logo {
+  		font-size: 35px;
+  		font-weight: bold;
+
+  		#logo-bottom {
+  			position: absolute;
+  			color: white;
+  		}
+  		#logo-top {
+  			position: relative;
+  			color: $blue;
+  		}
+  	}
+  }
+
+  a {
+  	color: $light-gray;
+  	font-family: $font-title;
+  	text-decoration: none;
+
+  }
+
+}
+
+/* media query for grid layout */
+@media only screen and (min-width: 600px) {
+    
+  /* grid */
+  .container {
+    grid-template-columns: auto repeat(3, minmax(100px, 400px)) auto;
+    grid-template-rows: 1fr;
+    grid-template-areas: ". content content content .";
+
+    nav {
+    	grid-column: span 5;
+    	z-index: 999;
+    }
+    div {
+    	grid-column: content;
+    	z-index: 1;
+    }
+    div.background {
+    	grid-column: span 5;
+    }
+
+  }
+  
+  /* nav styles */
+  nav ul li {
+    display: inline-block;
+    padding: 0 20px 0 0;
+  }
+  
+  /* hide toggle */
+  .toggle {
+    display: none;
+  }
+  
+}
+
+/* media query for nav styles */
+@media only screen and (max-width: 599px) {
+  
+    #nav {
+      transition: transform .3s ease-in-out;
+      top: 0;
+      bottom: 0;   
+      min-height: 100vh; /* override Safari bug */
+      position: fixed; /* or choose `absolute` depending on desired behavior*/
+      width: 300px;
+      left: -340px;
+    }
+  
+    #nav:target {     
+      transform: translateX(340px);
+    }
+  
+    .close {
+      text-align: right;
+      display: block;
+      text-decoration: none;
+      font-size: 3em;
+      position: relative;
+      top: -30px;
+    }
+  
+}
+
+#main-container{
+  overflow: unset;
+
+  .skew-blue-fill {
+    grid-column: 1/6;
+    position: absolute;
+    height: 25%;
+    width: 100%;
+    background-color: $blue;
+  }
+
+  .skew-outer {
+  	height: 100%;
+  	width: 100%;
+  	padding: 0;
+  	background: white;
+  	overflow: hidden;
+  	position: absolute;
+
+  	.skew-inner {
+  		height: 1000px;
+  		width: 100%;
+  		position: relative;
+
+  		&.blue {
+  			transform: skewY(18deg);
+  			background-color: $blue;
+  		}
+  		&.red {
+  			margin-top: 1800px;
+  			transform: skewY(-18deg);
+  			background-color: $red;
+  		}
+
+  	}
+  }
+}
+

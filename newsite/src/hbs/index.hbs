@@ -1,9 +1,63 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="icon" href="src/img/favicon.ico">
+<link rel='dns-prefetch' href='//fonts.googleapis.com'>
+<link href="https://fonts.googleapis.com/css?family=Montserrat|Oswald" rel="stylesheet">
 
 <title>STEVEN GRESH</title>
 
 {{#with htmlWebpackPlugin.options.data}}
-hello
+<div id="banner">
+	<div id="banner-overlay">
+		<h1>TEST HEADING</h1>
+		<div id="fade3">
+			<div id="f1">Thing 1</div>
+			<div id="s1"> | </div>
+			<div id="f2">Thing 2</div>
+			<div id="s2"> | </div>
+			<div id="f3">Thing 3</div>
+		</div>
+		<div id="triangles">
+			<div id="tri1">&#x25BC;</div>
+			<div id="tri2">&#x25BC;</div>
+			<div id="tri3">&#x25BC;</div>
+
+		</div>
+	</div>
+</div>
+<div id="banner-scroll">
+	<a href="#about-wrap"></a>
+</div>
+<div id="main-container" class="container">
+	<nav id="nav" role="navigation">    
+	    <ul class="left">
+	    	<li id="logo">
+	    		<a id="logo-bottom" href="#">TEST TEST</a>
+	    		<a id="logo-top" href="#">TEST TEST</a>
+	        </li>
+	    </ul>
+	    <ul class="right">
+	    	<li>
+	            <a href="#">ITEM 1</a>
+	        </li>
+	        <li>
+	            <a href="#">ITEM 2</a>
+	        </li>
+	        <li>
+	            <a href="#">ITEM 3</a>
+	        </li>
+	    </ul>
+	</nav>
+	<div class="skew-outer background">
+		<div id="skew-blue" class="skew-inner blue"></div>
+		<div id="skew-red" class="skew-inner red"></div>
+	</div>
+	<div class="skew-blue-fill"></div>
+	<div style="height: 500px; background: rgba(0,0,0,0);">Sup</div>
+	<div style="height: 500px; background: rgba(0,0,0,0);">Sup</div>
+	<div style="height: 500px; background: rgba(0,0,0,0);">Sup</div>
+	<div style="height: 500px; background: rgba(0,0,0,0);">Sup</div>
+
+</div>
+
 {{/with}}

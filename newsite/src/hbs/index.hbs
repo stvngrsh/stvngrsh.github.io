@@ -21,7 +21,7 @@
 <div id="banner-scroll">
 	<a href="#about-wrap"></a>
 </div>
-<div id="main-container" class="container">
+<div id="wrapper" >
 	<nav id="nav" role="navigation">    
 	    <ul class="left">
 	    	<li id="logo">
@@ -41,19 +41,24 @@
 	        </li>
 	    </ul>
 	</nav>
-	<div class="skew-outer background-section">
-		<div id="skew-blue" class="skew-inner blue"></div>
+	<div class="inner-wrap">
+		<div id="skew-blue" class="skew blue">
+			<div class="container">
+				{{!-- <div class="skew-blue-fill"></div> --}}
+				<h2 class="section-heading about-heading">
+					<s>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</s>
+					{{about.title}}
+					<s>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</s>
+				</h2>
+				<ul class="about-details">
+					{{#each about.bullets}}<li><b>> </b>{{this}}</li>{{/each}}
+				</ul>
+				<img src="img/headshot.jpg" alt="headshot" class="headshot"/>
+				<p class="blurb">{{about.blurb}}</p>
+			</div>
+		</div>
+		<div class="test" style="height:500px"></div>
 		<div id="skew-red" class="skew-inner red"></div>
+
 	</div>
-	<div class="skew-blue-fill"></div>
-	<h2 class="content-full section-heading about-heading">
-		<s>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</s>
-		{{about.title}}
-		<s>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</s>
-	</h2>
-	<ul class="content left about-details">
-		{{#each about.bullets}}<li><b>> </b>{{this}}</li>{{/each}}
-	</ul>
-	<p class="content right blurb">{{about.blurb}}</p>
-	<div class="content-full" style="height:500px"></div>
 </div>

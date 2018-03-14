@@ -29,13 +29,11 @@ module.exports = {
             {
                 test: /\.js$/,
                 loader: 'babel-loader',
-                query: {
-                    presets: ['es2015']
-                }
+                exclude: /node_modules/
             },
             {
-                test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
-                loader: 'file-loader?name=[name].[ext]'  // <-- retain original file name
+                test: /\.(jpe?g|png|gif|svg)$/i, 
+                loader: 'file-loader?name=./img/[name].[ext]'  // <-- retain original file name
             }
        ]
     },

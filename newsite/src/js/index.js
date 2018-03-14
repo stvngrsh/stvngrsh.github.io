@@ -1,4 +1,7 @@
 import '../sass/style.scss';
+
+import '../img/headshot.jpg';
+
 import data from '../data/data';
 let myTemplate = require('../hbs/index.hbs');
 
@@ -8,7 +11,7 @@ createHTML();
 function logoSkew(e) {
     const width = document.documentElement.clientWidth;
 
-    const skewOuter = document.getElementById('main-container').offsetTop;
+    const skewOuter = document.getElementById('wrapper').offsetTop;
 
     const skewBlue = document.getElementById('skew-blue').offsetTop;
     const blueHeight = document.getElementById('skew-blue').clientHeight;

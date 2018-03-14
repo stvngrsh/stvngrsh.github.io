@@ -1,49 +1,49 @@
 @mixin animation ($animation, $duration, $interations, $delay) {
-    -webkit-animation-delay: $delay;
-    -webkit-animation-duration: $duration;
-    -webkit-animation-name: $animation;
-    -webkit-animation-iteration-count: $interations;
-
-    -webkit-animation-fill-mode: forwards;
-
-    -moz-animation-delay: $delay;
-    -moz-animation-duration: $duration;
-    -moz-animation-name: $animation;
-    -moz-animation-iteration-count: $interations;
-
-    -moz-animation-fill-mode: forwards; 
-
-    -o-animation-delay: $delay;
-    -o-animation-duration: $duration;
-    -o-animation-name: $animation;
-    -o-animation-iteration-count: $interations;
-
-    -o-animation-fill-mode: forwards; 
-
-    animation-delay: $delay;
-    animation-duration: $duration;
-    animation-name: $animation;
-    animation-iteration-count: $interations;
-
-    animation-fill-mode: forwards; 
+	-webkit-animation-delay: $delay;
+	-webkit-animation-duration: $duration;
+	-webkit-animation-name: $animation;
+	-webkit-animation-iteration-count: $interations;
+	
+	-webkit-animation-fill-mode: forwards;
+	
+	-moz-animation-delay: $delay;
+	-moz-animation-duration: $duration;
+	-moz-animation-name: $animation;
+	-moz-animation-iteration-count: $interations;
+	
+	-moz-animation-fill-mode: forwards; 
+	
+	-o-animation-delay: $delay;
+	-o-animation-duration: $duration;
+	-o-animation-name: $animation;
+	-o-animation-iteration-count: $interations;
+	
+	-o-animation-fill-mode: forwards; 
+	
+	animation-delay: $delay;
+	animation-duration: $duration;
+	animation-name: $animation;
+	animation-iteration-count: $interations;
+	
+	animation-fill-mode: forwards; 
 }
 
 @mixin mykeyframe ($animation_name) {
-  @-webkit-keyframes #{$animation_name} {
-      @content;
-  }
-
-  @-moz-keyframes #{$animation_name} {
-      @content;
-  }
-
-  @-o-keyframes #{$animation_name} {
-      @content;
-  }
-
-  @keyframes #{$animation_name} {
-      @content;
-  }
+	@-webkit-keyframes #{$animation_name} {
+		@content;
+	}
+	
+	@-moz-keyframes #{$animation_name} {
+		@content;
+	}
+	
+	@-o-keyframes #{$animation_name} {
+		@content;
+	}
+	
+	@keyframes #{$animation_name} {
+		@content;
+	}
 }
 
 @include mykeyframe(fade){
@@ -78,14 +78,27 @@ $font-body: 'Arial', sans-serif;
 
 body {
 	margin: 0;
-  overflow: scroll;
+	overflow: scroll;
 	position: relative;
 }
 
 h1 {
 	color: white;
-	font-size: 60pt;
+	font-size: 5rem;
 	margin-top: 15%;
+	font-family: $font-title;
+}
+
+h2 {
+	font-size: 2.25rem;
+	font-family: $font-sub; 
+	line-height: 1.1;
+	font-weight: 500;
+}
+
+p {
+	font-family: $font-body;
+	font-size: 16px;
 }
 
 
@@ -96,12 +109,11 @@ h1 {
 	background-size: cover;
 	height: 100%;
 	width: 100%;
-	z-index: 1;
-
+	
 	&.fixed {
 		visibility: hidden;
 	}
-
+	
 	#banner-overlay {
 		background-color: rgba(0,0,0,.4);
 		font-family: $font-title;
@@ -111,14 +123,14 @@ h1 {
 		align-items: center;
 		flex-direction: column;
 		padding-bottom: 10%;
-
+		
 		#fade3 {
-
+			
 			display: inline-block;
 			color: white;
 			font-family: $font-sub;
 			font-size: 28pt;
-
+			
 			div {
 				opacity: 0;
 				display: inline;
@@ -137,12 +149,12 @@ h1 {
 				@include fade(2s);
 			}
 		}
-
+		
 		#triangles{
 			text-align: center;
 			color: white;
 			pointer-events: all;
-
+			
 			#tri1 {
 				@include ripple(0.5s);
 				font-size: 45px;
@@ -160,15 +172,14 @@ h1 {
 }
 
 #banner-scroll{
-	z-index: 1;
 	height: 100%;
-
+	
 	a {
 		width: 100%;
 		height: 100%;
 		display: block;
 	}
-
+	
 	p {
 		color: white;
 		font-size: 60pt;
@@ -179,167 +190,213 @@ h1 {
 /* grid */
 .container {
 	position: relative;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 10px;
-  background: white;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 10px;
+	background: white;
 }
 
 /* nav styles */
 nav {
 	padding: 5px 20px;
-  position: sticky;
-  top: 0;
-  background: $dark-blue;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-
-  ul {
-  	display: grid;
-  	flex-grow: 1;
-  	grid-template-columns: repeat(auto-fit, minmax(1px, max-content));
-  	align-items: center;
-  
-  	margin: 0;
-  	padding: 0;
-
-  	&.left {
-  		justify-content: flex-start;
-  	}
-  	&.right {
-  		justify-content: flex-end;
-  	}
-
-  	li {
-  		font-size: 18px;
-  		
-  	}
-
-  	li#logo {
-  		font-size: 35px;
-  		font-weight: bold;
-
-  		#logo-bottom {
-  			position: absolute;
-  			color: white;
-  		}
-  		#logo-top {
-  			position: relative;
-  			color: $blue;
-  		}
-  	}
-  }
-
-  a {
-  	color: $light-gray;
-  	font-family: $font-title;
-  	text-decoration: none;
-
-  }
-
-}
-
-/* media query for grid layout */
-@media only screen and (min-width: 600px) {
-    
-  /* grid */
-  .container {
-    grid-template-columns: auto repeat(3, minmax(100px, 400px)) auto;
-    grid-template-rows: 1fr;
-    grid-template-areas: ". content content content .";
-
-    nav {
-    	grid-column: span 5;
-    	z-index: 999;
-    }
-    div {
-    	grid-column: content;
-    	z-index: 1;
-    }
-    div.background {
-    	grid-column: span 5;
-    }
-
-  }
-  
-  /* nav styles */
-  nav ul li {
-    display: inline-block;
-    padding: 0 20px 0 0;
-  }
-  
-  /* hide toggle */
-  .toggle {
-    display: none;
-  }
-  
+	position: sticky;
+	top: 0;
+	background: $dark-blue;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	
+	ul {
+		display: grid;
+		flex-grow: 1;
+		grid-template-columns: repeat(auto-fit, minmax(1px, max-content));
+		align-items: center;
+		
+		margin: 0;
+		padding: 0;
+		
+		&.left {
+			justify-content: flex-start;
+		}
+		&.right {
+			justify-content: flex-end;
+		}
+		
+		li {
+			font-size: 18px;
+			
+		}
+		
+		li#logo {
+			font-size: 35px;
+			font-weight: bold;
+			
+			#logo-bottom {
+				position: absolute;
+				color: white;
+			}
+			#logo-top {
+				position: relative;
+				color: $blue;
+				text-shadow: -0.2px 0 $blue, 0 0.2px $blue, 0.2px 0 $blue, 0 -0.2px $blue;
+				
+			}
+		}
+	}
+	
+	a {
+		color: $light-gray;
+		font-family: $font-title;
+		text-decoration: none;
+		
+	}
+	
 }
 
 /* media query for nav styles */
 @media only screen and (max-width: 599px) {
-  
-    #nav {
-      transition: transform .3s ease-in-out;
-      top: 0;
-      bottom: 0;   
-      min-height: 100vh; /* override Safari bug */
-      position: fixed; /* or choose `absolute` depending on desired behavior*/
-      width: 300px;
-      left: -340px;
-    }
-  
-    #nav:target {     
-      transform: translateX(340px);
-    }
-  
-    .close {
-      text-align: right;
-      display: block;
-      text-decoration: none;
-      font-size: 3em;
-      position: relative;
-      top: -30px;
-    }
-  
+	
+	#nav {
+		transition: transform .3s ease-in-out;
+		top: 0;
+		bottom: 0;   
+		min-height: 100vh; /* override Safari bug */
+		position: fixed; /* or choose `absolute` depending on desired behavior*/
+		width: 300px;
+		left: -340px;
+	}
+	
+	#nav:target {     
+		transform: translateX(340px);
+	}
+	
+	.close {
+		text-align: right;
+		display: block;
+		text-decoration: none;
+		font-size: 3em;
+		position: relative;
+		top: -30px;
+	}
+	
+}
+
+/* media query for grid layout */
+@media only screen and (min-width: 600px) {
+	
+	/* grid */
+	.container {
+		grid-template-columns: auto repeat(3, minmax(100px, 400px)) auto;
+		grid-template-rows: 1fr;
+		grid-template-areas: ". content content content .";
+		z-index: 0;
+
+		nav {
+			grid-column: span 5;
+			z-index: 999;
+		}
+		.content-full {
+			grid-column: content;
+		}
+		.content {
+			grid-column-end: span 1;
+			align-self: center;
+			&.left {
+				justify-self: right;
+				grid-column-start: 2;
+			}
+			&.middle {
+				grid-column-end: 3;
+			}
+			&.right {
+				grid-column-start: 4;
+			}
+		}
+		.background {
+			grid-column: span 5;
+			z-index: -1;
+		}
+	}
+	
+	/* nav styles */
+	nav ul li {
+		display: inline-block;
+		padding: 0 20px 0 0;
+	}
+	
+	/* hide toggle */
+	.toggle {
+		display: none;
+	}
+	
 }
 
 #main-container{
-  overflow: unset;
+	overflow: unset;
+	
+	.skew-blue-fill {
+		grid-column: 1/6;
+		position: absolute;
+		min-height: 400px;
+		height: 25%;
+		width: 100%;
+		z-index: -1;
+		background-color: $blue;
+	}
+	
+	.skew-outer {
+		height: 100%;
+		width: 100%;
+		padding: 0;
+		background: white;
+		overflow: hidden;
+		position: absolute;
+		z-index: -1;
+		
+		.skew-inner {
+			height: 1000px;
+			width: 100%;
+			position: relative;
+			
+			&.blue {
+				transform: skewY(18deg);
+				background-color: $blue;
+			}
+			&.red {
+				margin-top: 1800px;
+				transform: skewY(-18deg);
+				background-color: $red;
+			}
+			
+		}
+	}
 
-  .skew-blue-fill {
-    grid-column: 1/6;
-    position: absolute;
-    height: 25%;
-    width: 100%;
-    background-color: $blue;
-  }
+	.section-heading {
+		text-shadow: 2px 2px rgba(0,0,0,0.3);
+		justify-self: center;
 
-  .skew-outer {
-  	height: 100%;
-  	width: 100%;
-  	padding: 0;
-  	background: white;
-  	overflow: hidden;
-  	position: absolute;
+		&.about-heading {
+			margin-top: 40px;
+			margin-bottom: 40px;
+			color: white;
+		}
+	}
 
-  	.skew-inner {
-  		height: 1000px;
-  		width: 100%;
-  		position: relative;
-
-  		&.blue {
-  			transform: skewY(18deg);
-  			background-color: $blue;
-  		}
-  		&.red {
-  			margin-top: 1800px;
-  			transform: skewY(-18deg);
-  			background-color: $red;
-  		}
-
-  	}
-  }
+	ul.about-details {
+		li {
+			list-style-type: none;
+			color: white;
+			font-family: $font-body;
+			font-size: 18px;
+			margin-bottom: 5px;
+			b {
+				color: $blue;
+			}
+		}
+	}
+	.blurb {
+		color: white;
+	}
 }
 

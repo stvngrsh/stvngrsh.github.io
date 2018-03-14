@@ -1,6 +1,9 @@
 import '../sass/style.scss';
+import data from '../data/data';
+let myTemplate = require('../hbs/index.hbs');
 
 document.addEventListener("scroll", logoSkew);
+createHTML();
 
 function logoSkew(e) {
     const width = document.documentElement.clientWidth;
@@ -9,7 +12,7 @@ function logoSkew(e) {
 
     const skewBlue = document.getElementById('skew-blue').offsetTop;
     const blueHeight = document.getElementById('skew-blue').clientHeight;
-    const blueTangentHeight = 0.3249 * width/2; //tan(18deg) = 0.3249
+    const blueTangentHeight = 0.3249 * width/2 - 4; //tan(18deg) = 0.3249
 
     const skewRed = document.getElementById('skew-red').offsetTop;
     const redHeight = document.getElementById('skew-red').clientHeight;
@@ -20,10 +23,8 @@ function logoSkew(e) {
     let blueOffset = logoOffset - skewBlue + blueHeight - blueTangentHeight;
     let redOffset = logoOffset - skewRed + redHeight;
 
-    console.log(blueTangentHeight, blueOffset);
-
-	let xP1 = 40 + blueOffset;
-	let xP2 = 2 + blueOffset;
+	let xP1 = 50 + blueOffset;
+	let xP2 = blueOffset;
 
 	let style = '-webkit-clip-path: polygon(0% 0%, 100% 0%, 100% ' + xP1 + 'px, 0% ' + xP2 + 'px)';
  
@@ -42,4 +43,9 @@ function getScrollTop(){
         D= (D.clientHeight)? D: B;
         return D.scrollTop;
     }
+}
+
+function createHTML() {
+    var main = document.getElementById('main');
+    main.innerHTML = myTemplate(data);
 }

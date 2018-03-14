@@ -1,7 +1,8 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var path = require('path');
+
 var webpack = require('webpack');
-var homeData = require('./src/data/homeData');
+var path = require('path');
+var data = require('./src/data/data');
 
 module.exports = {
     entry: './src/js/index.js',
@@ -11,10 +12,9 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            data: homeData,
             filename: 'index.html',
-            template: './src/hbs/index.hbs'
-        }),
+            template: './src/html/index.html'
+        })
     ],
     module: {
         loaders: [

@@ -1,21 +1,14 @@
-<meta name="description" content="">
-<meta name="author" content="">
-<link rel="icon" href="src/img/favicon.ico">
-<link rel='dns-prefetch' href='//fonts.googleapis.com'>
-<link href="https://fonts.googleapis.com/css?family=Montserrat|Oswald" rel="stylesheet">
+<title>{{title}}</title>
 
-<title>STEVEN GRESH</title>
-
-{{#with htmlWebpackPlugin.options.data}}
 <div id="banner">
 	<div id="banner-overlay">
-		<h1>TEST HEADING</h1>
+		<h1>{{name}}</h1>
 		<div id="fade3">
-			<div id="f1">Thing 1</div>
+			<div id="f1">{{subtitle.one}}</div>
 			<div id="s1"> | </div>
-			<div id="f2">Thing 2</div>
+			<div id="f2">{{subtitle.two}}</div>
 			<div id="s2"> | </div>
-			<div id="f3">Thing 3</div>
+			<div id="f3">{{subtitle.three}}</div>
 		</div>
 		<div id="triangles">
 			<div id="tri1">&#x25BC;</div>
@@ -32,8 +25,8 @@
 	<nav id="nav" role="navigation">    
 	    <ul class="left">
 	    	<li id="logo">
-	    		<a id="logo-bottom" href="#">TEST TEST</a>
-	    		<a id="logo-top" href="#">TEST TEST</a>
+	    		<a id="logo-bottom" href="#">{{nameUpper}}</a>
+	    		<a id="logo-top" href="#">{{nameUpper}}</a>
 	        </li>
 	    </ul>
 	    <ul class="right">
@@ -48,16 +41,19 @@
 	        </li>
 	    </ul>
 	</nav>
-	<div class="skew-outer background">
+	<div class="skew-outer background-section">
 		<div id="skew-blue" class="skew-inner blue"></div>
 		<div id="skew-red" class="skew-inner red"></div>
 	</div>
 	<div class="skew-blue-fill"></div>
-	<div style="height: 500px; background: rgba(0,0,0,0);">Sup</div>
-	<div style="height: 500px; background: rgba(0,0,0,0);">Sup</div>
-	<div style="height: 500px; background: rgba(0,0,0,0);">Sup</div>
-	<div style="height: 500px; background: rgba(0,0,0,0);">Sup</div>
-
+	<h2 class="content-full section-heading about-heading">
+		<s>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</s>
+		{{about.title}}
+		<s>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</s>
+	</h2>
+	<ul class="content left about-details">
+		{{#each about.bullets}}<li><b>> </b>{{this}}</li>{{/each}}
+	</ul>
+	<p class="content right blurb">{{about.blurb}}</p>
+	<div class="content-full" style="height:500px"></div>
 </div>
-
-{{/with}}

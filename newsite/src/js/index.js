@@ -3,6 +3,8 @@ import '../sass/style.scss';
 import '../img/headshot.jpg';
 
 import data from '../data/data';
+import test from '../data/test';
+
 let myTemplate = require('../hbs/index.hbs');
 
 document.addEventListener("scroll", logoSkew);
@@ -50,5 +52,15 @@ function getScrollTop(){
 
 function createHTML() {
     var main = document.getElementById('main');
-    main.innerHTML = myTemplate(data);
+
+    if (process.env.NODE_ENV === 'production') {
+        console.log('Welcome to production');
+        main.innerHTML = myTemplate(data);
+    } else {
+        console.log('Welcome to development');
+        main.innerHTML = myTemplate(test);
+    }
+    if (process.env.DEBUG) {
+        console.log('Debugging output');
+    }
 }

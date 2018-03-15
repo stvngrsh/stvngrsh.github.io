@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "babel": "babel --presets es2015 src/js/index.js -o build/bundle.js",
-    "start": "http-server ./build -p 9001",
-    "start:dev": "webpack-dev-server",
+    "start": "NODE_ENV=production webpack && http-server ./build -p 9001",
+    "start:dev": "NODE_ENV=development webpack-dev-server",
     "webpack": "webpack"
   },
   "author": "Steven Gresh",

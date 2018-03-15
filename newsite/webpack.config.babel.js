@@ -5,12 +5,17 @@ var path = require('path');
 var data = require('./src/data/data');
 
 module.exports = {
+
     entry: './src/js/index.js',
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'bundle.js'
     },
     plugins: [
+        new webpack.EnvironmentPlugin({
+            NODE_ENV: 'development',
+            DEBUG: false
+        }),
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: './src/html/index.html'
@@ -44,4 +49,5 @@ module.exports = {
             colors: true
     },
     devtool: 'source-map'
-};
+    
+}

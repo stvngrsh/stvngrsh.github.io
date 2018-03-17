@@ -7,9 +7,10 @@ const projectData = [
       'Arduino',
       'Engineering'
     ],
+    featuredImage: 'img/capstone1.jpg',
     images: [
       'img/capstone1.jpg',
-      'img/capstone2.jpg',
+      'img/capstone2.png',
       'img/capstone3.jpg',
       'img/capstone4.jpg'
     ],
@@ -60,6 +61,7 @@ const projectData = [
       'LAMP',
       'Full Stack'
     ],
+    featuredImage: 'img/m3d1.png',
     images: [
       'img/m3d1.png',
       'img/m3d2.png',
@@ -91,6 +93,7 @@ const projectData = [
       'JavaScript',
       'D3'
     ],
+    featuredImage: 'img/thales1.png',
     images: [
       'img/thales1.png',
       'img/thales2.png',
@@ -136,6 +139,7 @@ const projectData = [
       'Videography',
       'After Effects'
     ],
+    featuredImage: 'img/vids1.png',
     images: [
       'img/vids1.png',
       'img/vids2.png',
@@ -176,6 +180,7 @@ const projectData = [
       'Tech Writing',
       'Design'
     ],
+    featuredImage: 'img/3dguide.png',
     images: [
       'img/3dguide.png',
       'img/3dprint1.png',
@@ -209,6 +214,7 @@ const projectData = [
       'Java',
       'Kinect'
     ],
+    featuredImage: 'img/hand.png',
     images: [
       'img/hand.png',
       'img/rps1.png',
@@ -241,6 +247,7 @@ const projectData = [
       'Fusion 360',
       'Autodesk'
     ],
+    featuredImage: 'img/bernays.png',
     images: [
       'img/bernays.png',
       'img/cad1.jpg',
@@ -273,6 +280,7 @@ const projectData = [
       'Java',
       'Arduino'
     ],
+    featuredImage: 'img/nerf.png',
     images: [
       'img/nerf.png',
       'img/nerf1.jpg',
@@ -310,6 +318,7 @@ const projectData = [
       'HTML',
       'CSS'
     ],
+    featuredImage: 'img/spd.png',
     images: [
       'img/spd.png',
       'img/spd1.png',

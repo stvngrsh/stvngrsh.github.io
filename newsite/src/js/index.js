@@ -1,6 +1,9 @@
 import '../sass/style.scss';
 
-import '../img/headshot.jpg';
+function requireAll(r) {
+    r.keys().forEach(r); 
+}
+requireAll(require.context('../img', true, /\.(jpe?g|png|gif|svg)$/i));
 
 import data from '../data/data';
 import test from '../data/test';
@@ -58,7 +61,7 @@ function createHTML() {
         main.innerHTML = myTemplate(data);
     } else {
         console.log('Welcome to development');
-        main.innerHTML = myTemplate(test);
+        main.innerHTML = myTemplate(data);
     }
     if (process.env.DEBUG) {
         console.log('Debugging output');

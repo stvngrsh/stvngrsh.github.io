@@ -1,6 +1,8 @@
 <title>{{title}}</title>
 
 <div id="banner">
+	{{!-- <img id="grass" src="img/grass.png"/>
+	<img id="sky" src="img/sky.png"/> --}}
 	<div id="banner-overlay">
 		<h1>{{name}}</h1>
 		<div id="fade3">
@@ -43,13 +45,14 @@
 	</nav>
 	<div class="inner-wrap">
 		<div id="skew-blue" class="skew blue">
-			<div class="container">
+			<div class="container skew-rev">
 				{{!-- <div class="skew-blue-fill"></div> --}}
 				<h2 class="section-heading about-heading">
 					<s>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</s>
 					{{about.title}}
 					<s>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</s>
 				</h2>
+				<h3 class="tagline">{{about.tagline}}</h3>
 				<ul class="about-details">
 					{{#each about.bullets}}<li><b>> </b>{{this}}</li>{{/each}}
 				</ul>
@@ -57,8 +60,38 @@
 				<p class="blurb">{{about.blurb}}</p>
 			</div>
 		</div>
-		<div class="test" style="height:500px"></div>
-		<div id="skew-red" class="skew-inner red"></div>
+		<div class="container">
+			<h2 class="section-heading project-heading">
+				<s>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</s>
+				{{projects.title}}
+				<s>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</s>
+			</h2>
+			<div class="columns" >
+			{{#each projects.projectData}}
+			<div class="cell">
+				<button>
+					<h4>{{title}}</h4>
+					<p>{{subtitle}}</p>
+					<div>
+						{{#each keywords}}
+						<span class="pill">{{this}}</span>
+						{{/each}}
+					</div>
+				</button>
+				<img src="{{featuredImage}}" alt="test">
+			</div>
+			{{/each}}
+			</div>
+		</div>
+		<div id="skew-red" class="skew red">
+			<div class="container skew-rev">
+				<h2 class="section-heading about-heading">
+					<s>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</s>
+					{{resume.title}}
+					<s>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</s>
+				</h2>
+			</div>
+		</div>
 
 	</div>
 </div>

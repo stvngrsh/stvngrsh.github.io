@@ -64,6 +64,12 @@
 	@include animation(ripple, 3s, infinite, $delay);
 }
 
+@mixin transition($property, $time, $type) {
+	-webkit-transition: $property $time $type;
+	-moz-transition: $property $time $type;
+	-o-transition: $property $time $type;
+	transition: $property $time $type;
+}
 
 //Colors
 $overlay: rgba(0,0,0,.4);
@@ -71,6 +77,7 @@ $dark-blue: #2c3e50;
 $blue: #3498db;
 $red: #e74c3c;
 $light-gray: #ecf0f1;
+$medium-gray: #7f8c8d;
 
 $font-title: 'Oswald', sans-serif;
 $font-sub: 'Montserrat', sans-serif;
@@ -90,13 +97,40 @@ h1 {
 }
 
 h2 {
+	color: white;
 	font-size: 2.25rem;
 	font-family: $font-sub; 
 	line-height: 1.1;
 	font-weight: 500;
 }
 
+h3 {
+	color: white;
+	font-size: 2.25rem;
+	font-weight: normal;
+	font-family: $font-body;
+}
+
+h4 {
+	font-size: 20pt;
+	font-family: $font-title;
+	color: $dark-blue;
+}
+
+h5{
+	font-family: $font-sub;
+	font-size: 16pt;
+	color: $dark-blue;
+}
+
+h6 {
+	font-family: $font-body;
+	font-size: 14pt;
+	color: $medium-gray;
+}
+
 p {
+	color: black;
 	font-family: $font-body;
 	font-size: 16px;
 }
@@ -110,6 +144,14 @@ p {
 	height: 100%;
 	width: 100%;
 	
+	#grass {
+		position: absolute;
+	}
+
+	#sky {
+		position: absolute;
+	}
+
 	&.fixed {
 		visibility: hidden;
 	}
@@ -123,6 +165,7 @@ p {
 		align-items: center;
 		flex-direction: column;
 		padding-bottom: 10%;
+
 		
 		#fade3 {
 			
@@ -277,11 +320,15 @@ nav {
 /* grid */
 .container {
 	margin: auto;
-	transform: skewY(-18deg);
 	position: relative;
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-gap: 10px;
+	margin-bottom: 50px;
+
+	&.vertical-fill {
+		grid-auto-flow: row;
+	}
 }
 
 /* media query for grid layout */
@@ -334,14 +381,20 @@ nav {
 	&.blue {
 		transform: skewY(18deg);
 		background-color: $blue;
+		.skew-rev {
+			transform: skewY(-18deg);
+		}
 	}
 	&.red {
-		margin-top: 1800px;
 		transform: skewY(-18deg);
 		background-color: $red;
+		.skew-rev {
+			transform: skewY(18deg);
+		}
 	}
 	
 }
+
 
 .section-heading {
 	grid-column: 1/4;
@@ -353,6 +406,19 @@ nav {
 		margin-bottom: 40px;
 		color: white;
 	}
+
+	&.project-heading {
+		color: black;
+	}
+
+	&.resume-heading {
+		color: white;
+	}
+}
+
+.tagline {
+	grid-column: 1/4;
+	justify-self: center;
 }
 
 ul.about-details {
@@ -382,3 +448,105 @@ ul.about-details {
 	border: 0;
 }
 
+.columns {
+	grid-column: 1/4;
+	-webkit-column-count: 3;
+	-webkit-column-gap: 20px;
+	column-count: 3;
+	column-gap: 20px;
+	.cell {
+		position: relative;
+		display: inline-block;
+		-webkit-backface-visibility: hidden;
+		border-radius: 10px;
+		overflow: visible;
+		margin-bottom: 15px;
+		outline: none;
+		
+		&:hover, &:focus {
+			
+			button {
+				transform: scale(1.1);
+				opacity: 1;
+				h4, p, span {
+					opacity: 1;
+				}
+			}
+			img {
+				transform: scale(1.1);
+				filter: blur(1px);
+			}
+		}
+		
+		button {
+			outline: none;
+			transform: scale(1);
+			box-shadow: 10px 10px 5px rgba(0,0,0,0.16);
+			z-index: 2;
+			border-style: none;
+			padding: 15px;
+			border-radius: 10px;
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			color: white;
+			text-align: center;
+			text-decoration: none;
+			background-color: rgba(0,0,0,0.5);
+			opacity: 0.2;
+
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			
+			@include transition(opacity, 0.1s, linear);
+			@include transition(transform, 0.1s, ease-in);
+			
+			h4 {
+				margin-top: 10px;
+				margin-bottom: 10px;
+				color: white;
+				opacity: 0;
+				text-decoration: underline;
+				@include transition(opacity, 0.1s, linear);
+			}
+			p {
+				font-family: $font-sub;
+				color: white;
+				opacity: 0;
+				@include transition(opacity, 0.1s, linear);
+			}
+			span {
+				opacity: 0;
+				@include transition(opacity, 0.1s, linear);
+				background-color: white;
+				color: black;
+			}
+		}
+		img {
+			filter: blur(0px);
+			overflow: hidden;
+			z-index: 1;
+			width: 100%;
+			-webkit-backface-visibility: hidden;
+			border-radius: 10px;
+			@include transition(all, 0.1s, ease-in);
+
+		}
+
+	}
+	.pill {
+		display: inline-block;
+		padding: 3px 7px;
+		font-size: 12px;
+		font-weight: bold;
+		line-height: 1;
+		color: white;
+		text-align: center;
+		white-space: nowrap;
+		vertical-align: middle;
+		background-color: $medium-gray;
+		border-radius: 10px;
+	}
+}

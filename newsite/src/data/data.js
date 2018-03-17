@@ -38,11 +38,11 @@ var data = {
 	},
 	projects: {
 		title: "Featured Projects",
-		projects: projectData
+		projectData: projectData
 	},
 	resume: {
 		title: "Experience",
-		resume: resumeData
+		resumeData: resumeData
 	}
 };
 

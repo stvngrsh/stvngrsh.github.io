@@ -67,3 +67,30 @@ function createHTML() {
         console.log('Debugging output');
     }
 }
+
+(function() {
+    var buttons = document.getElementsByClassName('project-button');
+    for(let button of buttons) {
+        button.addEventListener('click', openModal);
+    }
+})();
+
+function openModal(e) {
+    let modal = e.target.dataset.modal;
+    console.log(modal);
+    document.getElementById(modal).className += " open";
+}
+
+function closeModal(e) {
+    let modal = e.target.dataset.modal;
+    document.getElementById(modal).className.replace(" " + open, "");
+}
+
+(function() {
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = '//cdn.youracclaim.com/assets/utilities/embed.js';
+    var o = document.getElementsByTagName('script')[0];
+    o.parentNode.insertBefore(s, o);
+})();

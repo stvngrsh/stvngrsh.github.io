@@ -46,21 +46,23 @@
 	<div class="inner-wrap">
 		<div id="skew-blue" class="skew blue">
 			<div class="container skew-rev">
-				{{!-- <div class="skew-blue-fill"></div> --}}
+				<div class="skew-blue-fill"></div>
 				<h2 class="section-heading about-heading">
 					<s>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</s>
 					{{about.title}}
 					<s>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</s>
 				</h2>
-				<h3 class="tagline">{{about.tagline}}</h3>
-				<ul class="about-details">
-					{{#each about.bullets}}<li><b>> </b>{{this}}</li>{{/each}}
-				</ul>
-				<img src="img/headshot.jpg" alt="headshot" class="headshot"/>
-				<p class="blurb">{{about.blurb}}</p>
+				<p class="tagline">{{about.tagline}}</p>
+				<div class="about-span">
+					<ul class="about-details">
+						{{#each about.bullets}}<li><b>> </b>{{this}}</li>{{/each}}
+					</ul>
+					<img src="img/headshot.jpg" alt="headshot" class="headshot"/>
+					<p class="blurb">{{about.blurb}}</p>
+				</div>
 			</div>
 		</div>
-		<div class="container">
+		<div class="container projects">
 			<h2 class="section-heading project-heading">
 				<s>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</s>
 				{{projects.title}}
@@ -69,8 +71,8 @@
 			<div class="columns" >
 			{{#each projects.projectData}}
 			<div class="cell">
-				<button>
-					<h4>{{title}}</h4>
+				<button class="project-button" data-modal="proj-{{@index}}">
+					<h3>{{title}}</h3>
 					<p>{{subtitle}}</p>
 					<div>
 						{{#each keywords}}
@@ -91,7 +93,68 @@
 					<s>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</s>
 				</h2>
 			</div>
+			{{#with resume.resumeData}}
+			<div class="container resume skew-rev">
+				<h2>{{education.title}}</h2>
+				{{#each education.items}}
+				<h6>{{dates}}</h6>
+				<h3>{{name}}</h3>
+				<h4>{{major}} <span class="gpa">{{gpa}}</span></h4>
+				{{#each programs}}
+				<h4><a href="{{link}}">{{name}}</a></h4>
+				<p>{{description}}</p>
+				{{/each}}
+				{{/each}}
+
+				<h2>{{certifications.title}}</h2>
+				{{#each certifications.items}}
+				<h6>{{dates}}</h6>
+				<h3>{{name}}</h3>
+				<h4>{{description}}</h4>
+				{{#if acclaimId}}
+				<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="{{acclaimId}}"></div>
+				{{/if}}
+				{{/each}}
+
+				<h2>{{experience.title}}</h2>
+				{{#each experience.items}}
+				<h6>{{dates}}</h6>
+				<h3>{{name}}</h3>
+				<h5>{{location}}</h5>
+				<p class="job-blurb">{{description}}</p>
+				{{/each}}
+
+				<h2>{{skills.title}}</h2>
+				<div class="key">
+					{{#each skills.labels}}
+					<div class="skill">
+						{{{times level}}}
+						{{name}}
+					</div>
+					{{/each}}
+				</div>
+				{{#each skills.sections}}
+				<div class="skill-section">
+					<h3>{{title}}</h3>
+					{{#each items}}
+					<div class="skill">
+						{{{times level}}}
+						{{skill}}
+					</div>
+					{{/each}}
+				</div>
+				{{/each}}
+			</div>
+			{{/with}}
 		</div>
 
 	</div>
 </div>
+
+{{#each projects.projectData}}
+	<div class="project-modal" id="proj-{{@index}}">
+		<div class="modal-content">
+			Stuff
+		</div>
+	</div>
+{{/each}}

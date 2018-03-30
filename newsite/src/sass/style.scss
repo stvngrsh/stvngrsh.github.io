@@ -78,6 +78,7 @@ $blue: #3498db;
 $red: #e74c3c;
 $light-gray: #ecf0f1;
 $medium-gray: #7f8c8d;
+$dark-gray: #333;
 
 $font-title: 'Oswald', sans-serif;
 $font-sub: 'Montserrat', sans-serif;
@@ -93,6 +94,7 @@ h1 {
 	color: white;
 	font-size: 5rem;
 	margin-top: 15%;
+	margin-bottom: 20px;
 	font-family: $font-title;
 }
 
@@ -108,24 +110,25 @@ h3 {
 	color: white;
 	font-size: 2.25rem;
 	font-weight: normal;
-	font-family: $font-body;
+	font-family: $font-title;
 }
 
 h4 {
-	font-size: 20pt;
-	font-family: $font-title;
+	font-size: 1.8rem;
+	font-family: $font-sub;
 	color: $dark-blue;
 }
 
 h5{
 	font-family: $font-sub;
-	font-size: 16pt;
-	color: $dark-blue;
+	font-size: 1.7rem;
+	color: $medium-gray;
 }
 
 h6 {
 	font-family: $font-body;
-	font-size: 14pt;
+	font-size: 1.5rem;
+	font-weight: normal;
 	color: $medium-gray;
 }
 
@@ -133,6 +136,8 @@ p {
 	color: black;
 	font-family: $font-body;
 	font-size: 16px;
+	font-weight: normal;
+	line-height: 1.42;
 }
 
 
@@ -173,6 +178,7 @@ p {
 			color: white;
 			font-family: $font-sub;
 			font-size: 28pt;
+			font-weight: bold;
 			
 			div {
 				opacity: 0;
@@ -232,7 +238,7 @@ p {
 
 /* nav styles */
 nav {
-	z-index: 1;
+	z-index: 999;
 	padding: 5px 20px;
 	position: sticky;
 	top: 0;
@@ -321,9 +327,9 @@ nav {
 .container {
 	margin: auto;
 	position: relative;
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-gap: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	margin-bottom: 50px;
 
 	&.vertical-fill {
@@ -331,32 +337,23 @@ nav {
 	}
 }
 
-/* media query for grid layout */
-@media only screen and (min-width: 600px) {
-	
-	/* grid */
-	.container {
-		max-width: 1200px;
-		grid-template-columns: repeat(3, minmax(100px, 400px));
-		grid-template-rows: 1fr;
-		z-index: 0;
-		align-items: center;
-	
-	}
-	
-	/* nav styles */
-	nav ul li {
-		display: inline-block;
-		padding: 0 20px 0 0;
-	}
-	
-	/* hide toggle */
-	.toggle {
-		display: none;
-	}
-	
+/* grid */
+.container {
+	max-width: 1200px;
+	z-index: 1;
 }
 
+/* nav styles */
+nav ul li {
+	display: inline-block;
+	padding: 0 20px 0 0;
+}
+
+/* hide toggle */
+.toggle {
+	display: none;
+}
+	
 #wrapper{
 	position: relative;
 	background: white;
@@ -365,13 +362,12 @@ nav {
 	}
 }
 .skew-blue-fill {
-	align-self: start;
-	position: absolute;
-	min-height: 400px;
-	height: 25%;
+	height: 100%;
 	width: 100%;
-	z-index: -1;
+	position: absolute;
 	background-color: $blue;
+	z-index: -1;
+	right: -50%;
 }
 
 .skew {
@@ -400,10 +396,11 @@ nav {
 	grid-column: 1/4;
 	text-shadow: 2px 2px rgba(0,0,0,0.3);
 	justify-self: center;
+	font-weight: bold;
 
 	&.about-heading {
-		margin-top: 40px;
-		margin-bottom: 40px;
+		margin-top: 80px;
+		margin-bottom: 20px;
 		color: white;
 	}
 
@@ -416,7 +413,16 @@ nav {
 	}
 }
 
+.about-span {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	align-items: center;
+	height: 135px;
+}
+
 .tagline {
+	color: white;
+	font-size: 2.25rem;
 	grid-column: 1/4;
 	justify-self: center;
 }
@@ -429,6 +435,7 @@ ul.about-details {
 		font-family: $font-body;
 		font-size: 18px;
 		margin-bottom: 5px;
+		color: $dark-gray;
 		b {
 			color: $blue;
 		}
@@ -446,6 +453,10 @@ ul.about-details {
 	filter: gray;
 	vertical-align: middle;
 	border: 0;
+}
+
+.projects {
+	margin-top: 200px;
 }
 
 .columns {
@@ -468,7 +479,7 @@ ul.about-details {
 			button {
 				transform: scale(1.1);
 				opacity: 1;
-				h4, p, span {
+				h3, p, span {
 					opacity: 1;
 				}
 			}
@@ -479,6 +490,7 @@ ul.about-details {
 		}
 		
 		button {
+			cursor: pointer;
 			outline: none;
 			transform: scale(1);
 			box-shadow: 10px 10px 5px rgba(0,0,0,0.16);
@@ -503,7 +515,8 @@ ul.about-details {
 			@include transition(opacity, 0.1s, linear);
 			@include transition(transform, 0.1s, ease-in);
 			
-			h4 {
+			h3 {
+				font-size: 1.8rem;
 				margin-top: 10px;
 				margin-bottom: 10px;
 				color: white;
@@ -548,5 +561,91 @@ ul.about-details {
 		vertical-align: middle;
 		background-color: $medium-gray;
 		border-radius: 10px;
+	}
+}
+
+.resume {
+	box-shadow: 10px 10px 5px rgba(0,0,0,0.16);
+	background: white;
+	border-radius: 10px;
+	padding-left: 30px;
+	padding-right: 30px;
+
+	h2, h3, h4, h5, h6, p {
+		grid-column: 1/4;
+		margin: 0;
+	}
+
+	h2 {
+		font-weight: bold;
+		color: $red;
+		padding-bottom: 25px;
+		border-bottom: 1px solid #eee;
+		margin-top: 60px;
+		margin-bottom: 25px;
+
+	}
+	h3 {
+		font-weight: bold;
+		color: $dark-blue;
+	}
+	h4 {
+		font-weight: bold;
+		margin-bottom: 10px;
+	}
+	.gpa {
+		font-weight: bolder;
+		color: $red;
+	}
+	a {
+		color: $blue;
+		margin-top: 15px;
+	}
+	p {
+		font-size: 1.5rem;
+		margin-bottom: 15px;
+	}
+	.skill {
+		font-family: $font-body;
+		font-size: 1.2rem;
+	}
+	.key {
+		grid-column: 1/4;
+		display: flex;
+		flex-direction: row;
+		.skill {
+			margin-right: 20px;
+		}
+	}
+	.skill-section {
+		justify-self: left;
+		align-self: flex-start;
+		grid-column: span 1;
+		h3 {
+			font-size: 1.6rem;
+		}
+	}
+}
+
+.project-modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rbg(0,0,0,.4);
+
+	.modal-content {
+		color: #aaa;
+		float: right;
+		font-size: 22px;
+		font-weight: bold;
+	}
+
+	&.open {
+		display: block;
 	}
 }

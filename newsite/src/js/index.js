@@ -1,6 +1,8 @@
+import $ from 'jquery';
 import '../sass/style.scss';
 
 function requireAll(r) {
+    console.log('require all');
     r.keys().forEach(r); 
 }
 requireAll(require.context('../img', true, /\.(jpe?g|png|gif|svg)$/i));
@@ -10,10 +12,35 @@ import test from '../data/test';
 
 let myTemplate = require('../hbs/index.hbs');
 
-document.addEventListener("scroll", logoSkew);
 createHTML();
 
+function createHTML() {
+    console.log('creating HTML');
+    var main = document.getElementById('main');
+
+    if (process.env.NODE_ENV === 'production') {
+        console.log('Welcome to production');
+        main.innerHTML = myTemplate(data);
+    } else {
+        console.log('Welcome to development');
+        main.innerHTML = myTemplate(data);
+    }
+    if (process.env.DEBUG) {
+        console.log('Debugging output');
+    }
+}
+
+$(document).ready(function () {
+    $('.project-button').click(function(ev){
+        openModal(ev);
+    });
+    $(document).scroll(function () { 
+        logoSkew();
+    });
+});
+
 function logoSkew(e) {
+    console.log('logo skew');
     const width = document.documentElement.clientWidth;
 
     const skewOuter = document.getElementById('wrapper').offsetTop;
@@ -34,10 +61,9 @@ function logoSkew(e) {
 	let xP1 = 50 + blueOffset;
 	let xP2 = blueOffset;
 
-	let style = '-webkit-clip-path: polygon(0% 0%, 100% 0%, 100% ' + xP1 + 'px, 0% ' + xP2 + 'px)';
+	let style = 'polygon(0% 0%, 100% 0%, 100% ' + xP1 + 'px, 0% ' + xP2 + 'px)';
  
-	document.getElementById('logo-top').style = '-webkit-clip-path: polygon(0% 0%, 100% 0%, 100% ' + xP1 + 'px, 0% ' + xP2 + 'px)';
-	
+    $('#logo-top').css('-webkit-clip-path', style);
 }
 
 function getScrollTop(){
@@ -53,40 +79,20 @@ function getScrollTop(){
     }
 }
 
-function createHTML() {
-    var main = document.getElementById('main');
-
-    if (process.env.NODE_ENV === 'production') {
-        console.log('Welcome to production');
-        main.innerHTML = myTemplate(data);
-    } else {
-        console.log('Welcome to development');
-        main.innerHTML = myTemplate(data);
-    }
-    if (process.env.DEBUG) {
-        console.log('Debugging output');
-    }
-}
-
-(function() {
-    var buttons = document.getElementsByClassName('project-button');
-    for(let button of buttons) {
-        button.addEventListener('click', openModal);
-    }
-})();
-
 function openModal(e) {
     let modal = e.target.dataset.modal;
-    console.log(modal);
-    document.getElementById(modal).className += " open";
+    $('.project-modal').removeClass('open');
+    $('#' + modal).addClass('open');
+    $('#modals').addClass('open');
 }
 
 function closeModal(e) {
-    let modal = e.target.dataset.modal;
-    document.getElementById(modal).className.replace(" " + open, "");
+    $('.project-modal').removeClass('open');
+    $('#modals').removeClass('open');
 }
 
 (function() {
+    console.log('embed');
     var s = document.createElement('script');
     s.type = 'text/javascript';
     s.async = true;

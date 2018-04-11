@@ -34,6 +34,15 @@ $(document).ready(function () {
     $('.project-button').click(function(ev){
         openModal(ev);
     });
+    $('.modal-close').click(function(ev) {
+        closeModal(ev);
+    });
+    $('.project-modal').click(function(ev) {
+        ev.stopPropagation();
+    });
+    $('#modals').click(function(ev) {
+        closeModal(ev);
+    });
     $(document).scroll(function () { 
         logoSkew();
     });
@@ -80,15 +89,19 @@ function getScrollTop(){
 }
 
 function openModal(e) {
-    let modal = e.target.dataset.modal;
+    e.preventDefault();
+    let modal = e.currentTarget.dataset.modal;
+    console.log(e.currentTarget);
     $('.project-modal').removeClass('open');
     $('#' + modal).addClass('open');
     $('#modals').addClass('open');
+    $('body').addClass('modal-open');
 }
 
 function closeModal(e) {
     $('.project-modal').removeClass('open');
     $('#modals').removeClass('open');
+    $('body').removeClass('modal-open');
 }
 
 (function() {

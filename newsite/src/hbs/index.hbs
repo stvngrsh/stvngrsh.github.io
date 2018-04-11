@@ -162,29 +162,33 @@
 				{{/each}}
 			</div>
 		</div>
-		<div class="modal-content">
+		<dic class="modal-content">
 			{{#each images}}
-			<img src="{{this}}"/>
+			<img src="{{this}}" class="content-img img-{{@index}}"/>
 			{{/each}}
-			<h5 class="organization">
-				<span class="type">{{organization.type}}</span>
-				<span class="name">{{organization.name}}</span>
-			</h5>
-			{{#if teammates}}
-			<h5>Teammates:</h5>
-			<ul class="teammates">
-				{{#each teammates}}
-				<li><a href="{{link}}">{{name}}</a></li>
-				{{/each}}
-			</ul>
-			{{/if}}
-			{{#each links}}
-				<a href="{{link}}" class="button-link">{{text}}</a>
-			{{/each}}
-			<p>{{bodyText}}</p>
-		</div>
+			<div class="text-info">
+				<h5 class="organization">
+					<span class="type">{{organization.type}}</span>
+					<span class="name">{{organization.name}}</span>
+				</h5>
+				{{#if teammates}}
+				<h5>Teammates:</h5>
+				<ul class="teammates">
+					{{#each teammates}}
+					<li><a href="{{link}}">{{name}}</a></li>
+					{{/each}}
+				</ul>
+				{{/if}}
+				<div class="links">
+					{{#each links}}
+					<a href="{{link}}" class="button-link">{{text}}</a>
+					{{/each}}
+				</div>
+			</div>
+			<p class="body-text">{{{bodyText}}}</p>
+		</dic>
 		<div class="modal-footer">
-			<button class="close">Close</button>
+			<button class="modal-close">Close</button>
 		</div>
 	</div>
 {{/each}}

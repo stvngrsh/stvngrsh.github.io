@@ -27,8 +27,14 @@
 	<nav id="nav" role="navigation">    
 	    <ul class="left">
 	    	<li id="logo">
-	    		<a id="logo-bottom" href="#">{{nameUpper}}</a>
-	    		<a id="logo-top" href="#">{{nameUpper}}</a>
+	    		<a id="logo-bottom" href="#" data-letters="{{nameUpper}}">
+					{{nameUpper}}
+					<span id="logo-wrap">
+	    				<span id="logo-top" data-letters="{{nameUpper}}">
+							{{nameUpper}}
+						</span>
+					</span>
+				</a>
 	        </li>
 	    </ul>
 	    <ul class="right">
@@ -162,17 +168,19 @@
 				{{/each}}
 			</div>
 		</div>
-		<dic class="modal-content">
+		<div class="modal-content">
 			{{#each images}}
-			<img src="{{this}}" class="content-img img-{{@index}}"/>
+			<div class="img-container container-{{@index}}">
+				<img src="{{this}}" class="content-img img-{{@index}}"/>
+			</div>
 			{{/each}}
 			<div class="text-info">
-				<h5 class="organization">
-					<span class="type">{{organization.type}}</span>
-					<span class="name">{{organization.name}}</span>
-				</h5>
+				<h6 class="organization">
+					<span class="bold">{{organization.type}}: </span>
+					<span class=>{{organization.name}}</span>
+				</h6>
 				{{#if teammates}}
-				<h5>Teammates:</h5>
+				<h6 class="bold" >Teammates:</h6>
 				<ul class="teammates">
 					{{#each teammates}}
 					<li><a href="{{link}}">{{name}}</a></li>
@@ -186,7 +194,7 @@
 				</div>
 			</div>
 			<p class="body-text">{{{bodyText}}}</p>
-		</dic>
+		</div>
 		<div class="modal-footer">
 			<button class="modal-close">Close</button>
 		</div>

@@ -56,7 +56,7 @@ function logoSkew(e) {
 
     const skewBlue = document.getElementById('skew-blue').offsetTop;
     const blueHeight = document.getElementById('skew-blue').clientHeight;
-    const blueTangentHeight = 0.3249 * width/2 - 4; //tan(18deg) = 0.3249
+    const blueTangentHeight = 0.3249 * width/2 - 125; //tan(18deg) = 0.3249
 
     const skewRed = document.getElementById('skew-red').offsetTop;
     const redHeight = document.getElementById('skew-red').clientHeight;
@@ -67,10 +67,10 @@ function logoSkew(e) {
     let blueOffset = logoOffset - skewBlue + blueHeight - blueTangentHeight;
     let redOffset = logoOffset - skewRed + redHeight;
 
-	let xP1 = 50 + blueOffset;
+	let xP1 = 121 + blueOffset;
 	let xP2 = blueOffset;
 
-	let style = 'polygon(0% 0%, 100% 0%, 100% ' + xP1 + 'px, 0% ' + xP2 + 'px)';
+	let style = 'polygon(0% ' + xP2 + 'px, 100% ' + xP1 + 'px, 100% 100%, 0% 100%)';
  
     $('#logo-top').css('-webkit-clip-path', style);
 }
@@ -95,13 +95,17 @@ function openModal(e) {
     $('.project-modal').removeClass('open');
     $('#' + modal).addClass('open');
     $('#modals').addClass('open');
-    $('body').addClass('modal-open');
+    $('body').bind('mousewheel touchmove', lockScroll);
 }
 
 function closeModal(e) {
     $('.project-modal').removeClass('open');
     $('#modals').removeClass('open');
-    $('body').removeClass('modal-open');
+    $('body').unbind('mousewheel touchmove', lockScroll);
+}
+
+function lockScroll(e) {
+    e.preventDefault();
 }
 
 (function() {

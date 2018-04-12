@@ -89,9 +89,10 @@ body {
 	overflow: scroll;
 	position: relative;
 
-	&.modal-open {
-		overflow: hidden;
-	}
+}
+
+a {
+	color: $blue;
 }
 
 h1 {
@@ -276,16 +277,32 @@ nav {
 		li#logo {
 			font-size: 35px;
 			font-weight: bold;
+			position: relative;
 			
 			#logo-bottom {
-				position: absolute;
-				color: white;
-			}
-			#logo-top {
 				position: relative;
+				outline: none;
+				text-decoration: none;
 				color: $blue;
-				text-shadow: -0.2px 0 $blue, 0 0.2px $blue, 0.2px 0 $blue, 0 -0.2px $blue;
-				
+				width: 100%;
+				overflow: hidden;
+				margin: 0;
+				-webkit-font-smoothing: antialiased;
+
+				#logo-wrap {
+					width: 100%;
+					position: absolute;
+					top: 0;
+					display: block;
+					height: 200px;
+					overflow: hidden;
+
+					#logo-top {
+						width: 200%;
+						position: absolute;
+						color: white;
+					}
+				}
 			}
 		}
 	}
@@ -684,23 +701,52 @@ ul.about-details {
 		.modal-content {
 			padding: 30px;
 			display: grid;
+			grid-gap: 10px;
 			grid-template-rows: repeat(3, 75px) auto;
-			grid-template-columns: repeat(4, auto) repeat(4, 1fr);
-			.content-img {
-				grid-column: 5 / span 1;
+			grid-template-columns: repeat(4, auto) 75px repeat(3, 1fr);
+
+			.img-container {
+				display: flex;
+				justify-content: center;
 				width: 100%;
-			}
-	
-			.img-0 {
-				grid-row: 1 / span 3;
-				grid-column: 1 / span 4;
-				width: auto;
 				height: 100%;
+				overflow: hidden;
+				
+				grid-column: 5 / span 1;
+				&.container-0 {
+					grid-row: 1 / span 3;
+					grid-column: 1 / span 4;
+					width: auto;
+					display: block;
+				}
+		
+				img {
+					width: auto;
+					height: 100%;
+				}
+		
 			}
-	
 			.text-info {
+				.bold {
+					font-weight: bold;
+				}
 				grid-row: 1 / span 3;
 				grid-column: 6 / span 3;
+				h6 {
+					font-size: 1.3rem;
+					color: black;
+					margin: 10px;
+				}
+				li {
+					a {
+						text-decoration: none;
+						font-family: $font-body;
+						font-size: 1.1rem;
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+				}
 			}
 	
 			.body-text {
@@ -709,9 +755,25 @@ ul.about-details {
 			}
 		}
 		.modal-footer {
+			height: 50px;
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			border-top: 1px solid $light-gray;
+			padding-right: 30px;
 			button {
+				font-size: 1rem;
+				padding: 10px 15px;
+				border: none;
 				color: white;
 				background-color: $red;
+
+				&:hover {
+					background-color: darken($red, 10%); 
+				}
+				&:focus {
+					background-color: darken($red, 15%);
+				}
 			}
 		}
 

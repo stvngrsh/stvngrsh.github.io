@@ -1,5 +1,24 @@
 const projectData = [
   {
+    title: 'Apple Watch Cordova Plugin',
+    subtitle: 'Supports communication between Apache Cordova iOS apps and WatchOS 2+ devices.',
+    keywords: [
+      'Apple Watch',
+      'Apache Cordova',
+      'Objective-C'
+    ],
+    images: [
+      'img/applewatch.png'
+    ],
+    links: [
+      {
+        text: 'GitHub Repo',
+        link: 'https://github.com/stvngrsh/cordova-plugin-watch-connectivity'
+      }
+    ],
+    bodyText: "Custom plugin developed for Apache Cordova applications to allow for Apple Watch Integrations. Communication with Apple Watch via WatchKit 2+ Watch Connectivity Framework. Plugin written in JS & Objective-C."
+  },
+  {
     title: 'Mechanical Engineering Capstone',
     subtitle: 'First place winner - Autonomous algae skimming robot',
     keywords: [

@@ -46,10 +46,18 @@ $(document).ready(function () {
     $(document).scroll(function () { 
         logoSkew();
     });
+    $('#banner').click(function(ev) {
+        scrollHome();
+    });
 });
 
+function scrollHome() {
+    $('html, body').animate({
+        scrollTop: $('#wrapper').offset().top
+    }, 1000);
+}
+
 function logoSkew(e) {
-    console.log('logo skew');
     const width = document.documentElement.clientWidth;
 
     const skewOuter = document.getElementById('wrapper').offsetTop;

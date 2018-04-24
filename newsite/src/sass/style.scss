@@ -147,6 +147,8 @@ p {
 
 
 #banner {
+	cursor: pointer;
+
 	position: fixed;
 	background-color: green;
 	//background-image: url(../img/banner.jpg);
@@ -226,6 +228,7 @@ p {
 }
 
 #banner-scroll{
+	
 	height: 100%;
 	
 	a {
@@ -307,7 +310,7 @@ nav {
 		}
 	}
 	
-	a {
+	#logo-bottom, a {
 		color: $light-gray;
 		font-family: $font-title;
 		text-decoration: none;

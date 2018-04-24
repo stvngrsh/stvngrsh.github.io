@@ -304,12 +304,14 @@ nav {
 				position: relative;
 				outline: none;
 				text-decoration: none;
-				color: $blue;
 				width: 100%;
 				overflow: hidden;
 				margin: 0;
 				-webkit-font-smoothing: antialiased;
-
+				color: $blue;
+				&.red {
+					color: $red;
+				}
 				#logo-wrap {
 					width: 100%;
 					position: absolute;

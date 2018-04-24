@@ -33,6 +33,8 @@ function createHTML() {
 }
 
 $(document).ready(function () {
+    setScrollVars();
+
     $('.project-button').click(function(ev){
         openModal(ev);
     });
@@ -57,6 +59,9 @@ $(document).ready(function () {
     $('#banner').click(function(ev) {
         scrollHome();
     });
+    $(window).resize(function() {
+        setScrollVars();
+    });
 });
 
 function scrollHome() {
@@ -65,30 +70,52 @@ function scrollHome() {
     }, 1000);
 }
 
-function logoSkew(e) {
-    const width = document.documentElement.clientWidth;
+const skewRed = document.getElementById('skew-red').offsetTop;
+const skewBlue = document.getElementById('skew-blue').offsetTop;
+const blueHeight = document.getElementById('skew-blue').clientHeight;
+const redHeight = document.getElementById('skew-red').clientHeight;
 
-    const skewOuter = document.getElementById('wrapper').offsetTop;
+let skewInit = false;
+let logoRed = false;
 
-    const skewBlue = document.getElementById('skew-blue').offsetTop;
-    const blueHeight = document.getElementById('skew-blue').clientHeight;
-    const blueTangentHeight = 0.3249 * width/2 - 125; //tan(18deg) = 0.3249
+let width;
+let skewOuter;
+let tangentHeight;
 
-    const skewRed = document.getElementById('skew-red').offsetTop;
-    const redHeight = document.getElementById('skew-red').clientHeight;
+function setScrollVars() {
+    width = document.documentElement.clientWidth;
+    skewOuter = document.getElementById('wrapper').offsetTop;
+    tangentHeight = 0.3249 * width/2 - 125; //tan(18deg) = 0.3249
+    logoSkew();
+}
 
-
+function logoSkew() {
+    
 	let logoOffset = skewOuter - getScrollTop();
-
-    let blueOffset = logoOffset - skewBlue + blueHeight - blueTangentHeight;
-    let redOffset = logoOffset - skewRed + redHeight;
-
-	let xP1 = 121 + blueOffset;
-	let xP2 = blueOffset;
-
-	let style = 'polygon(0% ' + xP2 + 'px, 100% ' + xP1 + 'px, 100% 100%, 0% 100%)';
- 
-    $('#logo-top').css('-webkit-clip-path', style);
+    let blueOffset = logoOffset - skewBlue + blueHeight - tangentHeight;
+    let redOffset = logoOffset - skewRed + redHeight - tangentHeight - 50;
+    
+    console.log(redOffset);
+    if(!skewInit || blueOffset > -200 && blueOffset < 200) {
+        let xP1 = 121 + blueOffset;
+        let xP2 = blueOffset;
+        let style = 'polygon(0 ' + xP2 + 'px, 100% ' + xP1 + 'px, 100% 100%, 0 100%)';
+        $('#logo-top').css('-webkit-clip-path', style);
+        if(logoRed) {
+            logoRed = false;
+            $('#logo-bottom').removeClass('red');
+        }
+    } else if(!skewInit || redOffset > -200 && redOffset < 200) {
+        let xP1 = 121 + redOffset;
+        let xP2 = redOffset;
+        let style = 'polygon(0 0, 100% 0, 100% ' + xP2 + 'px, 0 ' + xP1 + 'px)';
+        $('#logo-top').css('-webkit-clip-path', style); 
+        if(!logoRed) {
+            logoRed = true;
+            $('#logo-bottom').addClass('red');
+        }
+    }
+    skewInit = true;
 }
 
 function getScrollTop(){
@@ -138,23 +165,28 @@ function prevModal(e) {
     e.preventDefault();
     e.stopPropagation();
     let modal = $('.project-modal.open').prop('id').slice(-1);
-    let newModal = modal - 1;
-    console.log(newModal);
-    $('.project-modal').removeClass('open');
-    $('#proj-' + newModal).addClass('open');
-
-    enableModalChange(newModal);
+    if(modal > 0) {
+        let newModal = modal - 1;
+        $('.project-modal').removeClass('open');
+        $('#proj-' + newModal).addClass('open');
+    
+        enableModalChange("proj-" + newModal);
+    }
 }
 
 function nextModal(e) {
     e.preventDefault();
     e.stopPropagation();
     let modal = $('.project-modal.open').prop('id').slice(-1);
-    let newModal = modal + 1;
-    $('.project-modal').removeClass('open');
-    $('#proj-' + newModal).addClass('open');
+    let totalModals = $('.project-modal').length;
 
-    enableModalChange(newModal);
+    if(modal < totalModals - 1) {
+        let newModal = parseInt(modal) + 1;
+        $('.project-modal').removeClass('open');
+        $('#proj-' + newModal).addClass('open');
+    
+        enableModalChange("proj-" + newModal);
+    }
 }
 
 function lockScroll(e) {

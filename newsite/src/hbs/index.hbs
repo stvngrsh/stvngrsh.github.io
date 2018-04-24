@@ -107,7 +107,7 @@
 				<h3>{{name}}</h3>
 				<h4>{{major}} <span class="gpa">{{gpa}}</span></h4>
 				{{#each programs}}
-				<h4><a href="{{link}}">{{name}}</a></h4>
+				<h4><a href="{{link}}" target="_blank">{{name}}</a></h4>
 				<p>{{description}}</p>
 				{{/each}}
 				{{/each}}
@@ -178,21 +178,23 @@
 			</div>
 			{{/each}}
 			<div class="text-info">
+				{{#if organization}}
 				<h6 class="organization">
 					<span class="bold">{{organization.type}}: </span>
 					<span class=>{{organization.name}}</span>
 				</h6>
+				{{/if}}
 				{{#if teammates}}
 				<h6 class="bold" >Teammates:</h6>
 				<ul class="teammates">
 					{{#each teammates}}
-					<li><a href="{{link}}">{{name}}</a></li>
+					<li><a href="{{link}}" target="_blank">{{name}}</a></li>
 					{{/each}}
 				</ul>
 				{{/if}}
 				<div class="links">
 					{{#each links}}
-					<a href="{{link}}" class="button-link">{{text}}</a>
+					<a href="{{link}}" class="button-link" target="_blank">{{text}}</a>
 					{{/each}}
 				</div>
 			</div>

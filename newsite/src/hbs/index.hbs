@@ -158,7 +158,10 @@
 </div>
 
 <div id="modals">
-{{#each projects.projectData}}
+	<div class="modal-change prev">
+		<i class="fa fa-chevron-left"></i>
+	</div>
+	{{#each projects.projectData}}
 	<div class="project-modal" id="proj-{{@index}}">
 		<div class="modal-header">
 			<h3>{{title}}</h3>
@@ -199,5 +202,8 @@
 			<button class="modal-close">Close</button>
 		</div>
 	</div>
-{{/each}}
+	{{/each}}
+	<div class="modal-change next">
+		<i class="fa fa-chevron-right"></i>
+	</div>
 </div>

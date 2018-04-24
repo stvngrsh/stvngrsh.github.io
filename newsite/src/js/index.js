@@ -1,4 +1,6 @@
 import $ from 'jquery';
+import 'font-awesome/scss/font-awesome.scss';
+
 import '../sass/style.scss';
 
 function requireAll(r) {
@@ -42,6 +44,12 @@ $(document).ready(function () {
     });
     $('#modals').click(function(ev) {
         closeModal(ev);
+    });
+    $('.modal-change.prev').click(function(ev) { 
+        prevModal(ev);
+    });
+    $('.modal-change.next').click(function(ev) {
+        nextModal(ev);
     });
     $(document).scroll(function () { 
         logoSkew();
@@ -104,12 +112,49 @@ function openModal(e) {
     $('#' + modal).addClass('open');
     $('#modals').addClass('open');
     $('body').bind('mousewheel touchmove', lockScroll);
+    enableModalChange(modal);
+}
+
+function enableModalChange(modal) {
+    $('.modal-change').removeClass('enabled');
+    let totalModals = $('.project-modal').length;
+    if(modal === "proj-0") {
+        $('.modal-change.next').addClass('enabled');
+    } else if(modal === "proj-" + (totalModals - 1)) {
+        $('.modal-change.prev').addClass('enabled');
+    } else {
+        $('.modal-change.prev').addClass('enabled');
+        $('.modal-change.next').addClass('enabled');
+    }
 }
 
 function closeModal(e) {
     $('.project-modal').removeClass('open');
     $('#modals').removeClass('open');
     $('body').unbind('mousewheel touchmove', lockScroll);
+}
+
+function prevModal(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    let modal = $('.project-modal.open').prop('id').slice(-1);
+    let newModal = modal - 1;
+    console.log(newModal);
+    $('.project-modal').removeClass('open');
+    $('#proj-' + newModal).addClass('open');
+
+    enableModalChange(newModal);
+}
+
+function nextModal(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    let modal = $('.project-modal.open').prop('id').slice(-1);
+    let newModal = modal + 1;
+    $('.project-modal').removeClass('open');
+    $('#proj-' + newModal).addClass('open');
+
+    enableModalChange(newModal);
 }
 
 function lockScroll(e) {

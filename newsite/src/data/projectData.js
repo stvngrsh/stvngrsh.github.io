@@ -145,7 +145,7 @@ const projectData = [
         link: 'https://www.youtube.com/watch?v=4nl1B3RGWnY'
       }
     ],
-    bodyText: 'Semester long project working for <a href="http://www.thalescomminc.com/Content/Home.aspx" target="_blank"Thales DSI</a> to optimize IT asset allocation processes. Worked on multidisciplinary team of engineering and business majors, developed custom web application, and recommended system changes to reduce company asset costs, man-hours and even electricity consumption.'
+    bodyText: 'Semester long project working for <a href="http://www.thalescomminc.com/Content/Home.aspx" target="_blank">Thales DSI</a> to optimize IT asset allocation processes. Worked on multidisciplinary team of engineering and business majors, developed custom web application, and recommended system changes to reduce company asset costs, man-hours and even electricity consumption.'
   },
   {
     title: 'M3D Video Production',

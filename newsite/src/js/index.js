@@ -33,7 +33,6 @@ function createHTML() {
 }
 
 $(document).ready(function () {
-    setScrollVars();
 
     $('.project-button').click(function(ev){
         openModal(ev);
@@ -63,6 +62,9 @@ $(document).ready(function () {
         setScrollVars();
     });
 });
+$(window).on('load', function () {
+    setScrollVars();
+});
 
 function scrollHome() {
     $('html, body').animate({
@@ -70,52 +72,76 @@ function scrollHome() {
     }, 1000);
 }
 
-const skewRed = document.getElementById('skew-red').offsetTop;
-const skewBlue = document.getElementById('skew-blue').offsetTop;
-const blueHeight = document.getElementById('skew-blue').clientHeight;
-const redHeight = document.getElementById('skew-red').clientHeight;
+//Math constants
+const textPadding = 20;
+const radians = 0.314159; //18deg
+const tangentVal = Math.tan(radians);
 
-let skewInit = false;
-let logoRed = false;
-
-let width;
-let skewOuter;
-let tangentHeight;
+let bluePos;
+let redPos;
+let logoTangentHeight;
 
 function setScrollVars() {
-    width = document.documentElement.clientWidth;
-    skewOuter = document.getElementById('wrapper').offsetTop;
-    tangentHeight = 0.3249 * width/2 - 125; //tan(18deg) = 0.3249
+    //Initial distances from top, uses offsetTop
+    let skewBlue = document.getElementById('skew-blue').offsetTop;
+    let skewRed = document.getElementById('skew-red').offsetTop;
+    let skewOuter = document.getElementById('wrapper').offsetTop;
+
+    //Initial heights of blue section, uses clientHeight
+    let blueHeight = document.getElementById('skew-blue').clientHeight;
+
+    //Width of window
+    let width = document.documentElement.clientWidth;
+
+    //Tangent heights, the height of the skew part of the triangle -> tan(18deg) = x/(width/2)
+    let tangentHeight = tangentVal * width/2;
+
+    //Logo dimensions, offset is also calculated w/ same tangent method
+    let logoWidth = $('#logo-top').width();
+    let logoHeight = $('#logo-top').height();
+    logoTangentHeight = tangentVal * logoWidth;
+
+    //Actual position of bottom of skew lines
+    bluePos = skewBlue + skewOuter + blueHeight - tangentHeight;
+    redPos = skewRed + skewOuter + tangentHeight - logoHeight - textPadding;
+
     logoSkew();
 }
 
 function logoSkew() {
     
-	let logoOffset = skewOuter - getScrollTop();
-    let blueOffset = logoOffset - skewBlue + blueHeight - tangentHeight;
-    let redOffset = logoOffset - skewRed + redHeight - tangentHeight - 50;
+    //The scrolled distance past the logo
+    let scroll = getScrollTop();
     
-    console.log(redOffset);
-    if(!skewInit || blueOffset > -200 && blueOffset < 200) {
-        let xP1 = 121 + blueOffset;
+    //The scrolled distance past the skewed sections
+    let blueOffset = bluePos - scroll;
+    let redOffset = redPos - scroll;
+    // $('#debug2').css('top', skewRed + skewOuter);
+    // $('#debug3').css('top', redPos);
+    let clipPath = "";
+    let display = "";
+    if(blueOffset >= 200) {
+        $('#logo-bottom').removeClass('red');
+        display = "none";
+    } else if(blueOffset > -200 && blueOffset < 200) {
+
+        let xP1 = logoTangentHeight + blueOffset;
         let xP2 = blueOffset;
-        let style = 'polygon(0 ' + xP2 + 'px, 100% ' + xP1 + 'px, 100% 100%, 0 100%)';
-        $('#logo-top').css('-webkit-clip-path', style);
-        if(logoRed) {
-            logoRed = false;
-            $('#logo-bottom').removeClass('red');
-        }
-    } else if(!skewInit || redOffset > -200 && redOffset < 200) {
-        let xP1 = 121 + redOffset;
+        clipPath = 'polygon(0 ' + xP2 + 'px, 100% ' + xP1 + 'px, 100% 100%, 0 100%)';
+        $('#logo-bottom').removeClass('red');
+    } else if(redOffset > -200 && redOffset < 200) {
+
+        let xP1 = logoTangentHeight + redOffset;
         let xP2 = redOffset;
-        let style = 'polygon(0 0, 100% 0, 100% ' + xP2 + 'px, 0 ' + xP1 + 'px)';
-        $('#logo-top').css('-webkit-clip-path', style); 
-        if(!logoRed) {
-            logoRed = true;
-            $('#logo-bottom').addClass('red');
-        }
+        clipPath = 'polygon(0 0, 100% 0, 100% ' + xP2 + 'px, 0 ' + xP1 + 'px)';
+        $('#logo-bottom').addClass('red');
+    } else if(redOffset <= -200) {
+        display = "none";
+        $('#logo-bottom').addClass('red');
     }
-    skewInit = true;
+    $('#logo-top').css('display', display);
+    $('#logo-top').css('clip-path', clipPath);
+    $('#logo-top').css('-webkit-clip-path', clipPath);
 }
 
 function getScrollTop(){

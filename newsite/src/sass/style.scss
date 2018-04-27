@@ -63,8 +63,8 @@ $font-body: 'Arial', sans-serif;
 	0% {opacity: 0;}
 	100% {opacity: 1;}
 }
-@mixin fade($delay) {
-	@include animation(fade, 2s, 1, $delay);
+@mixin fade($duration, $delay) {
+	@include animation(fade, $duration, 1, $delay);
 }
 
 @include mykeyframe(ripple){
@@ -75,6 +75,14 @@ $font-body: 'Arial', sans-serif;
 }
 @mixin ripple($delay) {
 	@include animation(ripple, 3s, infinite, $delay);
+}
+
+@include mykeyframe(slideDown){
+	0% {margin-top: -200px; opacity: 0;}
+	100% {margin-top: 0px; opacity: 1;}
+}
+@mixin slideDown($duration, $delay) {
+	@include animation(slideDown, $duration, 1, $delay);
 }
 
 @mixin transition($property, $time, $type) {
@@ -169,7 +177,7 @@ p {
 
 	position: fixed;
 	background-color: green;
-	//background-image: url(../img/banner.jpg);
+	background-image: url(../img/banner.jpg);
 	background-size: cover;
 	height: 100%;
 	width: 100%;
@@ -211,16 +219,16 @@ p {
 				animation-fill-mode: forwards;
 			}
 			#f1 {	
-				@include fade(0.8s);
+				@include fade(2s, 0.8s);
 			}
 			#s1,#s2 {	
-				@include fade(2.4s);
+				@include fade(2s, 2.4s);
 			}
 			#f2 {	
-				@include fade(1.5s);
+				@include fade(2s, 1.5s);
 			}
 			#f3 {	
-				@include fade(2s);
+				@include fade(2s, 2s);
 			}
 		}
 		
@@ -321,7 +329,7 @@ nav {
 					overflow: hidden;
 
 					#logo-top {
-						width: 200%;
+						width: 100%;
 						position: absolute;
 						color: white;
 					}
@@ -543,7 +551,7 @@ ul.about-details {
 			}
 			img {
 				transform: scale(1.1);
-				filter: blur(1px);
+				//filter: blur(1px);
 			}
 		}
 		
@@ -596,13 +604,13 @@ ul.about-details {
 			}
 		}
 		img {
-			filter: blur(0px);
+			//filter: blur(0px);
 			overflow: hidden;
 			z-index: 1;
 			width: 100%;
 			-webkit-backface-visibility: hidden;
 			border-radius: 10px;
-			@include transition(all, 0.1s, ease-in);
+			@include transition(transform, 0.1s, ease-in);
 
 		}
 
@@ -675,9 +683,9 @@ ul.about-details {
 
 #modals {
 	z-index: 999;
-	background-color: rgba(0,0,0,.4);
+	background-color: rgba(0,0,0,0.4);
 	position: fixed;
-	display: none; 
+	visibility: hidden;
 	left: 0;
 	top: 0;
 	width: 100%;
@@ -685,9 +693,12 @@ ul.about-details {
 	align-items: center;
 	justify-content: center;
 	flex-direction: row;
+	opacity: 0;
 
 	&.open {
-		display: flex;
+		display: flex;		
+		visibility: visible;
+		@include fade(.2s, 0);
 	}
 	.modal-change {
 		color: white;
@@ -726,7 +737,7 @@ ul.about-details {
 		}
 	}
 	.project-modal {
-
+		
 		display: none;
 		flex-direction: column;
 		z-index: 1;
@@ -734,6 +745,8 @@ ul.about-details {
 		background-color: white;
 		box-shadow: 10px 10px 5px rgba(0,0,0,0.16);
 		border-radius: 4px;
+		opacity: 0;
+		margin-top: -200px;
 		.modal-header {
 			padding: 15px 40px;
 			display: flex;
@@ -872,9 +885,40 @@ ul.about-details {
 			}
 		}
 
-	
 		&.open {
+			@include slideDown(.4s, .2s);
 			display: flex;
 		}
+	}
+}
+
+.debug-line {
+    position: absolute;
+    height: 0;
+    width: 100%;
+    border-top-style: solid;
+    border-width: 1px;
+	z-index: 9999;
+	
+	&#debug1 {
+		border-color: red;
+	}
+	&#debug2 {
+		border-color: green;
+	}
+	&#debug3 {
+		border-color: blue;
+	}
+	&#debug4 {
+		border-color: purple;
+	}
+	&#debugVert {
+		border-color: black;
+		position: fixed;
+		width: 0;
+		border-left-style: solid;
+		left: 50%;
+		top: 0;
+		height: 100%;
 	}
 }

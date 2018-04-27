@@ -4,7 +4,7 @@ const projectData = [
     subtitle: 'Supports communication between Apache Cordova iOS apps and WatchOS 2+ devices.',
     keywords: [
       'Apple Watch',
-      'Apache Cordova',
+      'Cordova',
       'Objective-C'
     ],
     images: [

@@ -39,19 +39,30 @@
 	    </ul>
 	    <ul class="right">
 	    	<li>
-	            <a href="#">ITEM 1</a>
+	            <a class="item" href="#about">{{nav.about}}</a>
 	        </li>
 	        <li>
-	            <a href="#">ITEM 2</a>
+	            <a class="item" href="#projects">{{nav.projects}}</a>
 	        </li>
 	        <li>
-	            <a href="#">ITEM 3</a>
+	            <a class="item" href="#resume">{{nav.resume}}</a>
+	        </li>
+			<li class="dropdown">
+				<div class="item">{{nav.contact}}</div>
+				<ul >
+					<li>
+						<a class="item" href="mailto:{{nav.email.link}}">{{nav.email.title}}</a>
+					</li>
+					<li>
+						<a class="item" href="{{nav.linkedin.link}}">{{nav.linkedin.title}}</a>
+					</li>
+				</ul>
 	        </li>
 	    </ul>
 	</nav>
 	<div class="inner-wrap">
 		<div id="skew-blue" class="skew blue">
-			<div class="container skew-rev">
+			<div id="about" class="container skew-rev">
 				<div class="skew-blue-fill"></div>
 				<h2 class="section-heading about-heading">
 					<s>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</s>
@@ -68,6 +79,7 @@
 				</div>
 			</div>
 		</div>
+		<div id="projects"></div>
 		<div class="container projects">
 			<h2 class="section-heading project-heading">
 				<s>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</s>
@@ -90,7 +102,8 @@
 			</div>
 			{{/each}}
 			</div>
-		</div>
+		</div>			
+		<div id="resume" ></div>
 		<div id="skew-red" class="skew red">
 			<div class="container skew-rev">
 				<h2 class="section-heading about-heading">
@@ -100,6 +113,7 @@
 				</h2>
 			</div>
 			{{#with resume.resumeData}}
+			<div id="resume" ></div>
 			<div class="container resume skew-rev">
 				<h2>{{education.title}}</h2>
 				{{#each education.items}}

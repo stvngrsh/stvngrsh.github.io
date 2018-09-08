@@ -61,6 +61,14 @@ $(document).ready(function () {
     $(window).resize(function() {
         setScrollVars();
     });
+    $('.dropdown').mouseover(function(ev) {
+        console.log('ev.target :', ev.currentTarget);
+        $(ev.currentTarget).addClass('open');
+    });
+    $('.dropdown').mouseout(function(ev) {
+        ev.stopPropagation();
+        $(ev.currentTarget).removeClass('open');
+    });
 });
 $(window).on('load', function () {
     setScrollVars();

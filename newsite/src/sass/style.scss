@@ -300,7 +300,15 @@ nav {
 		
 		li {
 			font-size: 18px;
-			
+			.item {
+				color: $light-gray;
+				font-family: $font-title;
+				text-decoration: none;
+			}
+			.item:hover {
+				text-decoration: underline;
+				color: $blue;
+			}
 		}
 		
 		li#logo {
@@ -338,13 +346,47 @@ nav {
 		}
 	}
 	
-	#logo-bottom, a {
+	#logo-bottom {
 		color: $light-gray;
 		font-family: $font-title;
 		text-decoration: none;
 		
 	}
+
+	.dropdown {
+		ul {
+			background: $dark-blue;
+			top: 60px;
+			padding: 15px;
+			right: 0;
+			width: 85px;
+			position: absolute;
+			display: none;
+			cursor: default;
+			.item {
+				cursor: default;
+			}
+			li {
+				cursor: pointer;
+				padding: 5 5px;
+			}
+		}
+		&.open {
+			ul {
+				display: block;
+			}
+		}
+	}
 	
+}
+
+#projects {
+	position: absolute;
+}
+
+#resume {
+	position: relative;
+	top: -80px;
 }
 
 /* media query for nav styles */
@@ -413,13 +455,17 @@ nav ul li {
 		overflow: hidden;
 	}
 }
+#skew-blue {
+	margin-bottom: 100px;
+}
+
 .skew-blue-fill {
-	height: 100%;
-	width: 100%;
+	height: 109%;
+	width: 120%;
 	position: absolute;
 	background-color: $blue;
 	z-index: -1;
-	right: -50%;
+	right: -65%;
 }
 
 .skew {

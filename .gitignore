@@ -1,3 +1,5 @@
 newsite/node_modules
 newsite/build
 newsite/package-lock.json
+kellysite/node_modules
+kellysite/vendor

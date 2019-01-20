@@ -3,3 +3,5 @@ newsite/build
 newsite/package-lock.json
 kellysite/node_modules
 kellysite/vendor
+.DS_Store
+react-modular-video/.DS_Store

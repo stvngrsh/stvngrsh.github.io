@@ -537,7 +537,7 @@ function (_React$Component) {
             showCustomFill: !_this2.state.showCustomFill
           });
         }
-      }, "Toggle Custom Fill Component"), this.state.showCustomSliders || this.state.showCustomFill && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"], {
+      }, "Toggle Custom Fill Component"), (this.state.showCustomSliders || this.state.showCustomFill) && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"], {
         inline: true
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["FormGroup"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["ControlLabel"], null, "Left Slider"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["FormControl"], {
         disabled: true,

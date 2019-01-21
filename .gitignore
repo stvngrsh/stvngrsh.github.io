@@ -5,3 +5,5 @@ kellysite/node_modules
 kellysite/vendor
 .DS_Store
 react-modular-video/.DS_Store
+*.gz
+react-modular-video/.DS_Store

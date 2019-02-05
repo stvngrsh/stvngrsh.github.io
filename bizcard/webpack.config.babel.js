@@ -2,13 +2,12 @@ var HtmlWebpackPlugin = require("html-webpack-plugin");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin;
 var path = require("path");
-var data = require("./src/data/data");
 
 const env = process.env.WEBPACK_BUILD || "development";
 
 module.exports = {
   mode: env,
-  entry: "./src/js/index.js",
+  entry: "./index.js",
   output: {
     path: path.resolve(__dirname, "build"),
     filename: "bundle.js"
@@ -16,7 +15,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: "index.html",
-      template: "./src/html/index.html"
+      template: "./index.html"
     }),
     new BundleAnalyzerPlugin()
   ],
@@ -25,10 +24,6 @@ module.exports = {
       {
         test: /\.(s*)css$/,
         use: ["style-loader", "css-loader", "sass-loader"]
-      },
-      {
-        test: /\.hbs$/,
-        loader: "handlebars-loader"
       },
       {
         test: /\.js$/,

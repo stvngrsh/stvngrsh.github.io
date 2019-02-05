@@ -1,8 +1,8 @@
 <title>{{title}}</title>
 
 <div id="banner">
-	{{!-- <img id="grass" src="img/grass.png"/>
-	<img id="sky" src="img/sky.png"/> --}}
+	{{!-- <img id="grass" src="img/grass.png" />
+	<img id="sky" src="img/sky.png" /> --}}
 	<div id="banner-overlay">
 		<h1>{{name}}</h1>
 		<div id="fade3">
@@ -23,30 +23,30 @@
 <div id="banner-scroll">
 	<a href="#about-wrap"></a>
 </div>
-<div id="wrapper" >
-	<nav id="nav" role="navigation">    
-	    <ul class="left">
-	    	<li id="logo">
-	    		<div id="logo-bottom" data-letters="{{nameUpper}}">
+<div id="wrapper">
+	<nav id="nav" role="navigation">
+		<ul class="left">
+			<li id="logo">
+				<div id="logo-bottom" data-letters="{{nameUpper}}">
 					{{nameUpper}}
 					<span id="logo-wrap">
-	    				<span id="logo-top" data-letters="{{nameUpper}}">
+						<span id="logo-top" data-letters="{{nameUpper}}">
 							{{nameUpper}}
 						</span>
 					</span>
 				</div>
-	        </li>
-	    </ul>
-	    <ul class="right">
-	    	<li>
-	            <a class="item" href="#about">{{nav.about}}</a>
-	        </li>
-	        <li>
-	            <a class="item" href="#projects">{{nav.projects}}</a>
-	        </li>
-	        <li>
-	            <a class="item" href="#resume">{{nav.resume}}</a>
-	        </li>
+			</li>
+		</ul>
+		<ul class="right">
+			<li class="nav-item" id="nav-about">
+				<a class="item" href="#about">{{nav.about}}</a>
+			</li>
+			<li class="nav-item" id="nav-projects">
+				<a class="item" href="#projects">{{nav.projects}}</a>
+			</li>
+			<li class="nav-item" id="nav-resume">
+				<a class="item" href="#resume">{{nav.resume}}</a>
+			</li>
 			<li class="dropdown">
 				<div class="item">{{nav.contact}}</div>
 				<ul>
@@ -57,8 +57,8 @@
 						<a class="item" href="{{nav.linkedin.link}}">{{nav.linkedin.title}}</a>
 					</li>
 				</ul>
-	        </li>
-	    </ul>
+			</li>
+		</ul>
 	</nav>
 	<div class="inner-wrap">
 		<div id="skew-blue" class="skew blue">
@@ -74,7 +74,7 @@
 					<ul class="about-details">
 						{{#each about.bullets}}<li><b>> </b>{{this}}</li>{{/each}}
 					</ul>
-					<img src="img/headshot.jpg" alt="headshot" class="headshot"/>
+					<img src="img/headshot.jpg" alt="headshot" class="headshot" />
 					<p class="blurb">{{about.blurb}}</p>
 				</div>
 			</div>
@@ -86,24 +86,24 @@
 				{{projects.title}}
 				<s>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</s>
 			</h2>
-			<div class="columns" >
-			{{#each projects.projectData}}
-			<div class="cell">
-				<button class="project-button" data-modal="proj-{{@index}}">
-					<h3>{{title}}</h3>
-					<p>{{subtitle}}</p>
-					<div>
-						{{#each keywords}}
-						<span class="pill">{{this}}</span>
-						{{/each}}
-					</div>
-				</button>
-				<img src="{{images.[0]}}" alt="test">
+			<div class="columns">
+				{{#each projects.projectData}}
+				<div class="cell">
+					<button class="project-button" data-modal="proj-{{@index}}">
+						<h3>{{title}}</h3>
+						<p>{{subtitle}}</p>
+						<div>
+							{{#each keywords}}
+							<span class="pill">{{this}}</span>
+							{{/each}}
+						</div>
+					</button>
+					<img src="{{images.[0]}}" alt="test">
+				</div>
+				{{/each}}
 			</div>
-			{{/each}}
-			</div>
-		</div>			
-		<div id="resume" ></div>
+		</div>
+		<div id="resume"></div>
 		<div id="skew-red" class="skew red">
 			<div class="container skew-rev">
 				<h2 class="section-heading about-heading">
@@ -113,7 +113,7 @@
 				</h2>
 			</div>
 			{{#with resume.resumeData}}
-			<div id="resume" ></div>
+			<div id="resume"></div>
 			<div class="container resume skew-rev">
 				<h2>{{education.title}}</h2>
 				{{#each education.items}}
@@ -144,7 +144,7 @@
 				<p class="job-blurb">{{description}}</p>
 				{{/each}}
 
-				<h2>{{skills.title}}</h2>
+				{{!-- <h2>{{skills.title}}</h2>
 				<div class="key">
 					{{#each skills.labels}}
 					<div class="skill">
@@ -163,7 +163,7 @@
 					</div>
 					{{/each}}
 				</div>
-				{{/each}}
+				{{/each}}--}}
 			</div>
 			{{/with}}
 		</div>
@@ -189,7 +189,7 @@
 			{{#each images}}
 			<div class="img-container container-{{@index}}">
 				<div class="img-overlay"><i class="fa fa-search"></i></div>
-				<img src="{{this}}" class="content-img img-{{@index}}"/>
+				<img src="{{this}}" class="content-img img-{{@index}}" />
 			</div>
 			{{/each}}
 			<div class="text-info">
@@ -200,7 +200,7 @@
 				</h6>
 				{{/if}}
 				{{#if teammates}}
-				<h6 class="bold" >Teammates:</h6>
+				<h6 class="bold">Teammates:</h6>
 				<ul class="teammates">
 					{{#each teammates}}
 					<li><a href="{{link}}" target="_blank">{{name}}</a></li>
@@ -224,7 +224,7 @@
 		<i class="fa fa-chevron-right"></i>
 	</div>
 </div>
-{{!-- 
+{{!--
 <div id="debug1" class="debug-line"></div>
 <div id="debug2" class="debug-line"></div>
 <div id="debug3" class="debug-line"></div>

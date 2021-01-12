@@ -39,7 +39,11 @@
         font-weight: normal;
         font-style: italic;
       }
-
+      #darkmode {
+        position: fixed;
+        top: 16px;
+        right: 16px;
+      }
       body.darkmode {
         background: #222;
       }
@@ -51,6 +55,11 @@
       }
       body.darkmode a:visited {
         color: #bb86fc;
+      }
+      @media (max-width: 768px) {
+        #darkmode {
+          display: none;
+        }
       }
     </style>
     <script type="application/ld+json">
@@ -70,17 +79,13 @@
     <main>
       <h1>Steven Gresh (The web developer)</h1>
       <p>
-        Sorry for the lack of design. I'll bet this site loaded real quick
-        though.
-      </p>
-      <p>
         Send me a message on
         <a target="_blank" href="https://www.linkedin.com/in/stevengresh/"
           >LinkedIn</a
         >.
       </p>
-      <button id="darkmode">
-        It's 2020 so here's the mandated darkmode button
+      <button id="darkmode" title="It's 2021 of course there's a darkmode button">
+        'Spooky' Mode
       </button>
 
       <br />
